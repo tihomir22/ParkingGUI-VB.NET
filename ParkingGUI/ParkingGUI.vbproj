@@ -121,6 +121,9 @@
     <EmbeddedResource Include="entradaVehiculo.resx">
       <DependentUpon>entradaVehiculo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fijarPrecios.resx">
+      <DependentUpon>fijarPrecios.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
