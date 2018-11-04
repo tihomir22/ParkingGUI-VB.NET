@@ -32,9 +32,23 @@ Partial Class fijarPrecios
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
+        Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -45,7 +59,7 @@ Partial Class fijarPrecios
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.OK_Button, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Cancel_Button, 1, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(277, 274)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(277, 344)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -145,13 +159,107 @@ Partial Class fijarPrecios
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "Fijar precios"
         '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.TextBox1)
+        Me.GroupBox3.Controls.Add(Me.Label2)
+        Me.GroupBox3.Controls.Add(Me.Label3)
+        Me.GroupBox3.Controls.Add(Me.DateTimePicker1)
+        Me.GroupBox3.Location = New System.Drawing.Point(4, 176)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(428, 76)
+        Me.GroupBox3.TabIndex = 10
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Elija una fecha"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(386, 22)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(30, 13)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Hora"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(6, 22)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(23, 13)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Dia"
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(6, 41)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
+        Me.DateTimePicker1.TabIndex = 0
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(240, 41)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(179, 20)
+        Me.TextBox1.TabIndex = 4
+        Me.TextBox1.Text = "00:00"
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.NumericUpDown2)
+        Me.GroupBox4.Controls.Add(Me.NumericUpDown1)
+        Me.GroupBox4.Controls.Add(Me.Label4)
+        Me.GroupBox4.Controls.Add(Me.Label5)
+        Me.GroupBox4.Location = New System.Drawing.Point(5, 258)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(428, 76)
+        Me.GroupBox4.TabIndex = 11
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Introduzca nuevo precio"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(348, 25)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(70, 13)
+        Me.Label4.TabIndex = 3
+        Me.Label4.Text = "Precio nuevo"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(6, 22)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(75, 13)
+        Me.Label5.TabIndex = 2
+        Me.Label5.Text = "Precio antiguo"
+        '
+        'NumericUpDown1
+        '
+        Me.NumericUpDown1.Location = New System.Drawing.Point(9, 42)
+        Me.NumericUpDown1.Name = "NumericUpDown1"
+        Me.NumericUpDown1.Size = New System.Drawing.Size(196, 20)
+        Me.NumericUpDown1.TabIndex = 6
+        '
+        'NumericUpDown2
+        '
+        Me.NumericUpDown2.Location = New System.Drawing.Point(239, 41)
+        Me.NumericUpDown2.Name = "NumericUpDown2"
+        Me.NumericUpDown2.Size = New System.Drawing.Size(179, 20)
+        Me.NumericUpDown2.TabIndex = 7
+        '
         'fijarPrecios
         '
         Me.AcceptButton = Me.OK_Button
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Cancel_Button
-        Me.ClientSize = New System.Drawing.Size(435, 315)
+        Me.ClientSize = New System.Drawing.Size(435, 385)
+        Me.Controls.Add(Me.GroupBox4)
+        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
@@ -167,6 +275,12 @@ Partial Class fijarPrecios
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -181,4 +295,14 @@ Partial Class fijarPrecios
     Friend WithEvents RadioButton2 As RadioButton
     Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents Label1 As Label
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents NumericUpDown2 As NumericUpDown
+    Friend WithEvents NumericUpDown1 As NumericUpDown
 End Class

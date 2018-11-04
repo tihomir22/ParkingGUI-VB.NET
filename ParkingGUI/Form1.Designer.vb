@@ -24,34 +24,37 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button5 = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.25!)
+        Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label1.Font = New System.Drawing.Font("Nirmala UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label1.Location = New System.Drawing.Point(238, 19)
+        Me.Label1.Location = New System.Drawing.Point(245, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(250, 38)
+        Me.Label1.Size = New System.Drawing.Size(245, 47)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Gestion Parking"
         '
@@ -63,6 +66,7 @@ Partial Class Form1
         'SplitContainer1.Panel1
         '
         Me.SplitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.SplitContainer1.Panel1.Controls.Add(Me.PictureBox1)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Button5)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Button4)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Button3)
@@ -82,32 +86,14 @@ Partial Class Form1
         Me.SplitContainer1.SplitterDistance = 237
         Me.SplitContainer1.TabIndex = 1
         '
-        'Button1
+        'Button5
         '
-        Me.Button1.Location = New System.Drawing.Point(4, 4)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(230, 43)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Entrada de vehiculo"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(4, 53)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(230, 43)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Salida de vehiculo"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(4, 102)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(230, 43)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "Fijar precios"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Button5.Location = New System.Drawing.Point(4, 200)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(230, 43)
+        Me.Button5.TabIndex = 4
+        Me.Button5.Text = "Sacar cuentas"
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'Button4
         '
@@ -118,61 +104,32 @@ Partial Class Form1
         Me.Button4.Text = "Gestion de gastos"
         Me.Button4.UseVisualStyleBackColor = True
         '
-        'TableLayoutPanel1
+        'Button3
         '
-        Me.TableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.InsetDouble
-        Me.TableLayoutPanel1.ColumnCount = 5
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(4, 53)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 2
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(463, 141)
-        Me.TableLayoutPanel1.TabIndex = 0
+        Me.Button3.Location = New System.Drawing.Point(4, 102)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(230, 43)
+        Me.Button3.TabIndex = 2
+        Me.Button3.Text = "Fijar precios"
+        Me.Button3.UseVisualStyleBackColor = True
         '
-        'Label2
+        'Button2
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!)
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label2.Location = New System.Drawing.Point(175, 16)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(113, 31)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Planta 1"
+        Me.Button2.Location = New System.Drawing.Point(4, 53)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(230, 43)
+        Me.Button2.TabIndex = 1
+        Me.Button2.Text = "Salida de vehiculo"
+        Me.Button2.UseVisualStyleBackColor = True
         '
-        'Label3
+        'Button1
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!)
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label3.Location = New System.Drawing.Point(175, 200)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(113, 31)
-        Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Planta 2"
-        '
-        'TableLayoutPanel2
-        '
-        Me.TableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble
-        Me.TableLayoutPanel2.ColumnCount = 5
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(4, 237)
-        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 2
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(463, 141)
-        Me.TableLayoutPanel2.TabIndex = 2
+        Me.Button1.Location = New System.Drawing.Point(4, 4)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(230, 43)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "Entrada de vehiculo"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Label4
         '
@@ -202,6 +159,62 @@ Partial Class Form1
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(463, 141)
         Me.TableLayoutPanel3.TabIndex = 4
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!)
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label3.Location = New System.Drawing.Point(175, 200)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(113, 31)
+        Me.Label3.TabIndex = 3
+        Me.Label3.Text = "Planta 2"
+        '
+        'TableLayoutPanel2
+        '
+        Me.TableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble
+        Me.TableLayoutPanel2.ColumnCount = 5
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(4, 237)
+        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
+        Me.TableLayoutPanel2.RowCount = 2
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(463, 141)
+        Me.TableLayoutPanel2.TabIndex = 2
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!)
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label2.Location = New System.Drawing.Point(175, 16)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(113, 31)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Planta 1"
+        '
+        'TableLayoutPanel1
+        '
+        Me.TableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.InsetDouble
+        Me.TableLayoutPanel1.ColumnCount = 5
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(4, 53)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 2
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(463, 141)
+        Me.TableLayoutPanel1.TabIndex = 0
+        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark
@@ -211,14 +224,14 @@ Partial Class Form1
         Me.Panel1.Size = New System.Drawing.Size(711, 66)
         Me.Panel1.TabIndex = 2
         '
-        'Button5
+        'PictureBox1
         '
-        Me.Button5.Location = New System.Drawing.Point(4, 200)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(230, 43)
-        Me.Button5.TabIndex = 4
-        Me.Button5.Text = "Sacar cuentas"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.PictureBox1.Image = Global.ParkingGUI.My.Resources.Resources.parking_icon_png_6
+        Me.PictureBox1.Location = New System.Drawing.Point(-38, 270)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(328, 380)
+        Me.PictureBox1.TabIndex = 5
+        Me.PictureBox1.TabStop = False
         '
         'Form1
         '
@@ -236,6 +249,7 @@ Partial Class Form1
         Me.SplitContainer1.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -254,4 +268,5 @@ Partial Class Form1
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Button5 As Button
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

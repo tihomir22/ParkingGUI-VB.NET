@@ -1,6 +1,6 @@
 ﻿Imports System.Windows.Forms
 
-Public Class fijarPrecios
+Public Class GestionGastos
 
     Private Sub OK_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK_Button.Click
         Me.DialogResult = System.Windows.Forms.DialogResult.OK
@@ -16,7 +16,11 @@ Public Class fijarPrecios
 
     End Sub
 
-    Private Sub GroupBox4_Enter(sender As Object, e As EventArgs) Handles GroupBox4.Enter
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
 
     End Sub
 End Class
