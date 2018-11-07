@@ -35,9 +35,12 @@ Partial Class bajaVehiculo
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -48,7 +51,7 @@ Partial Class bajaVehiculo
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.OK_Button, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Cancel_Button, 1, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(275, 443)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(275, 498)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -76,10 +79,10 @@ Partial Class bajaVehiculo
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(6, 207)
+        Me.TextBox1.Location = New System.Drawing.Point(6, 268)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(417, 221)
+        Me.TextBox1.Size = New System.Drawing.Size(417, 201)
         Me.TextBox1.TabIndex = 1
         '
         'Label1
@@ -96,7 +99,7 @@ Partial Class bajaVehiculo
         '
         Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Red
         Me.Button1.FlatAppearance.BorderSize = 2
-        Me.Button1.Location = New System.Drawing.Point(12, 446)
+        Me.Button1.Location = New System.Drawing.Point(12, 475)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 3
@@ -171,11 +174,30 @@ Partial Class bajaVehiculo
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label2.Location = New System.Drawing.Point(118, 180)
+        Me.Label2.Location = New System.Drawing.Point(116, 241)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(215, 24)
         Me.Label2.TabIndex = 7
         Me.Label2.Text = "Información del vehiculo"
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.ComboBox1)
+        Me.GroupBox3.Enabled = False
+        Me.GroupBox3.Location = New System.Drawing.Point(4, 176)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(419, 60)
+        Me.GroupBox3.TabIndex = 7
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Matricula"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(7, 20)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(411, 21)
+        Me.ComboBox1.TabIndex = 0
         '
         'bajaVehiculo
         '
@@ -183,14 +205,15 @@ Partial Class bajaVehiculo
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Cancel_Button
-        Me.ClientSize = New System.Drawing.Size(433, 484)
+        Me.ClientSize = New System.Drawing.Size(433, 539)
+        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.Controls.Add(Me.GroupBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -202,6 +225,7 @@ Partial Class bajaVehiculo
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -219,4 +243,6 @@ Partial Class bajaVehiculo
     Friend WithEvents RadioButton2 As RadioButton
     Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents Label2 As Label
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents ComboBox1 As ComboBox
 End Class

@@ -117,4 +117,76 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="RadioButton4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
+        TUUH4gsHCQAWhlqXXwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAL8SURBVFhH
+        xZfJy09RGMfflDlDyLRhJRvChp0hQuykrOUPQFlYGLOw480YG3YWZEqRjSmUjRILQ4REkkxlY/h8bvd5
+        O7/7/s79Da/hW58699xz733uPc90ezrQUFgJR+E6PIYvJU/gBhyD1TAM/pimwBH4DL/aRKM0xmu7lm+x
+        B75B9QEf4D5cKnHsXHXdV9gOQ6AjTYa7kN7sOeyAOZCT53bCS0ivvQWToC3NglcQF/+EQzAS2tUocAtS
+        IzTKe9fKN08f/gKWQLdaDun9HPuMptLL70AsPgO+SVX6xjqYD+PL8WzIaQxchLivW9s0SnZDLPLNmz1c
+        +QauOQELyvFeqNNYeA1xf527QVMhvN09Xww5dWOAMoeEAT6rIURThzngREVrYX9JrH0Ep8rxNVgGw6FO
+        xyGeY24p5H6YOJx8BiOgKrNfXFjHdzgIubh3WyNETWz6XZE64wZbnWiiGWA0nIdYazrWATfB6XIu2AI5
+        7YJY57Y0fP6ZTtRoI8RafSBV6ukXnMhoLsQ6v2xRRDx440EL1RngF4lz+5yoUaRtrykqmQf3PGih1IDL
+        sKhE5/wBzpuyjao6PQDXWlH7HNBP2EqpATmuQDbblboKrvXZXRvgWxj/Yji+gzj3EeqMCAOMhOIzeNDp
+        FlR9YDSYQeP8ZsgptsBc0uc8A3VC9RDi/EknMgon9Es0JJlWYWh8x9rUABPPeohzksspaRj2OpHm6NxF
+        C0FPfwqx9i2Ygm+CnU/My3uYAM2UJqKlTpgOo9/LpeJ2vD8wr+QajzQVf4LBUMjCEDdoVoymwYqSNeC6
+        27ChHJ+FeWDtr1NajA47EbI0tluOre2uOwf6jGO3p5XSrTb0+/WINgmxoK4h6caAakOyDfrJspx2wrmW
+        bBBMh4ngHjoeBzlVWzI75Gybbvb6m02pDtiyPf+vbXnIL5F2yPLPfkxC5gc75YH8muntOlzHv2aprO1+
+        zqia7WBiM847fus6GSWrQGPMdjYyGiVWVIuadcV4L5rN1urp+Q37pXeqUJ7xiwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="RadioButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
+        TUUH4gsHCQAsQFZO7QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHOSURBVFhH
+        7Vc9LwRBGB46CpGIj9DwF4iPUq2hEqXmhLudubtcgU5olNSiUaHS+QEkQuOjUKAjInEyM+4K5JLzzO64
+        nV0rkXOzmn2SJ9l9n3fmee+93ZlZUhdyvJ1QsUgcce1SXauYdeR4P2FyA4YlsBoiYnwTBQ3o7AaCyhEY
+        7IEVw/AnVggT+yQrR/XoOrFSbSaMT8L8KMLkl+THxOFT7ly/Rv6+BYMXwJvgZH/iLXFkmsw9tmqXCMyX
+        uvCLV5FcDA1uJDE3XyPZcrd2BfLFPghb4JuRaJvKa5s4z70ET+15SIyTV3jCxWUoGCdP0QG0gUmKTizF
+        SiodQkud+kHQUO+7w8etMiuHtVsIauGIblPjmRGD2jUEJpb9RL6DjozVyOSEMQnWCENzaawbbm5A261p
+        lBe0WwQon/UTxbqOekiXewztQkd9qNiXrnJNePuHpzE5o6MRSApICkgKSApICvjXApiYRsJZLdHbcA58
+        ikNDE0HN1aWhIzeg3RnaiesVQOa1A8KHkWSb74S+tGl3QJ3bzRbapjqHkmqTdtdwP0TEEFpm7OMWqDwC
+        HypUpED1Hz3FTOWZUsfyB1xEt8o2lTdevQJuyt9E+4QnL3wCcszzuAhiJ1EAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="RadioButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAB+kAAAfpAZR6PEAAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAACZ0lEQVRYR8WXzU8TURTF59/TFQbdEYIEjUBAEMGIhgZLIk35sB8aoMQUYZQFUAFhpRmCwRANIkWD
+        CcsGQdywkC2XnEne85XevpkbTLv4beaec+7Jm7YvdYioqrAPK4nTFm/skJCZT029897mOTDjPDac9qGb
+        JGF8LkU73/MsmHEeG7rAq+UELXlZ6kneKRGZXKYAsrEDu9Qzv8CTTBf9Ptr1cVfS/gCi5bWpIiZzQ4EF
+        oLnoUwuRrfZgpy5wb/QW7e2vU6GwRbFsLz1INtPBwbYWg7XP83R3uDGwADTQml5kIRPZ2IFd2KkLABjv
+        P7td0hR8+/Hen2MWVEBlwWNmqJPFDpUFdIHOkSZKzUZpY2uRjg7zRebIWIc2hCkA4DEzkIls7MAupdMF
+        +if+fQ5M9vY/ajEIWwDAy2Vil9IEFlj88FKLgaQAvFymqEBmIa7FQFIAXi5TVOD16nMtBpIC8HKZogLr
+        X3JaDCQF4OUy2QIP06306esSa1DfWRC2ADxcFnZgl9LpAorIeCdtbq8Umd6svtDzsAXgMTOQiWw1V+gC
+        5l2AXyzTDIan+3xdmALQXvQjU3QX7P70igIOf+3QyEwksAA00JpeZCEz9F2AZ+UIcwLlCH0X2LhMAVBy
+        F7QO1hckjM0m/nob3hkHZpzHhtPwqJYkDKajJ647QxyYcR4bTl3PtRMJseTAMbccYMZ5bDjXm6+QhIF4
+        X9kTwIzz2HDqumtOJcSS0T/ccoAZ57FR/c8Adyw2/vsruNFy9VTC09H+sq8AM85jo/qvoKG3Nichmnic
+        dd3pHAdmnMcG+4exkrAPKwc554Dm3JVaW7dOAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="RadioButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAAYUAAAGFAUVZnkIAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAAC20lEQVRYR8WTS2gTQRiAU/GBKL4OnkJJdqe+IlGo6EF8nARvXqyItSl48IEgVATFSxA8aKFidiZJ
+        BQ+ioohIBR9NdzYrrU0DFg8qLYKIPVhUSlPFasXH+v+bmWWTznl6+Nid73/MzO5MxPO8OUUpdaKUOlFK
+        nSilTpRSJ0qpE6XUiVLqRCl1opQ6iVSG2lKVUqofnp7g7VQ51RxOItQZNSn3TMt5vTvtzof3X9WxbflN
+        0ul5xOKtJuP94CdM6nyBpxPPFDfJHmausNGg/D34GWA62VlY4tfKhMmh1PZPg+1juIipocNPpW+ixW3+
+        ZAhzTkKTNXJsUPs45sB7PsgJQTJ8g+xjUvthOBbP8B3ogwUgSdbb8+bZiZFKua0CwwZ0sPusKJo2uu3l
+        psX3ySYk27eLZNxoMKb8fiznxmJWYZ3B+KHm7uEF2MO4ajdC/A/wT4C5HRirWYBh8VNb8o+88cEjk19L
+        rYRkniyC5ElRcB1z4HkOxz65wmqTuQTe/abAC5JxzHBPBPxFER/E3yje72CsJpHQYgKDLTduVUbdY+2E
+        2i0iGT6ZsxVzYGc3hZuQdXWfF/6xfQbPBcYS6XsLwX32Y4yfhk0ykfcO4zULQOATj2PCzms9ndDosSh8
+        GcQpHxYNBqSLdpUWw/gy8FfEsOYSxgzmHJRurVWIQ/8Dchzt6l1VM3m1INjhCID/DZsdxRgkNMAh/C7i
+        3fW1xHL2g8dTjvEP6OBGPBfjWRDm7KlpUC3gqbrEbwnmLsUYHjDp8bz4O7f4BWzUmB1YaWaLzRDzzwzc
+        kHI8y5MyX4nlnJ+1gPCpFuRlDAr2So+T4j0P5YX5LXLl9fwZu+KuCPowflf4nprJgwTKXwH4KWeaWN/m
+        wMMhEoVwx91oE7PXwzW9LfJ/AGPAAzywcIOWBb8LJgz3N5h91veUfwzkXKGUOlFKnSilTpRSJ0qpE6XU
+        iVLqRCl1opQ6UUp9eJH/paozVzKcatEAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>

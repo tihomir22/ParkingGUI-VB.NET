@@ -22,15 +22,10 @@ Partial Class GestionGastos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GestionGastos))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.OK_Button = New System.Windows.Forms.Button()
         Me.Cancel_Button = New System.Windows.Forms.Button()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.CheckedListBox1 = New System.Windows.Forms.CheckedListBox()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
@@ -40,10 +35,18 @@ Partial Class GestionGastos
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -54,7 +57,7 @@ Partial Class GestionGastos
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.OK_Button, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Cancel_Button, 1, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(277, 274)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(286, 295)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -80,70 +83,6 @@ Partial Class GestionGastos
         Me.Cancel_Button.TabIndex = 1
         Me.Cancel_Button.Text = "Cancelar"
         '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.CheckedListBox1)
-        Me.GroupBox2.Location = New System.Drawing.Point(13, 66)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(424, 80)
-        Me.GroupBox2.TabIndex = 11
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Elija una plaza"
-        '
-        'CheckedListBox1
-        '
-        Me.CheckedListBox1.FormattingEnabled = True
-        Me.CheckedListBox1.Items.AddRange(New Object() {"Plaza 1", "Plaza 2 ", "Plaza 3", "Plaza 4", "Plaza 5", "Plaza 6", "Plaza 7 ", "Plaza 8 ", "Plaza 9", "Plaza 10"})
-        Me.CheckedListBox1.Location = New System.Drawing.Point(7, 20)
-        Me.CheckedListBox1.Name = "CheckedListBox1"
-        Me.CheckedListBox1.Size = New System.Drawing.Size(411, 49)
-        Me.CheckedListBox1.TabIndex = 0
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.RadioButton3)
-        Me.GroupBox1.Controls.Add(Me.RadioButton2)
-        Me.GroupBox1.Controls.Add(Me.RadioButton1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(425, 47)
-        Me.GroupBox1.TabIndex = 10
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Elija una planta"
-        '
-        'RadioButton3
-        '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(308, 21)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(64, 17)
-        Me.RadioButton3.TabIndex = 4
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "Planta 3"
-        Me.RadioButton3.UseVisualStyleBackColor = True
-        '
-        'RadioButton2
-        '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(157, 21)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(64, 17)
-        Me.RadioButton2.TabIndex = 3
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Planta 2"
-        Me.RadioButton2.UseVisualStyleBackColor = True
-        '
-        'RadioButton1
-        '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(6, 19)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(64, 17)
-        Me.RadioButton1.TabIndex = 2
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Planta 1"
-        Me.RadioButton1.UseVisualStyleBackColor = True
-        '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.TextBox3)
@@ -154,29 +93,30 @@ Partial Class GestionGastos
         Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Controls.Add(Me.Label1)
         Me.GroupBox3.Controls.Add(Me.TextBox1)
-        Me.GroupBox3.Location = New System.Drawing.Point(13, 152)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(424, 116)
+        Me.GroupBox3.Size = New System.Drawing.Size(424, 130)
         Me.GroupBox3.TabIndex = 12
         Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Gastos e ingresos"
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(296, 81)
+        Me.TextBox3.Location = New System.Drawing.Point(296, 96)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(122, 20)
         Me.TextBox3.TabIndex = 7
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(188, 81)
+        Me.TextBox2.Location = New System.Drawing.Point(188, 96)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(96, 20)
         Me.TextBox2.TabIndex = 6
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(9, 81)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(9, 96)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(163, 20)
         Me.DateTimePicker1.TabIndex = 5
@@ -184,7 +124,7 @@ Partial Class GestionGastos
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(185, 65)
+        Me.Label4.Location = New System.Drawing.Point(185, 80)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(68, 13)
         Me.Label4.TabIndex = 4
@@ -193,7 +133,7 @@ Partial Class GestionGastos
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(293, 65)
+        Me.Label3.Location = New System.Drawing.Point(293, 80)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(37, 13)
         Me.Label3.TabIndex = 3
@@ -202,7 +142,7 @@ Partial Class GestionGastos
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 65)
+        Me.Label2.Location = New System.Drawing.Point(6, 80)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(37, 13)
         Me.Label2.TabIndex = 2
@@ -211,7 +151,7 @@ Partial Class GestionGastos
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 16)
+        Me.Label1.Location = New System.Drawing.Point(6, 26)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(53, 13)
         Me.Label1.TabIndex = 1
@@ -219,10 +159,109 @@ Partial Class GestionGastos
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(7, 32)
+        Me.TextBox1.Location = New System.Drawing.Point(7, 42)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(411, 20)
         Me.TextBox1.TabIndex = 0
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.TextBox5)
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.TextBox4)
+        Me.GroupBox1.Controls.Add(Me.RadioButton4)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.RadioButton3)
+        Me.GroupBox1.Controls.Add(Me.RadioButton2)
+        Me.GroupBox1.Controls.Add(Me.RadioButton1)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 148)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(424, 120)
+        Me.GroupBox1.TabIndex = 13
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Metodo de pago"
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Image = CType(resources.GetObject("RadioButton1.Image"), System.Drawing.Image)
+        Me.RadioButton1.Location = New System.Drawing.Point(9, 20)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(64, 32)
+        Me.RadioButton1.TabIndex = 8
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "             "
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Image = CType(resources.GetObject("RadioButton2.Image"), System.Drawing.Image)
+        Me.RadioButton2.Location = New System.Drawing.Point(130, 19)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(64, 32)
+        Me.RadioButton2.TabIndex = 9
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "             "
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
+        'RadioButton3
+        '
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.Image = CType(resources.GetObject("RadioButton3.Image"), System.Drawing.Image)
+        Me.RadioButton3.Location = New System.Drawing.Point(350, 19)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(64, 32)
+        Me.RadioButton3.TabIndex = 10
+        Me.RadioButton3.TabStop = True
+        Me.RadioButton3.Text = "             "
+        Me.RadioButton3.UseVisualStyleBackColor = True
+        '
+        'RadioButton4
+        '
+        Me.RadioButton4.AutoSize = True
+        Me.RadioButton4.Image = CType(resources.GetObject("RadioButton4.Image"), System.Drawing.Image)
+        Me.RadioButton4.Location = New System.Drawing.Point(239, 19)
+        Me.RadioButton4.Name = "RadioButton4"
+        Me.RadioButton4.Size = New System.Drawing.Size(64, 32)
+        Me.RadioButton4.TabIndex = 11
+        Me.RadioButton4.TabStop = True
+        Me.RadioButton4.Text = "             "
+        Me.RadioButton4.UseVisualStyleBackColor = True
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Enabled = False
+        Me.TextBox4.Location = New System.Drawing.Point(9, 84)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(185, 20)
+        Me.TextBox4.TabIndex = 9
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(6, 68)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(49, 13)
+        Me.Label5.TabIndex = 8
+        Me.Label5.Text = "Comision"
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Enabled = False
+        Me.TextBox5.Location = New System.Drawing.Point(239, 84)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(180, 20)
+        Me.TextBox5.TabIndex = 13
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(349, 68)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(68, 13)
+        Me.Label6.TabIndex = 12
+        Me.Label6.Text = "Total importe"
         '
         'GestionGastos
         '
@@ -230,10 +269,9 @@ Partial Class GestionGastos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Cancel_Button
-        Me.ClientSize = New System.Drawing.Size(435, 315)
-        Me.Controls.Add(Me.GroupBox3)
-        Me.Controls.Add(Me.GroupBox2)
+        Me.ClientSize = New System.Drawing.Size(444, 336)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
@@ -243,23 +281,16 @@ Partial Class GestionGastos
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "GestionGastos"
         Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents OK_Button As System.Windows.Forms.Button
     Friend WithEvents Cancel_Button As System.Windows.Forms.Button
-    Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents CheckedListBox1 As CheckedListBox
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents RadioButton3 As RadioButton
-    Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Label1 As Label
     Friend WithEvents TextBox1 As TextBox
@@ -269,4 +300,13 @@ Partial Class GestionGastos
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents RadioButton4 As RadioButton
+    Friend WithEvents RadioButton3 As RadioButton
+    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents Label5 As Label
 End Class

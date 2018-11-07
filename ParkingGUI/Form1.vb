@@ -17,6 +17,8 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim entrada As entradaVehiculo = New entradaVehiculo
+        Dim todaysdate As String = String.Format("{0:dd/MM/yyyy}", DateTime.Now)
+        entrada.TextBox2.Text = todaysdate
         entrada.ShowDialog()
     End Sub
 
@@ -39,5 +41,9 @@
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Dim sacar As SacarCuentas = New SacarCuentas
         sacar.ShowDialog()
+    End Sub
+
+    Private Sub SplitContainer1_Panel2_Paint(sender As Object, e As PaintEventArgs) Handles SplitContainer1.Panel2.Paint
+
     End Sub
 End Class
