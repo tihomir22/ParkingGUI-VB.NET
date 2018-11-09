@@ -636,7 +636,6 @@ Partial Class Form1
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents Label3 As Label
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents Button5 As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Button35 As Button
@@ -670,4 +669,5 @@ Partial Class Form1
     Friend WithEvents Button7 As Button
     Friend WithEvents Button6 As Button
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents Panel1 As Panel
 End Class

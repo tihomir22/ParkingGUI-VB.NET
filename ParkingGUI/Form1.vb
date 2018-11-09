@@ -24,28 +24,29 @@
         Dim entrada As entradaVehiculo = New entradaVehiculo
         Dim todaysdate As String = String.Format("{0:dd/MM/yyyy}", DateTime.Now)
         entrada.TextBox2.Text = todaysdate
-        entrada.ShowDialog()
+
+        entrada.Show()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim salida As bajaVehiculo = New bajaVehiculo
-        salida.ShowDialog()
+        salida.Show()
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Dim fijarPrecios As fijarPrecios = New fijarPrecios
-        fijarPrecios.ShowDialog()
+        fijarPrecios.Show()
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         Dim gestion As GestionGastos = New GestionGastos
-        gestion.ShowDialog()
+        gestion.Show()
 
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Dim sacar As SacarCuentas = New SacarCuentas
-        sacar.ShowDialog()
+        sacar.Show()
     End Sub
 
     Private Sub SplitContainer1_Panel2_Paint(sender As Object, e As PaintEventArgs) Handles SplitContainer1.Panel2.Paint
