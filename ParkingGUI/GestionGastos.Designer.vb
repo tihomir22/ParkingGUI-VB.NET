@@ -22,6 +22,7 @@ Partial Class GestionGastos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GestionGastos))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.OK_Button = New System.Windows.Forms.Button()
@@ -36,17 +37,21 @@ Partial Class GestionGastos
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolTip2 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -57,7 +62,7 @@ Partial Class GestionGastos
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.OK_Button, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Cancel_Button, 1, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(286, 295)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(296, 417)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -93,7 +98,7 @@ Partial Class GestionGastos
         Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Controls.Add(Me.Label1)
         Me.GroupBox3.Controls.Add(Me.TextBox1)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox3.Location = New System.Drawing.Point(15, 143)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(424, 130)
         Me.GroupBox3.TabIndex = 12
@@ -106,13 +111,16 @@ Partial Class GestionGastos
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(122, 20)
         Me.TextBox3.TabIndex = 7
+        Me.ToolTip1.SetToolTip(Me.TextBox3, "El precio introducido por el usuario")
         '
         'TextBox2
         '
+        Me.TextBox2.Enabled = False
         Me.TextBox2.Location = New System.Drawing.Point(188, 96)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(96, 20)
         Me.TextBox2.TabIndex = 6
+        Me.ToolTip1.SetToolTip(Me.TextBox2, "Numero de factura, se genera automaticamente")
         '
         'DateTimePicker1
         '
@@ -120,6 +128,7 @@ Partial Class GestionGastos
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(163, 20)
         Me.DateTimePicker1.TabIndex = 5
+        Me.ToolTip1.SetToolTip(Me.DateTimePicker1, "La fecha en el que se realizó el gasto o ingreso")
         '
         'Label4
         '
@@ -163,6 +172,7 @@ Partial Class GestionGastos
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(411, 20)
         Me.TextBox1.TabIndex = 0
+        Me.ToolTip1.SetToolTip(Me.TextBox1, "Introduce un nombre descriptivo del gasto o ingreso")
         '
         'GroupBox1
         '
@@ -174,48 +184,39 @@ Partial Class GestionGastos
         Me.GroupBox1.Controls.Add(Me.RadioButton3)
         Me.GroupBox1.Controls.Add(Me.RadioButton2)
         Me.GroupBox1.Controls.Add(Me.RadioButton1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 148)
+        Me.GroupBox1.Location = New System.Drawing.Point(15, 279)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(424, 120)
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Metodo de pago"
         '
-        'RadioButton1
+        'TextBox5
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Image = CType(resources.GetObject("RadioButton1.Image"), System.Drawing.Image)
-        Me.RadioButton1.Location = New System.Drawing.Point(9, 20)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(64, 32)
-        Me.RadioButton1.TabIndex = 8
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "             "
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.TextBox5.Enabled = False
+        Me.TextBox5.Location = New System.Drawing.Point(239, 84)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(180, 20)
+        Me.TextBox5.TabIndex = 13
+        Me.ToolTip2.SetToolTip(Me.TextBox5, "El precio final a pagar")
         '
-        'RadioButton2
+        'Label6
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Image = CType(resources.GetObject("RadioButton2.Image"), System.Drawing.Image)
-        Me.RadioButton2.Location = New System.Drawing.Point(130, 19)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(64, 32)
-        Me.RadioButton2.TabIndex = 9
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "             "
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(349, 68)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(68, 13)
+        Me.Label6.TabIndex = 12
+        Me.Label6.Text = "Total importe"
         '
-        'RadioButton3
+        'TextBox4
         '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Image = CType(resources.GetObject("RadioButton3.Image"), System.Drawing.Image)
-        Me.RadioButton3.Location = New System.Drawing.Point(350, 19)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(64, 32)
-        Me.RadioButton3.TabIndex = 10
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "             "
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.TextBox4.Enabled = False
+        Me.TextBox4.Location = New System.Drawing.Point(9, 84)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(185, 20)
+        Me.TextBox4.TabIndex = 9
+        Me.ToolTip2.SetToolTip(Me.TextBox4, "La comision depende del metodo de pago seleccionado, se añadirá al precio final")
         '
         'RadioButton4
         '
@@ -227,15 +228,8 @@ Partial Class GestionGastos
         Me.RadioButton4.TabIndex = 11
         Me.RadioButton4.TabStop = True
         Me.RadioButton4.Text = "             "
+        Me.ToolTip2.SetToolTip(Me.RadioButton4, "Pagar con bitcoin")
         Me.RadioButton4.UseVisualStyleBackColor = True
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Enabled = False
-        Me.TextBox4.Location = New System.Drawing.Point(9, 84)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(185, 20)
-        Me.TextBox4.TabIndex = 9
         '
         'Label5
         '
@@ -246,22 +240,61 @@ Partial Class GestionGastos
         Me.Label5.TabIndex = 8
         Me.Label5.Text = "Comision"
         '
-        'TextBox5
+        'RadioButton3
         '
-        Me.TextBox5.Enabled = False
-        Me.TextBox5.Location = New System.Drawing.Point(239, 84)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(180, 20)
-        Me.TextBox5.TabIndex = 13
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.Image = CType(resources.GetObject("RadioButton3.Image"), System.Drawing.Image)
+        Me.RadioButton3.Location = New System.Drawing.Point(350, 19)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(64, 32)
+        Me.RadioButton3.TabIndex = 10
+        Me.RadioButton3.TabStop = True
+        Me.RadioButton3.Text = "             "
+        Me.ToolTip2.SetToolTip(Me.RadioButton3, "Pagar con transferencia bancaria")
+        Me.RadioButton3.UseVisualStyleBackColor = True
         '
-        'Label6
+        'RadioButton2
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(349, 68)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(68, 13)
-        Me.Label6.TabIndex = 12
-        Me.Label6.Text = "Total importe"
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Image = CType(resources.GetObject("RadioButton2.Image"), System.Drawing.Image)
+        Me.RadioButton2.Location = New System.Drawing.Point(130, 19)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(64, 32)
+        Me.RadioButton2.TabIndex = 9
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "             "
+        Me.ToolTip2.SetToolTip(Me.RadioButton2, "Pagar con efectivo")
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Image = CType(resources.GetObject("RadioButton1.Image"), System.Drawing.Image)
+        Me.RadioButton1.Location = New System.Drawing.Point(9, 20)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(64, 32)
+        Me.RadioButton1.TabIndex = 8
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "             "
+        Me.ToolTip2.SetToolTip(Me.RadioButton1, "Pagar con visa")
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
+        'ToolTip1
+        '
+        Me.ToolTip1.AutomaticDelay = 100
+        '
+        'ToolTip2
+        '
+        Me.ToolTip2.AutomaticDelay = 100
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(158, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(151, 126)
+        Me.PictureBox1.TabIndex = 14
+        Me.PictureBox1.TabStop = False
         '
         'GestionGastos
         '
@@ -269,7 +302,8 @@ Partial Class GestionGastos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Cancel_Button
-        Me.ClientSize = New System.Drawing.Size(444, 336)
+        Me.ClientSize = New System.Drawing.Size(454, 458)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.TableLayoutPanel1)
@@ -285,6 +319,7 @@ Partial Class GestionGastos
         Me.GroupBox3.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -309,4 +344,7 @@ Partial Class GestionGastos
     Friend WithEvents Label6 As Label
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents Label5 As Label
+    Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents ToolTip2 As ToolTip
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

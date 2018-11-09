@@ -22,6 +22,8 @@ Partial Class SacarCuentas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SacarCuentas))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.OK_Button = New System.Windows.Forms.Button()
         Me.Cancel_Button = New System.Windows.Forms.Button()
@@ -31,8 +33,11 @@ Partial Class SacarCuentas
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Gastos = New System.Windows.Forms.ListBox()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.TableLayoutPanel1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -43,7 +48,7 @@ Partial Class SacarCuentas
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.OK_Button, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Cancel_Button, 1, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(300, 320)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(289, 442)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -75,7 +80,7 @@ Partial Class SacarCuentas
         Me.GroupBox3.Controls.Add(Me.DateTimePicker1)
         Me.GroupBox3.Controls.Add(Me.Label1)
         Me.GroupBox3.Controls.Add(Me.Gastos)
-        Me.GroupBox3.Location = New System.Drawing.Point(13, 12)
+        Me.GroupBox3.Location = New System.Drawing.Point(16, 149)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(424, 291)
         Me.GroupBox3.TabIndex = 14
@@ -96,6 +101,7 @@ Partial Class SacarCuentas
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker1.TabIndex = 2
+        Me.ToolTip1.SetToolTip(Me.DateTimePicker1, "Los gastos se imprimiran en un dia concreto")
         '
         'Label1
         '
@@ -113,15 +119,31 @@ Partial Class SacarCuentas
         Me.Gastos.Name = "Gastos"
         Me.Gastos.Size = New System.Drawing.Size(411, 199)
         Me.Gastos.TabIndex = 0
+        Me.ToolTip1.SetToolTip(Me.Gastos, "Aqui se van a imprimir los gastos que tiene usted")
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(13, 321)
+        Me.Button1.Location = New System.Drawing.Point(16, 446)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(121, 26)
         Me.Button1.TabIndex = 15
         Me.Button1.Text = "Mostrar gastos"
+        Me.ToolTip1.SetToolTip(Me.Button1, "Haga click para imprimir los gastos en el cuadro de Gastos")
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(155, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(151, 131)
+        Me.PictureBox1.TabIndex = 16
+        Me.PictureBox1.TabStop = False
+        '
+        'ToolTip1
+        '
+        Me.ToolTip1.AutomaticDelay = 100
+        Me.ToolTip1.ShowAlways = True
         '
         'SacarCuentas
         '
@@ -129,7 +151,8 @@ Partial Class SacarCuentas
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Cancel_Button
-        Me.ClientSize = New System.Drawing.Size(458, 361)
+        Me.ClientSize = New System.Drawing.Size(447, 483)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.TableLayoutPanel1)
@@ -143,6 +166,7 @@ Partial Class SacarCuentas
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -155,4 +179,6 @@ Partial Class SacarCuentas
     Friend WithEvents Label2 As Label
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Label1 As Label
+    Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

@@ -22,6 +22,8 @@ Partial Class entradaVehiculo
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(entradaVehiculo))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.OK_Button = New System.Windows.Forms.Button()
         Me.Cancel_Button = New System.Windows.Forms.Button()
@@ -32,18 +34,21 @@ Partial Class entradaVehiculo
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.CheckedListBox1 = New System.Windows.Forms.CheckedListBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.RadioButton5 = New System.Windows.Forms.RadioButton()
         Me.RadioButton6 = New System.Windows.Forms.RadioButton()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.TableLayoutPanel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -54,7 +59,7 @@ Partial Class entradaVehiculo
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.OK_Button, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Cancel_Button, 1, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(287, 280)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(296, 436)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -96,12 +101,13 @@ Partial Class entradaVehiculo
         Me.GroupBox1.Controls.Add(Me.RadioButton3)
         Me.GroupBox1.Controls.Add(Me.RadioButton2)
         Me.GroupBox1.Controls.Add(Me.RadioButton1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(14, 163)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(425, 47)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Elija una planta"
+        Me.ToolTip1.SetToolTip(Me.GroupBox1, "Elija una planta, cada planta  alberga plazas")
         '
         'RadioButton3
         '
@@ -128,12 +134,13 @@ Partial Class entradaVehiculo
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.CheckedListBox1)
-        Me.GroupBox2.Location = New System.Drawing.Point(13, 66)
+        Me.GroupBox2.Location = New System.Drawing.Point(15, 217)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(424, 80)
         Me.GroupBox2.TabIndex = 4
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Elija una plaza"
+        Me.ToolTip1.SetToolTip(Me.GroupBox2, "Elija una plaza donde quiere almacenar el vehiculo")
         '
         'CheckedListBox1
         '
@@ -147,18 +154,27 @@ Partial Class entradaVehiculo
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.TextBox2)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 152)
+        Me.GroupBox3.Location = New System.Drawing.Point(14, 303)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(221, 61)
         Me.GroupBox3.TabIndex = 5
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Fecha del sistema"
         '
+        'TextBox2
+        '
+        Me.TextBox2.Enabled = False
+        Me.TextBox2.Location = New System.Drawing.Point(6, 28)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(209, 20)
+        Me.TextBox2.TabIndex = 3
+        Me.ToolTip1.SetToolTip(Me.TextBox2, "Fecha actual en la que se quiere guardar el vehiculo")
+        '
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.TextBox1)
         Me.GroupBox4.Enabled = False
-        Me.GroupBox4.Location = New System.Drawing.Point(239, 152)
+        Me.GroupBox4.Location = New System.Drawing.Point(241, 303)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(198, 61)
         Me.GroupBox4.TabIndex = 6
@@ -171,17 +187,19 @@ Partial Class entradaVehiculo
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(186, 20)
         Me.TextBox1.TabIndex = 1
+        Me.ToolTip1.SetToolTip(Me.TextBox1, "Debe introducir la matricula del vehiculo para registrarlo en el sistema")
         '
         'GroupBox5
         '
         Me.GroupBox5.Controls.Add(Me.RadioButton5)
         Me.GroupBox5.Controls.Add(Me.RadioButton6)
-        Me.GroupBox5.Location = New System.Drawing.Point(12, 219)
+        Me.GroupBox5.Location = New System.Drawing.Point(14, 370)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(425, 47)
         Me.GroupBox5.TabIndex = 5
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Elija tipo de vehiculo"
+        Me.ToolTip1.SetToolTip(Me.GroupBox5, "Elija un tipo de vehiculo")
         '
         'RadioButton5
         '
@@ -205,13 +223,18 @@ Partial Class entradaVehiculo
         Me.RadioButton6.Text = "Moto"
         Me.RadioButton6.UseVisualStyleBackColor = True
         '
-        'TextBox2
+        'PictureBox1
         '
-        Me.TextBox2.Enabled = False
-        Me.TextBox2.Location = New System.Drawing.Point(6, 28)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(209, 20)
-        Me.TextBox2.TabIndex = 3
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(156, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(136, 136)
+        Me.PictureBox1.TabIndex = 7
+        Me.PictureBox1.TabStop = False
+        '
+        'ToolTip1
+        '
+        Me.ToolTip1.AutomaticDelay = 100
         '
         'entradaVehiculo
         '
@@ -219,7 +242,8 @@ Partial Class entradaVehiculo
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Cancel_Button
-        Me.ClientSize = New System.Drawing.Size(445, 321)
+        Me.ClientSize = New System.Drawing.Size(454, 477)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
@@ -243,6 +267,7 @@ Partial Class entradaVehiculo
         Me.GroupBox4.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -262,4 +287,6 @@ Partial Class entradaVehiculo
     Friend WithEvents RadioButton5 As RadioButton
     Friend WithEvents RadioButton6 As RadioButton
     Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents ToolTip1 As ToolTip
 End Class
