@@ -23,9 +23,9 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -69,15 +69,47 @@ Partial Class Form1
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button43 = New System.Windows.Forms.Button()
+        Me.Button42 = New System.Windows.Forms.Button()
+        Me.Button41 = New System.Windows.Forms.Button()
+        Me.Button40 = New System.Windows.Forms.Button()
+        Me.Button39 = New System.Windows.Forms.Button()
+        Me.Button38 = New System.Windows.Forms.Button()
+        Me.Button37 = New System.Windows.Forms.Button()
+        Me.Button36 = New System.Windows.Forms.Button()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Button46 = New System.Windows.Forms.Button()
+        Me.Button45 = New System.Windows.Forms.Button()
+        Me.Button44 = New System.Windows.Forms.Button()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Button47 = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
+        Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage2.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -101,7 +133,9 @@ Partial Class Form1
         'SplitContainer1.Panel1
         '
         Me.SplitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.SplitContainer1.Panel1.Controls.Add(Me.Label6)
         Me.SplitContainer1.Panel1.Controls.Add(Me.PictureBox1)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.Button47)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Button5)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Button4)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Button3)
@@ -121,59 +155,65 @@ Partial Class Form1
         Me.SplitContainer1.SplitterDistance = 237
         Me.SplitContainer1.TabIndex = 1
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.ParkingGUI.My.Resources.Resources.parking_icon_png_6
-        Me.PictureBox1.Location = New System.Drawing.Point(-38, 270)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(328, 380)
-        Me.PictureBox1.TabIndex = 5
-        Me.PictureBox1.TabStop = False
-        '
         'Button5
         '
+        Me.Button5.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
+        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button5.Location = New System.Drawing.Point(4, 200)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(230, 43)
         Me.Button5.TabIndex = 4
         Me.Button5.Text = "Sacar cuentas"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.Button5.UseVisualStyleBackColor = False
         '
         'Button4
         '
+        Me.Button4.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
+        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button4.Location = New System.Drawing.Point(4, 151)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(230, 43)
         Me.Button4.TabIndex = 3
         Me.Button4.Text = "Gestion de gastos"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.Button4.UseVisualStyleBackColor = False
         '
         'Button3
         '
+        Me.Button3.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
+        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button3.Location = New System.Drawing.Point(4, 102)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(230, 43)
         Me.Button3.TabIndex = 2
         Me.Button3.Text = "Fijar precios"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'Button2
         '
+        Me.Button2.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button2.Location = New System.Drawing.Point(4, 53)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(230, 43)
         Me.Button2.TabIndex = 1
         Me.Button2.Text = "Salida de vehiculo"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Button1
         '
+        Me.Button1.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button1.Location = New System.Drawing.Point(4, 4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(230, 43)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Entrada de vehiculo"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Label4
         '
@@ -600,26 +640,325 @@ Partial Class Form1
         Me.Panel1.Size = New System.Drawing.Size(711, 66)
         Me.Panel1.TabIndex = 2
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Button43)
+        Me.GroupBox1.Controls.Add(Me.Button42)
+        Me.GroupBox1.Controls.Add(Me.Button41)
+        Me.GroupBox1.Controls.Add(Me.Button40)
+        Me.GroupBox1.Controls.Add(Me.Button39)
+        Me.GroupBox1.Controls.Add(Me.Button38)
+        Me.GroupBox1.Controls.Add(Me.Button37)
+        Me.GroupBox1.Controls.Add(Me.Button36)
+        Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 269)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(437, 133)
+        Me.GroupBox1.TabIndex = 4
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Elija una camera"
+        Me.ToolTip1.SetToolTip(Me.GroupBox1, "Elija una planta, cada planta  alberga plazas")
+        '
+        'Button43
+        '
+        Me.Button43.BackColor = System.Drawing.Color.White
+        Me.Button43.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button43.Location = New System.Drawing.Point(325, 77)
+        Me.Button43.Name = "Button43"
+        Me.Button43.Size = New System.Drawing.Size(100, 50)
+        Me.Button43.TabIndex = 8
+        Me.Button43.Text = "CAMERA 8"
+        Me.Button43.UseVisualStyleBackColor = False
+        '
+        'Button42
+        '
+        Me.Button42.BackColor = System.Drawing.Color.White
+        Me.Button42.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button42.Location = New System.Drawing.Point(219, 77)
+        Me.Button42.Name = "Button42"
+        Me.Button42.Size = New System.Drawing.Size(100, 50)
+        Me.Button42.TabIndex = 7
+        Me.Button42.Text = "CAMERA 7"
+        Me.Button42.UseVisualStyleBackColor = False
+        '
+        'Button41
+        '
+        Me.Button41.BackColor = System.Drawing.Color.White
+        Me.Button41.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button41.Location = New System.Drawing.Point(113, 77)
+        Me.Button41.Name = "Button41"
+        Me.Button41.Size = New System.Drawing.Size(100, 50)
+        Me.Button41.TabIndex = 6
+        Me.Button41.Text = "CAMERA 6"
+        Me.Button41.UseVisualStyleBackColor = False
+        '
+        'Button40
+        '
+        Me.Button40.BackColor = System.Drawing.Color.White
+        Me.Button40.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button40.Location = New System.Drawing.Point(7, 77)
+        Me.Button40.Name = "Button40"
+        Me.Button40.Size = New System.Drawing.Size(100, 50)
+        Me.Button40.TabIndex = 5
+        Me.Button40.Text = "CAMERA 5"
+        Me.Button40.UseVisualStyleBackColor = False
+        '
+        'Button39
+        '
+        Me.Button39.BackColor = System.Drawing.Color.White
+        Me.Button39.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button39.Location = New System.Drawing.Point(325, 24)
+        Me.Button39.Name = "Button39"
+        Me.Button39.Size = New System.Drawing.Size(100, 50)
+        Me.Button39.TabIndex = 3
+        Me.Button39.Text = "CAMERA 4"
+        Me.Button39.UseVisualStyleBackColor = False
+        '
+        'Button38
+        '
+        Me.Button38.BackColor = System.Drawing.Color.White
+        Me.Button38.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button38.Location = New System.Drawing.Point(219, 24)
+        Me.Button38.Name = "Button38"
+        Me.Button38.Size = New System.Drawing.Size(100, 50)
+        Me.Button38.TabIndex = 2
+        Me.Button38.Text = "CAMERA 3"
+        Me.Button38.UseVisualStyleBackColor = False
+        '
+        'Button37
+        '
+        Me.Button37.BackColor = System.Drawing.Color.White
+        Me.Button37.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button37.Location = New System.Drawing.Point(113, 24)
+        Me.Button37.Name = "Button37"
+        Me.Button37.Size = New System.Drawing.Size(100, 50)
+        Me.Button37.TabIndex = 1
+        Me.Button37.Text = "CAMERA 2"
+        Me.Button37.UseVisualStyleBackColor = False
+        '
+        'Button36
+        '
+        Me.Button36.BackColor = System.Drawing.Color.DimGray
+        Me.Button36.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button36.Location = New System.Drawing.Point(7, 24)
+        Me.Button36.Name = "Button36"
+        Me.Button36.Size = New System.Drawing.Size(100, 50)
+        Me.Button36.TabIndex = 0
+        Me.Button36.Text = "CAMERA 1"
+        Me.Button36.UseVisualStyleBackColor = False
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.RadioButton2)
+        Me.GroupBox2.Controls.Add(Me.RadioButton1)
+        Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 408)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(437, 46)
+        Me.GroupBox2.TabIndex = 9
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Elija modo"
+        Me.ToolTip1.SetToolTip(Me.GroupBox2, "Elija una planta, cada planta  alberga plazas")
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Checked = True
+        Me.RadioButton2.Location = New System.Drawing.Point(316, 19)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(60, 17)
+        Me.RadioButton2.TabIndex = 1
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "Manual"
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(26, 19)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(78, 17)
+        Me.RadioButton1.TabIndex = 0
+        Me.RadioButton1.Text = "Automatico"
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.Button46)
+        Me.GroupBox3.Controls.Add(Me.Button45)
+        Me.GroupBox3.Controls.Add(Me.Button44)
+        Me.GroupBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.GroupBox3.Location = New System.Drawing.Point(6, 460)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(437, 96)
+        Me.GroupBox3.TabIndex = 10
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Opciones"
+        Me.ToolTip1.SetToolTip(Me.GroupBox3, "Elija una planta, cada planta  alberga plazas")
+        '
+        'Button46
+        '
+        Me.Button46.BackColor = System.Drawing.Color.White
+        Me.Button46.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button46.Location = New System.Drawing.Point(298, 28)
+        Me.Button46.Name = "Button46"
+        Me.Button46.Size = New System.Drawing.Size(133, 50)
+        Me.Button46.TabIndex = 4
+        Me.Button46.Text = "Reiniciar Camera"
+        Me.Button46.UseVisualStyleBackColor = False
+        '
+        'Button45
+        '
+        Me.Button45.BackColor = System.Drawing.Color.White
+        Me.Button45.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button45.Location = New System.Drawing.Point(155, 28)
+        Me.Button45.Name = "Button45"
+        Me.Button45.Size = New System.Drawing.Size(133, 50)
+        Me.Button45.TabIndex = 3
+        Me.Button45.Text = "Grabar video"
+        Me.Button45.UseVisualStyleBackColor = False
+        '
+        'Button44
+        '
+        Me.Button44.BackColor = System.Drawing.Color.White
+        Me.Button44.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button44.Location = New System.Drawing.Point(6, 28)
+        Me.Button44.Name = "Button44"
+        Me.Button44.Size = New System.Drawing.Size(133, 50)
+        Me.Button44.TabIndex = 2
+        Me.Button44.Text = "Sacar captura"
+        Me.Button44.UseVisualStyleBackColor = False
+        '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Location = New System.Drawing.Point(729, 0)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(460, 692)
+        Me.TabControl1.TabIndex = 3
+        '
+        'TabPage1
+        '
+        Me.TabPage1.BackColor = System.Drawing.Color.DimGray
+        Me.TabPage1.Controls.Add(Me.GroupBox3)
+        Me.TabPage1.Controls.Add(Me.Label5)
+        Me.TabPage1.Controls.Add(Me.GroupBox2)
+        Me.TabPage1.Controls.Add(Me.GroupBox1)
+        Me.TabPage1.Controls.Add(Me.PictureBox2)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(452, 666)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "Camera"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label5.Location = New System.Drawing.Point(388, 250)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(61, 13)
+        Me.Label5.TabIndex = 10
+        Me.Label5.Text = "CAMERA 1"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(4, 7)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(442, 256)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 0
+        Me.PictureBox2.TabStop = False
+        '
+        'TabPage2
+        '
+        Me.TabPage2.BackColor = System.Drawing.Color.DimGray
+        Me.TabPage2.Controls.Add(Me.TextBox1)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(452, 666)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Debugging"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.TextBox1.ForeColor = System.Drawing.SystemColors.HighlightText
+        Me.TextBox1.Location = New System.Drawing.Point(6, 6)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(437, 652)
+        Me.TextBox1.TabIndex = 0
+        '
+        'Button47
+        '
+        Me.Button47.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button47.Image = CType(resources.GetObject("Button47.Image"), System.Drawing.Image)
+        Me.Button47.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button47.Location = New System.Drawing.Point(4, 250)
+        Me.Button47.Name = "Button47"
+        Me.Button47.Size = New System.Drawing.Size(230, 43)
+        Me.Button47.TabIndex = 5
+        Me.Button47.Text = "Soporte tecnico"
+        Me.Button47.UseVisualStyleBackColor = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(15, 490)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(135, 118)
+        Me.PictureBox1.TabIndex = 6
+        Me.PictureBox1.TabStop = False
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(12, 457)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(152, 13)
+        Me.Label6.TabIndex = 7
+        Me.Label6.Text = "Aplicacion de Parking VB.NET"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(724, 694)
+        Me.ClientSize = New System.Drawing.Size(1188, 692)
+        Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.SplitContainer1.Panel1.ResumeLayout(False)
+        Me.SplitContainer1.Panel1.PerformLayout()
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         Me.SplitContainer1.Panel2.PerformLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -637,7 +976,6 @@ Partial Class Form1
     Friend WithEvents Label3 As Label
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents Button5 As Button
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Button35 As Button
     Friend WithEvents Button34 As Button
     Friend WithEvents Button33 As Button
@@ -670,4 +1008,29 @@ Partial Class Form1
     Friend WithEvents Button6 As Button
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents Button46 As Button
+    Friend WithEvents Button45 As Button
+    Friend WithEvents Button44 As Button
+    Friend WithEvents Label5 As Label
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents Button43 As Button
+    Friend WithEvents Button42 As Button
+    Friend WithEvents Button41 As Button
+    Friend WithEvents Button40 As Button
+    Friend WithEvents Button39 As Button
+    Friend WithEvents Button38 As Button
+    Friend WithEvents Button37 As Button
+    Friend WithEvents Button36 As Button
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Button47 As Button
 End Class
