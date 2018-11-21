@@ -26,14 +26,14 @@
 
     End Sub
     Public Function iniciarArrayImagenes(ByRef lista As List(Of Image))
-        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera1.jpg"))
-        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera2.jpg"))
-        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera3.jpg"))
-        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera4.jpg"))
-        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera5.jpg"))
-        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera6.jpg"))
-        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera7.jpg"))
-        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera8.jpg"))
+        lista.Add(Image.FromFile("C:\Users\sportak\source\repos\ParkingGUI-VB.NET\iconos\camera1.jpg"))
+        lista.Add(Image.FromFile("C:\Users\sportak\source\repos\ParkingGUI-VB.NET\iconos\camera2.jpg"))
+        lista.Add(Image.FromFile("C:\Users\sportak\source\repos\ParkingGUI-VB.NET\iconos\camera3.jpg"))
+        lista.Add(Image.FromFile("C:\Users\sportak\source\repos\ParkingGUI-VB.NET\iconos\camera4.jpg"))
+        lista.Add(Image.FromFile("C:\Users\sportak\source\repos\ParkingGUI-VB.NET\iconos\camera5.jpg"))
+        lista.Add(Image.FromFile("C:\Users\sportak\source\repos\ParkingGUI-VB.NET\iconos\camera6.jpg"))
+        lista.Add(Image.FromFile("C:\Users\sportak\source\repos\ParkingGUI-VB.NET\iconos\camera7.jpg"))
+        lista.Add(Image.FromFile("C:\Users\sportak\source\repos\ParkingGUI-VB.NET\iconos\camera8.jpg"))
         Me.añadirTexto(Me.listaImagenes.Count & " imagenes fueron dadas de alta!")
     End Function
 

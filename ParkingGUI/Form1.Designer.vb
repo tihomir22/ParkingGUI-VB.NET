@@ -117,13 +117,13 @@ Partial Class Form1
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label1.Font = New System.Drawing.Font("Nirmala UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Lucida Sans", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label1.Location = New System.Drawing.Point(245, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(245, 47)
+        Me.Label1.Size = New System.Drawing.Size(302, 39)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Gestion Parking"
+        Me.Label1.Text = "GESTION PARKING"
         '
         'SplitContainer1
         '
@@ -132,7 +132,7 @@ Partial Class Form1
         '
         'SplitContainer1.Panel1
         '
-        Me.SplitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.SplitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.SplitContainer1.Panel1.Controls.Add(Me.Label6)
         Me.SplitContainer1.Panel1.Controls.Add(Me.PictureBox1)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Button47)
@@ -158,6 +158,7 @@ Partial Class Form1
         'Label6
         '
         Me.Label6.AutoSize = True
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label6.Location = New System.Drawing.Point(12, 457)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(152, 13)
@@ -287,6 +288,8 @@ Partial Class Form1
         'Button35
         '
         Me.Button35.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Button35.BackgroundImage = CType(resources.GetObject("Button35.BackgroundImage"), System.Drawing.Image)
+        Me.Button35.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button35.Location = New System.Drawing.Point(6, 75)
         Me.Button35.Name = "Button35"
         Me.Button35.Size = New System.Drawing.Size(83, 60)
@@ -307,6 +310,8 @@ Partial Class Form1
         'Button33
         '
         Me.Button33.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Button33.BackgroundImage = CType(resources.GetObject("Button33.BackgroundImage"), System.Drawing.Image)
+        Me.Button33.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button33.Location = New System.Drawing.Point(98, 75)
         Me.Button33.Name = "Button33"
         Me.Button33.Size = New System.Drawing.Size(83, 60)
@@ -317,6 +322,8 @@ Partial Class Form1
         'Button32
         '
         Me.Button32.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Button32.BackgroundImage = CType(resources.GetObject("Button32.BackgroundImage"), System.Drawing.Image)
+        Me.Button32.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button32.Location = New System.Drawing.Point(374, 75)
         Me.Button32.Name = "Button32"
         Me.Button32.Size = New System.Drawing.Size(83, 60)
@@ -337,6 +344,8 @@ Partial Class Form1
         'Button26
         '
         Me.Button26.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Button26.BackgroundImage = CType(resources.GetObject("Button26.BackgroundImage"), System.Drawing.Image)
+        Me.Button26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button26.Location = New System.Drawing.Point(6, 6)
         Me.Button26.Name = "Button26"
         Me.Button26.Size = New System.Drawing.Size(83, 60)
@@ -357,6 +366,8 @@ Partial Class Form1
         'Button28
         '
         Me.Button28.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Button28.BackgroundImage = CType(resources.GetObject("Button28.BackgroundImage"), System.Drawing.Image)
+        Me.Button28.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button28.Location = New System.Drawing.Point(190, 6)
         Me.Button28.Name = "Button28"
         Me.Button28.Size = New System.Drawing.Size(83, 60)
@@ -426,6 +437,8 @@ Partial Class Form1
         'Button25
         '
         Me.Button25.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Button25.BackgroundImage = CType(resources.GetObject("Button25.BackgroundImage"), System.Drawing.Image)
+        Me.Button25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button25.Location = New System.Drawing.Point(6, 75)
         Me.Button25.Name = "Button25"
         Me.Button25.Size = New System.Drawing.Size(83, 60)
@@ -436,6 +449,8 @@ Partial Class Form1
         'Button24
         '
         Me.Button24.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Button24.BackgroundImage = CType(resources.GetObject("Button24.BackgroundImage"), System.Drawing.Image)
+        Me.Button24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button24.Location = New System.Drawing.Point(190, 75)
         Me.Button24.Name = "Button24"
         Me.Button24.Size = New System.Drawing.Size(83, 60)
@@ -486,6 +501,8 @@ Partial Class Form1
         'Button21
         '
         Me.Button21.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Button21.BackgroundImage = CType(resources.GetObject("Button21.BackgroundImage"), System.Drawing.Image)
+        Me.Button21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button21.Location = New System.Drawing.Point(98, 6)
         Me.Button21.Name = "Button21"
         Me.Button21.Size = New System.Drawing.Size(83, 60)
@@ -516,6 +533,8 @@ Partial Class Form1
         'Button18
         '
         Me.Button18.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Button18.BackgroundImage = CType(resources.GetObject("Button18.BackgroundImage"), System.Drawing.Image)
+        Me.Button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button18.Location = New System.Drawing.Point(374, 6)
         Me.Button18.Name = "Button18"
         Me.Button18.Size = New System.Drawing.Size(83, 60)
@@ -584,6 +603,8 @@ Partial Class Form1
         'Button13
         '
         Me.Button13.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Button13.BackgroundImage = CType(resources.GetObject("Button13.BackgroundImage"), System.Drawing.Image)
+        Me.Button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button13.Location = New System.Drawing.Point(190, 75)
         Me.Button13.Name = "Button13"
         Me.Button13.Size = New System.Drawing.Size(83, 60)
@@ -634,6 +655,8 @@ Partial Class Form1
         'Button8
         '
         Me.Button8.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Button8.BackgroundImage = CType(resources.GetObject("Button8.BackgroundImage"), System.Drawing.Image)
+        Me.Button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button8.Location = New System.Drawing.Point(190, 6)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(83, 60)
@@ -644,6 +667,8 @@ Partial Class Form1
         'Button7
         '
         Me.Button7.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Button7.BackgroundImage = CType(resources.GetObject("Button7.BackgroundImage"), System.Drawing.Image)
+        Me.Button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button7.Location = New System.Drawing.Point(98, 6)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(83, 60)

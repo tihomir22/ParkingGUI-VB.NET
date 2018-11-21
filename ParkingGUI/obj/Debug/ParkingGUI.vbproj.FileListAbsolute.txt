@@ -47,3 +47,4 @@ C:\Users\mati\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.exe
 C:\Users\mati\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.xml
 C:\Users\mati\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.pdb
 C:\Users\mati\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.SoporteTecnico.resources
+C:\Users\sportak\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.SoporteTecnico.resources
