@@ -2,6 +2,9 @@
     Public vehiculo As Vehiculo
     Public vehiculo2 As Vehiculo
     Dim botonSeleccionadoCamara As Button
+    Dim fotoActual As PictureBox
+    Dim listaImagenes As List(Of Image) = New List(Of Image)
+
 
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
 
@@ -18,8 +21,21 @@
         Me.TextBox1.Text = "Cargado con exito : " & Me.ToString
         Me.cargarEventosBtnCamera()
         Me.botonSeleccionadoCamara = Me.Button36
+        Me.fotoActual = Me.PictureBox2
+        Me.iniciarArrayImagenes(Me.listaImagenes)
 
     End Sub
+    Public Function iniciarArrayImagenes(ByRef lista As List(Of Image))
+        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera1.jpg"))
+        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera2.jpg"))
+        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera3.jpg"))
+        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera4.jpg"))
+        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera5.jpg"))
+        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera6.jpg"))
+        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera7.jpg"))
+        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera8.jpg"))
+        Me.añadirTexto(Me.listaImagenes.Count & " imagenes fueron dadas de alta!")
+    End Function
 
     Public Sub cargarEventosBtnCamera()
         AddHandler Me.Button36.Click, AddressOf Me.Clicaso
@@ -42,6 +58,28 @@
         Me.botonSeleccionadoCamara.ForeColor = Color.Black
         Me.botonSeleccionadoCamara = btn
         Me.Label5.Text = botonSeleccionadoCamara.Text
+
+        Select Case Me.Label5.Text
+            Case "CAMERA 1"
+                Me.fotoActual.Image = Me.listaImagenes(0)
+            Case "CAMERA 2"
+                Me.fotoActual.Image = Me.listaImagenes(1)
+            Case "CAMERA 3"
+                Me.fotoActual.Image = Me.listaImagenes(2)
+            Case "CAMERA 4"
+                Me.fotoActual.Image = Me.listaImagenes(3)
+            Case "CAMERA 5"
+                Me.fotoActual.Image = Me.listaImagenes(4)
+            Case "CAMERA 6"
+                Me.fotoActual.Image = Me.listaImagenes(5)
+            Case "CAMERA 7"
+                Me.fotoActual.Image = Me.listaImagenes(6)
+            Case "CAMERA 8"
+                Me.fotoActual.Image = Me.listaImagenes(7)
+        End Select
+
+        Me.añadirTexto("Mostrando " & Me.Label5.Text)
+
 
     End Sub
 
@@ -116,5 +154,22 @@
         Me.TextBox1.Text = Me.TextBox1.Text & Environment.NewLine & texto
     End Function
 
+    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
+        Me.añadirTexto("Has seleccionado el modo automatico")
+        Dim indice As Integer = 1
 
+
+        Dim imagenRandom As Image = Me.listaImagenes(CInt(Math.Ceiling(Rnd() * 6)) + 1)
+
+
+    End Sub
+
+    Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
+        Me.añadirTexto("Has seleccionado el modo manual")
+    End Sub
+
+    Private Sub Button47_Click(sender As Object, e As EventArgs) Handles Button47.Click
+        Dim soporte As SoporteTecnico = New SoporteTecnico
+        soporte.Show()
+    End Sub
 End Class

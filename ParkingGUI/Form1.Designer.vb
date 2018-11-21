@@ -26,6 +26,9 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Button47 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -91,13 +94,11 @@ Partial Class Form1
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Button47 = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -109,7 +110,6 @@ Partial Class Form1
         Me.TabPage1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -154,6 +154,36 @@ Partial Class Form1
         Me.SplitContainer1.Size = New System.Drawing.Size(711, 620)
         Me.SplitContainer1.SplitterDistance = 237
         Me.SplitContainer1.TabIndex = 1
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(12, 457)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(152, 13)
+        Me.Label6.TabIndex = 7
+        Me.Label6.Text = "Aplicacion de Parking VB.NET"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(15, 490)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(135, 118)
+        Me.PictureBox1.TabIndex = 6
+        Me.PictureBox1.TabStop = False
+        '
+        'Button47
+        '
+        Me.Button47.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button47.Image = CType(resources.GetObject("Button47.Image"), System.Drawing.Image)
+        Me.Button47.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button47.Location = New System.Drawing.Point(4, 250)
+        Me.Button47.Name = "Button47"
+        Me.Button47.Size = New System.Drawing.Size(230, 43)
+        Me.Button47.TabIndex = 5
+        Me.Button47.Text = "Soporte tecnico"
+        Me.Button47.UseVisualStyleBackColor = False
         '
         'Button5
         '
@@ -897,36 +927,6 @@ Partial Class Form1
         Me.TextBox1.Size = New System.Drawing.Size(437, 652)
         Me.TextBox1.TabIndex = 0
         '
-        'Button47
-        '
-        Me.Button47.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button47.Image = CType(resources.GetObject("Button47.Image"), System.Drawing.Image)
-        Me.Button47.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button47.Location = New System.Drawing.Point(4, 250)
-        Me.Button47.Name = "Button47"
-        Me.Button47.Size = New System.Drawing.Size(230, 43)
-        Me.Button47.TabIndex = 5
-        Me.Button47.Text = "Soporte tecnico"
-        Me.Button47.UseVisualStyleBackColor = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(15, 490)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(135, 118)
-        Me.PictureBox1.TabIndex = 6
-        Me.PictureBox1.TabStop = False
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(12, 457)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(152, 13)
-        Me.Label6.TabIndex = 7
-        Me.Label6.Text = "Aplicacion de Parking VB.NET"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -943,6 +943,7 @@ Partial Class Form1
         Me.SplitContainer1.Panel2.PerformLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
@@ -958,7 +959,6 @@ Partial Class Form1
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

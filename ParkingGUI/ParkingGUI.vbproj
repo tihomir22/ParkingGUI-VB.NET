@@ -125,6 +125,12 @@
     <Compile Include="SacarCuentas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SoporteTecnico.Designer.vb">
+      <DependentUpon>SoporteTecnico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SoporteTecnico.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vehiculo.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SacarCuentas.resx">
       <DependentUpon>SacarCuentas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SoporteTecnico.resx">
+      <DependentUpon>SoporteTecnico.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
