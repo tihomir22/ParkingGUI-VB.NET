@@ -117,11 +117,11 @@ Partial Class Form1
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label1.Font = New System.Drawing.Font("Lucida Sans", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label1.Location = New System.Drawing.Point(245, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(302, 39)
+        Me.Label1.Size = New System.Drawing.Size(315, 39)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "GESTION PARKING"
         '
@@ -602,8 +602,7 @@ Partial Class Form1
         '
         'Button13
         '
-        Me.Button13.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Button13.BackgroundImage = CType(resources.GetObject("Button13.BackgroundImage"), System.Drawing.Image)
+        Me.Button13.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.Button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button13.Location = New System.Drawing.Point(190, 75)
         Me.Button13.Name = "Button13"
@@ -654,25 +653,25 @@ Partial Class Form1
         '
         'Button8
         '
-        Me.Button8.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Button8.BackgroundImage = CType(resources.GetObject("Button8.BackgroundImage"), System.Drawing.Image)
+        Me.Button8.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.Button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button8.Location = New System.Drawing.Point(190, 6)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(83, 60)
         Me.Button8.TabIndex = 2
+        Me.Button8.Tag = ""
         Me.Button8.Text = " "
         Me.Button8.UseVisualStyleBackColor = False
         '
         'Button7
         '
-        Me.Button7.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Button7.BackgroundImage = CType(resources.GetObject("Button7.BackgroundImage"), System.Drawing.Image)
+        Me.Button7.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.Button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button7.Location = New System.Drawing.Point(98, 6)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(83, 60)
         Me.Button7.TabIndex = 1
+        Me.Button7.Tag = ""
         Me.Button7.Text = " "
         Me.Button7.UseVisualStyleBackColor = False
         '
@@ -683,6 +682,7 @@ Partial Class Form1
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(83, 60)
         Me.Button6.TabIndex = 0
+        Me.Button6.Tag = ""
         Me.Button6.Text = " "
         Me.Button6.UseVisualStyleBackColor = False
         '

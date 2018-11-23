@@ -11,6 +11,10 @@
         Me.modelo = modelo
     End Sub
 
+    Public Function getTipo()
+        Return Me.tipo
+    End Function
+
     Public Function toString()
         Return Me.tipo & " " & Me.matricula & " " & Me.marca & " " & Me.modelo
     End Function

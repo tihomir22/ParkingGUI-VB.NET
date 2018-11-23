@@ -1,6 +1,8 @@
 ﻿Public Class Form1
     Public vehiculo As Vehiculo
     Public vehiculo2 As Vehiculo
+    Public listaPlanta1() As Vehiculo
+    Public listaPlanta1Botones() As Button
     Dim botonSeleccionadoCamara As Button
     Dim fotoActual As PictureBox
     Dim listaImagenes As List(Of Image) = New List(Of Image)
@@ -16,24 +18,73 @@
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Me.vehiculo = New Vehiculo("coche", "8814HJK", "Opel", "Corsa")
-        Me.vehiculo2 = New Vehiculo("coche", "123456HJK", "Tesla", "Modelo X")
+
         Me.TextBox1.Text = "Cargado con exito : " & Me.ToString
         Me.cargarEventosBtnCamera()
         Me.botonSeleccionadoCamara = Me.Button36
         Me.fotoActual = Me.PictureBox2
         Me.iniciarArrayImagenes(Me.listaImagenes)
+        Me.darDeAltaVehiculosPlanta1()
 
     End Sub
+    Public Function darDeAltaVehiculosPlanta1()
+        Dim coche As Vehiculo = New Vehiculo("coche", "8814HJK", "Opel", "Corsa")
+        Dim coche2 As Vehiculo = New Vehiculo("coche", "123456HJK", "Tesla", "Modelo X")
+        Dim moto1 As Vehiculo = New Vehiculo("moto", "453463DAS", "PIAGIO", "DiMama")
+        Me.listaPlanta1 = New Vehiculo(9) {Nothing, coche, moto1, Nothing, Nothing, Nothing, Nothing, coche2, Nothing, Nothing}
+        Me.añadirTexto("Añadido con exito vehiculos de la planta 1")
+        Me.cargarBotonesPlanta1()
+    End Function
+
+    Public Function cargarBotonesPlanta1()
+        Me.listaPlanta1Botones = New Button(9) {Button6, Button7, Button8, Button9, Button10, Button11, Button12, Button13, Button14, Button15}
+        Me.añadirTexto("Añadido con exito botones de la planta 1")
+        Me.asignarValorABotonesPlanta1()
+    End Function
+
+    Public Function asignarValorABotonesPlanta1()
+        For index As Integer = 0 To Me.listaPlanta1.Length - 1
+            Me.listaPlanta1Botones(index).Tag = index
+            If Me.listaPlanta1(index) Is Nothing Then
+
+            Else
+                Dim btn As Button = Me.listaPlanta1Botones(index)
+                AddHandler btn.Click, AddressOf Me.abrirInformacion
+                btn.BackColor = ColorTranslator.FromHtml("#FF4136")
+                If Me.listaPlanta1(index).getTipo Is "moto" Then
+                    Dim imagen As Image = Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\motorcycle.png")
+                    btn.Image = imagen
+                Else
+                    Dim imagen As Image = Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\car.png")
+                    btn.Image = imagen
+                End If
+                Me.añadirTexto(Me.listaPlanta1(index).toString & "cargado con exito")
+
+            End If
+
+
+        Next
+    End Function
+
+    Public Function abrirInformacion(sender As Object, e As EventArgs)
+        Dim btn As Button = sender
+        Me.añadirTexto("Se ha seleccionado " & Me.listaPlanta1(btn.Tag).toString)
+        Dim info As Informacion_coche = New Informacion_coche()
+        info.TextBox1.Text = Me.listaPlanta1(btn.Tag).toString
+        info.ShowDialog()
+
+    End Function
+
+
     Public Function iniciarArrayImagenes(ByRef lista As List(Of Image))
-        lista.Add(Image.FromFile("C:\Users\sportak\source\repos\ParkingGUI-VB.NET\iconos\camera1.jpg"))
-        lista.Add(Image.FromFile("C:\Users\sportak\source\repos\ParkingGUI-VB.NET\iconos\camera2.jpg"))
-        lista.Add(Image.FromFile("C:\Users\sportak\source\repos\ParkingGUI-VB.NET\iconos\camera3.jpg"))
-        lista.Add(Image.FromFile("C:\Users\sportak\source\repos\ParkingGUI-VB.NET\iconos\camera4.jpg"))
-        lista.Add(Image.FromFile("C:\Users\sportak\source\repos\ParkingGUI-VB.NET\iconos\camera5.jpg"))
-        lista.Add(Image.FromFile("C:\Users\sportak\source\repos\ParkingGUI-VB.NET\iconos\camera6.jpg"))
-        lista.Add(Image.FromFile("C:\Users\sportak\source\repos\ParkingGUI-VB.NET\iconos\camera7.jpg"))
-        lista.Add(Image.FromFile("C:\Users\sportak\source\repos\ParkingGUI-VB.NET\iconos\camera8.jpg"))
+        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera1.jpg"))
+        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera2.jpg"))
+        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera3.jpg"))
+        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera4.jpg"))
+        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera5.jpg"))
+        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera6.jpg"))
+        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera7.jpg"))
+        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera8.jpg"))
         Me.añadirTexto(Me.listaImagenes.Count & " imagenes fueron dadas de alta!")
     End Function
 
@@ -47,6 +98,7 @@
         AddHandler Me.Button42.Click, AddressOf Me.Clicaso
         AddHandler Me.Button43.Click, AddressOf Me.Clicaso
     End Sub
+
 
     Private Sub Clicaso(sender As Object, e As EventArgs)
         añadirTexto("HAS CLICKEADO AL BOTON " & sender.ToString)
@@ -128,15 +180,7 @@
 
     End Sub
 
-    Private Sub Button6_MouseEnter(sender As Object, e As EventArgs) _
-    Handles Button6.MouseEnter
-        ToolTip1.SetToolTip(Button6, Me.vehiculo.toString())
-    End Sub
 
-    Private Sub Button7_MouseEnter(sender As Object, e As EventArgs) _
-    Handles Button7.MouseEnter
-        ToolTip1.SetToolTip(Button7, Me.vehiculo2.toString())
-    End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
 
