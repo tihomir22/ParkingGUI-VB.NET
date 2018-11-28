@@ -1,11 +1,23 @@
-﻿Public Class Form1
+﻿Imports System.Threading
+
+Public Class Form1
     Public vehiculo As Vehiculo
     Public vehiculo2 As Vehiculo
     Public listaPlanta1() As Vehiculo
     Public listaPlanta1Botones() As Button
-    Dim botonSeleccionadoCamara As Button
-    Dim fotoActual As PictureBox
-    Dim listaImagenes As List(Of Image) = New List(Of Image)
+    Public listaPlanta2() As Vehiculo
+    Public listaPlanta2Botones() As Button
+    Public listaPlanta3() As Vehiculo
+    Public listaPlanta3Botones() As Button
+    Public botonSeleccionadoCamara As Button
+    Public fotoActual As PictureBox
+    Public listaImagenes As List(Of Image) = New List(Of Image)
+    Private trd As Thread
+    Public listaVehiculosPlanta1 As List(Of Vehiculo)
+    Public listaVehiculosPlanta2 As List(Of Vehiculo)
+    Public listaVehiculosPlanta3 As List(Of Vehiculo)
+
+    Public control As ControladorVehiculo
 
 
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
@@ -17,123 +29,65 @@
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        control = New ControladorVehiculo
+        control.TextBox1 = Me.TextBox1
 
         Me.TextBox1.Text = "Cargado con exito : " & Me.ToString
         Me.cargarEventosBtnCamera()
         Me.botonSeleccionadoCamara = Me.Button36
         Me.fotoActual = Me.PictureBox2
-        Me.iniciarArrayImagenes(Me.listaImagenes)
-        Me.darDeAltaVehiculosPlanta1()
+        control.iniciarArrayImagenes(Me.listaImagenes)
+        control.darDeAltaVehiculosLista()
+        Me.darDeAltaVehiculosPlanta(Me.listaVehiculosPlanta1, 1)
+        Me.darDeAltaVehiculosPlanta(Me.listaVehiculosPlanta2, 2)
+        Me.darDeAltaVehiculosPlanta(Me.listaVehiculosPlanta3, 3)
 
     End Sub
-    Public Function darDeAltaVehiculosPlanta1()
-        Dim coche As Vehiculo = New Vehiculo("coche", "8814HJK", "Opel", "Corsa")
-        Dim coche2 As Vehiculo = New Vehiculo("coche", "123456HJK", "Tesla", "Modelo X")
-        Dim moto1 As Vehiculo = New Vehiculo("moto", "453463DAS", "PIAGIO", "DiMama")
-        Me.listaPlanta1 = New Vehiculo(9) {Nothing, coche, moto1, Nothing, Nothing, Nothing, Nothing, coche2, Nothing, Nothing}
-        Me.añadirTexto("Añadido con exito vehiculos de la planta 1")
-        Me.cargarBotonesPlanta1()
-    End Function
-
-    Public Function cargarBotonesPlanta1()
-        Me.listaPlanta1Botones = New Button(9) {Button6, Button7, Button8, Button9, Button10, Button11, Button12, Button13, Button14, Button15}
-        Me.añadirTexto("Añadido con exito botones de la planta 1")
-        Me.asignarValorABotonesPlanta1()
-    End Function
-
-    Public Function asignarValorABotonesPlanta1()
-        For index As Integer = 0 To Me.listaPlanta1.Length - 1
-            Me.listaPlanta1Botones(index).Tag = index
-            If Me.listaPlanta1(index) Is Nothing Then
-
-            Else
-                Dim btn As Button = Me.listaPlanta1Botones(index)
-                AddHandler btn.Click, AddressOf Me.abrirInformacion
-                btn.BackColor = ColorTranslator.FromHtml("#FF4136")
-                If Me.listaPlanta1(index).getTipo Is "moto" Then
-                    Dim imagen As Image = Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\motorcycle.png")
-                    btn.Image = imagen
-                Else
-                    Dim imagen As Image = Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\car.png")
-                    btn.Image = imagen
-                End If
-                Me.añadirTexto(Me.listaPlanta1(index).toString & "cargado con exito")
-
-            End If
 
 
-        Next
-    End Function
-
-    Public Function abrirInformacion(sender As Object, e As EventArgs)
-        Dim btn As Button = sender
-        Me.añadirTexto("Se ha seleccionado " & Me.listaPlanta1(btn.Tag).toString)
-        Dim info As Informacion_coche = New Informacion_coche()
-        info.TextBox1.Text = Me.listaPlanta1(btn.Tag).toString
-        info.ShowDialog()
-
-    End Function
 
 
-    Public Function iniciarArrayImagenes(ByRef lista As List(Of Image))
-        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera1.jpg"))
-        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera2.jpg"))
-        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera3.jpg"))
-        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera4.jpg"))
-        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera5.jpg"))
-        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera6.jpg"))
-        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera7.jpg"))
-        lista.Add(Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\camera8.jpg"))
-        Me.añadirTexto(Me.listaImagenes.Count & " imagenes fueron dadas de alta!")
-    End Function
-
-    Public Sub cargarEventosBtnCamera()
-        AddHandler Me.Button36.Click, AddressOf Me.Clicaso
-        AddHandler Me.Button37.Click, AddressOf Me.Clicaso
-        AddHandler Me.Button38.Click, AddressOf Me.Clicaso
-        AddHandler Me.Button39.Click, AddressOf Me.Clicaso
-        AddHandler Me.Button40.Click, AddressOf Me.Clicaso
-        AddHandler Me.Button41.Click, AddressOf Me.Clicaso
-        AddHandler Me.Button42.Click, AddressOf Me.Clicaso
-        AddHandler Me.Button43.Click, AddressOf Me.Clicaso
-    End Sub
 
 
-    Private Sub Clicaso(sender As Object, e As EventArgs)
-        añadirTexto("HAS CLICKEADO AL BOTON " & sender.ToString)
-        Dim btn As Button = sender
+    Public Function darDeAltaVehiculosPlanta(ByVal list As List(Of Vehiculo), ByVal numPlanta As Integer)
+        Select Case numPlanta
+            Case 1
+                Me.listaPlanta1 = New Vehiculo(9) {Nothing, list(0), list(1), Nothing, Nothing, Nothing, Nothing, list(2), Nothing, Nothing}
+                Me.añadirTexto("Añadido con exito vehiculos de la planta 1")
+                Me.listaPlanta1Botones = New Button(9) {Button6, Button7, Button8, Button9, Button10, Button11, Button12, Button13, Button14, Button15}
+                Me.añadirTexto("Añadido con exito botones de la planta 1")
+                control.asignarValorABotonesPlanta(Me.listaPlanta1.ToList, Me.listaPlanta1Botones.ToList)
+            Case 2
+                Me.listaPlanta2 = New Vehiculo(9) {list(0), Nothing, list(1), Nothing, Nothing, list(2), Nothing, Nothing, Nothing, Nothing}
+                Me.añadirTexto("Añadido con exito vehiculos de la planta 2")
+                Me.listaPlanta2Botones = New Button(9) {Button16, Button17, Button18, Button19, Button20, Button21, Button22, Button23, Button24, Button25}
+                Me.añadirTexto("Añadido con exito botones de la planta 2")
+                control.asignarValorABotonesPlanta(Me.listaPlanta2.ToList, Me.listaPlanta2Botones.ToList)
+            Case 3
+                Me.listaPlanta3 = New Vehiculo(9) {list(1), Nothing, Nothing, Nothing, Nothing, list(2), Nothing, Nothing, list(0), Nothing}
+                Me.añadirTexto("Añadido con exito vehiculos de la planta 3")
+                Me.listaPlanta3Botones = New Button(9) {Button26, Button27, Button28, Button29, Button30, Button31, Button32, Button33, Button34, Button35}
+                Me.añadirTexto("Añadido con exito botones de la planta 3")
+                control.asignarValorABotonesPlanta(Me.listaPlanta3.ToList, Me.listaPlanta3Botones.ToList)
 
-        btn.BackColor = Color.DimGray
-        btn.ForeColor = Color.White
-        Me.botonSeleccionadoCamara.BackColor = Color.White
-        Me.botonSeleccionadoCamara.ForeColor = Color.Black
-        Me.botonSeleccionadoCamara = btn
-        Me.Label5.Text = botonSeleccionadoCamara.Text
-
-        Select Case Me.Label5.Text
-            Case "CAMERA 1"
-                Me.fotoActual.Image = Me.listaImagenes(0)
-            Case "CAMERA 2"
-                Me.fotoActual.Image = Me.listaImagenes(1)
-            Case "CAMERA 3"
-                Me.fotoActual.Image = Me.listaImagenes(2)
-            Case "CAMERA 4"
-                Me.fotoActual.Image = Me.listaImagenes(3)
-            Case "CAMERA 5"
-                Me.fotoActual.Image = Me.listaImagenes(4)
-            Case "CAMERA 6"
-                Me.fotoActual.Image = Me.listaImagenes(5)
-            Case "CAMERA 7"
-                Me.fotoActual.Image = Me.listaImagenes(6)
-            Case "CAMERA 8"
-                Me.fotoActual.Image = Me.listaImagenes(7)
         End Select
 
-        Me.añadirTexto("Mostrando " & Me.Label5.Text)
+    End Function
 
 
+    Public Sub cargarEventosBtnCamera()
+        AddHandler Me.Button36.Click, AddressOf Me.control.Clicaso
+        AddHandler Me.Button37.Click, AddressOf Me.control.Clicaso
+        AddHandler Me.Button38.Click, AddressOf Me.control.Clicaso
+        AddHandler Me.Button39.Click, AddressOf Me.control.Clicaso
+        AddHandler Me.Button40.Click, AddressOf Me.control.Clicaso
+        AddHandler Me.Button41.Click, AddressOf Me.control.Clicaso
+        AddHandler Me.Button42.Click, AddressOf Me.control.Clicaso
+        AddHandler Me.Button43.Click, AddressOf Me.control.Clicaso
     End Sub
+
+
+
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
 
@@ -201,13 +155,21 @@
     Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
         Me.añadirTexto("Has seleccionado el modo automatico")
         Dim indice As Integer = 1
-
-
+        Me.trd = New Thread(AddressOf cambiarImagen)
+        trd.IsBackground = True
+        trd.Start()
         Dim imagenRandom As Image = Me.listaImagenes(CInt(Math.Ceiling(Rnd() * 6)) + 1)
 
 
     End Sub
+    Private Function cambiarImagen()
+        While True
 
+            Dim random As Integer = CInt(Math.Ceiling(Rnd() * Me.listaImagenes.Capacity - 1)) + 1
+            ' Me.TextBox1.Text = Me.TextBox1.Text & Environment.NewLine & "Dembow"
+            Thread.Sleep(1000)
+        End While
+    End Function
     Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
         Me.añadirTexto("Has seleccionado el modo manual")
     End Sub

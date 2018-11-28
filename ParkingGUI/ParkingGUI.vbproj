@@ -79,6 +79,7 @@
     <Compile Include="bajaVehiculo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ControladorVehiculo.vb" />
     <Compile Include="entradaVehiculo.Designer.vb">
       <DependentUpon>entradaVehiculo.vb</DependentUpon>
     </Compile>

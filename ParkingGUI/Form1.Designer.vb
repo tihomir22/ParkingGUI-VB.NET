@@ -287,8 +287,7 @@ Partial Class Form1
         '
         'Button35
         '
-        Me.Button35.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Button35.BackgroundImage = CType(resources.GetObject("Button35.BackgroundImage"), System.Drawing.Image)
+        Me.Button35.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.Button35.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button35.Location = New System.Drawing.Point(6, 75)
         Me.Button35.Name = "Button35"
@@ -309,8 +308,7 @@ Partial Class Form1
         '
         'Button33
         '
-        Me.Button33.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Button33.BackgroundImage = CType(resources.GetObject("Button33.BackgroundImage"), System.Drawing.Image)
+        Me.Button33.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.Button33.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button33.Location = New System.Drawing.Point(98, 75)
         Me.Button33.Name = "Button33"
@@ -321,8 +319,7 @@ Partial Class Form1
         '
         'Button32
         '
-        Me.Button32.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Button32.BackgroundImage = CType(resources.GetObject("Button32.BackgroundImage"), System.Drawing.Image)
+        Me.Button32.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.Button32.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button32.Location = New System.Drawing.Point(374, 75)
         Me.Button32.Name = "Button32"
@@ -343,8 +340,7 @@ Partial Class Form1
         '
         'Button26
         '
-        Me.Button26.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Button26.BackgroundImage = CType(resources.GetObject("Button26.BackgroundImage"), System.Drawing.Image)
+        Me.Button26.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.Button26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button26.Location = New System.Drawing.Point(6, 6)
         Me.Button26.Name = "Button26"
@@ -365,8 +361,7 @@ Partial Class Form1
         '
         'Button28
         '
-        Me.Button28.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Button28.BackgroundImage = CType(resources.GetObject("Button28.BackgroundImage"), System.Drawing.Image)
+        Me.Button28.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.Button28.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button28.Location = New System.Drawing.Point(190, 6)
         Me.Button28.Name = "Button28"
@@ -436,8 +431,7 @@ Partial Class Form1
         '
         'Button25
         '
-        Me.Button25.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Button25.BackgroundImage = CType(resources.GetObject("Button25.BackgroundImage"), System.Drawing.Image)
+        Me.Button25.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.Button25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button25.Location = New System.Drawing.Point(6, 75)
         Me.Button25.Name = "Button25"
@@ -448,8 +442,7 @@ Partial Class Form1
         '
         'Button24
         '
-        Me.Button24.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Button24.BackgroundImage = CType(resources.GetObject("Button24.BackgroundImage"), System.Drawing.Image)
+        Me.Button24.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.Button24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button24.Location = New System.Drawing.Point(190, 75)
         Me.Button24.Name = "Button24"
@@ -500,8 +493,7 @@ Partial Class Form1
         '
         'Button21
         '
-        Me.Button21.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Button21.BackgroundImage = CType(resources.GetObject("Button21.BackgroundImage"), System.Drawing.Image)
+        Me.Button21.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.Button21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button21.Location = New System.Drawing.Point(98, 6)
         Me.Button21.Name = "Button21"
@@ -532,8 +524,7 @@ Partial Class Form1
         '
         'Button18
         '
-        Me.Button18.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Button18.BackgroundImage = CType(resources.GetObject("Button18.BackgroundImage"), System.Drawing.Image)
+        Me.Button18.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.Button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Button18.Location = New System.Drawing.Point(374, 6)
         Me.Button18.Name = "Button18"
