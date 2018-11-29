@@ -23,51 +23,98 @@
 
         btn.BackColor = Color.DimGray
         btn.ForeColor = Color.White
-        Form1.botonSeleccionadoCamara.BackColor = Color.White
-        Form1.botonSeleccionadoCamara.ForeColor = Color.Black
-        Form1.botonSeleccionadoCamara = btn
-        Form1.Label5.Text = Form1.botonSeleccionadoCamara.Text
+        Principal.botonSeleccionadoCamara.BackColor = Color.White
+        Principal.botonSeleccionadoCamara.ForeColor = Color.Black
+        Principal.botonSeleccionadoCamara = btn
+        Principal.Label5.Text = Principal.botonSeleccionadoCamara.Text
 
-        Select Case Form1.Label5.Text
+        Select Case Principal.Label5.Text
             Case "CAMERA 1"
-                Form1.fotoActual.Image = Form1.listaImagenes(0)
+                Principal.fotoActual.Image = Principal.listaImagenes(0)
             Case "CAMERA 2"
-                Form1.fotoActual.Image = Form1.listaImagenes(1)
+                Principal.fotoActual.Image = Principal.listaImagenes(1)
             Case "CAMERA 3"
-                Form1.fotoActual.Image = Form1.listaImagenes(2)
+                Principal.fotoActual.Image = Principal.listaImagenes(2)
             Case "CAMERA 4"
-                Form1.fotoActual.Image = Form1.listaImagenes(3)
+                Principal.fotoActual.Image = Principal.listaImagenes(3)
             Case "CAMERA 5"
-                Form1.fotoActual.Image = Form1.listaImagenes(4)
+                Principal.fotoActual.Image = Principal.listaImagenes(4)
             Case "CAMERA 6"
-                Form1.fotoActual.Image = Form1.listaImagenes(5)
+                Principal.fotoActual.Image = Principal.listaImagenes(5)
             Case "CAMERA 7"
-                Form1.fotoActual.Image = Form1.listaImagenes(6)
+                Principal.fotoActual.Image = Principal.listaImagenes(6)
             Case "CAMERA 8"
-                Form1.fotoActual.Image = Form1.listaImagenes(7)
+                Principal.fotoActual.Image = Principal.listaImagenes(7)
         End Select
 
-        Me.añadirTexto("Mostrando " & Form1.Label5.Text)
+        Me.añadirTexto("Mostrando " & Principal.Label5.Text)
 
 
     End Sub
 
     Public Function darDeAltaVehiculosLista()
-        Dim coche As Vehiculo = New Vehiculo("coche", "8814HJK", "Opel", "Corsa")
-        Dim coche2 As Vehiculo = New Vehiculo("coche", "123456HJK", "Tesla", "Modelo X")
-        Dim moto1 As Vehiculo = New Vehiculo("moto", "453463DAS", "PIAGIO", "DiMama")
-        Form1.listaVehiculosPlanta1 = New List(Of Vehiculo)({coche, coche2, moto1})
+        Dim newfile As String = "bbdd.txt"
+        Dim newPath As String = System.IO.Path.Combine(Application.StartupPath(), newfile)
+        If System.IO.File.Exists(newPath) = True Then
+            Principal.listaVehiculosPlanta1 = reader(newPath, "1")
+            Principal.listaVehiculosPlanta2 = reader(newPath, "2")
+            Principal.listaVehiculosPlanta3 = reader(newPath, "3")
 
-        Dim coch3 As Vehiculo = New Vehiculo("coche", "123124HA", "Ford", "Mondeo")
-        Dim moto2 As Vehiculo = New Vehiculo("moto", "44556HJK", "Harley", "Davidson")
-        Dim moto3 As Vehiculo = New Vehiculo("moto", "453456HAQ", "Suzuki", "Yamakuza")
-        Form1.listaVehiculosPlanta2 = New List(Of Vehiculo)({coch3, moto2, moto3})
+        Else
+            Dim coche As Vehiculo = New Vehiculo("coche", "8814HJK", "Opel", "Corsa")
+            Dim coche2 As Vehiculo = New Vehiculo("coche", "123456HJK", "Tesla", "Modelo X")
+            Dim moto1 As Vehiculo = New Vehiculo("moto", "453463DAS", "PIAGIO", "DiMama")
+            Principal.listaVehiculosPlanta1 = New List(Of Vehiculo)({coche, coche2, moto1})
+            Me.writer(newPath, Principal.listaVehiculosPlanta1, 1)
 
-        Dim coch4 As Vehiculo = New Vehiculo("coche", "756344VCF", "BMW", "Serie 3")
-        Dim coche5 As Vehiculo = New Vehiculo("coche", "4565465F", "Mercedes", "Benz")
-        Dim coche6 As Vehiculo = New Vehiculo("coche", "14881488HFG", "Lamborgini", "Murcielago")
-        Form1.listaVehiculosPlanta3 = New List(Of Vehiculo)({coch4, coche5, coche6})
+            Dim coch3 As Vehiculo = New Vehiculo("coche", "123124HA", "Ford", "Mondeo")
+            Dim moto2 As Vehiculo = New Vehiculo("moto", "44556HJK", "Harley", "Davidson")
+            Dim moto3 As Vehiculo = New Vehiculo("moto", "453456HAQ", "Suzuki", "Yamakuza")
+            Principal.listaVehiculosPlanta2 = New List(Of Vehiculo)({coch3, moto2, moto3})
+            Me.writer(newPath, Principal.listaVehiculosPlanta2, 2)
+
+            Dim coch4 As Vehiculo = New Vehiculo("coche", "756344VCF", "BMW", "Serie 3")
+            Dim coche5 As Vehiculo = New Vehiculo("coche", "4565465F", "Mercedes", "Benz")
+            Dim coche6 As Vehiculo = New Vehiculo("coche", "14881488HFG", "Lamborgini", "Murcielago")
+            Principal.listaVehiculosPlanta3 = New List(Of Vehiculo)({coch4, coche5, coche6})
+            Me.writer(newPath, Principal.listaVehiculosPlanta3, 3)
+        End If
+
     End Function
+
+    Function reader(ByRef newPath As String, ByVal numPlanta As String)
+        Dim list As New List(Of Vehiculo)
+
+        Using sr As New System.IO.StreamReader(newPath)
+            Dim strAux As String = "Dembow"
+            While sr.Peek <> -1
+                strAux = sr.ReadLine()
+                Dim listaItems As String() = strAux.Split(";")
+
+                If numPlanta = listaItems(0).ToString Then
+                    list.Add(New Vehiculo(listaItems(1), listaItems(2), listaItems(3), listaItems(4)))
+
+                End If
+
+            End While
+            sr.Close()
+        End Using
+
+        Return list
+    End Function
+
+    Sub writer(ByRef newPath As String, ByVal list As List(Of Vehiculo), ByVal planta As Integer)
+
+        Using sw As New System.IO.StreamWriter(newPath, True)
+            For Each item As Vehiculo In list
+                sw.WriteLine(planta & ";" & item.toCSV)
+            Next
+            sw.Flush() ''yeap I'm the sort of person that flushes it then closes it
+                sw.Close()
+
+
+        End Using
+    End Sub
 
 
     Public Function asignarValorABotonesPlanta(ByRef listaVehiculos As List(Of Vehiculo), ByRef listaBotones As List(Of Button))
@@ -82,11 +129,13 @@
                 Dim btn As Button = listaBotones(index)
                 AddHandler btn.Click, AddressOf Me.abrirInformacion
                 btn.BackColor = ColorTranslator.FromHtml("#FF4136")
-                If listaVehiculos(index).getTipo Is "moto" Then
-                    Dim imagen As Image = Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\motorcycle.png")
+
+
+                If listaVehiculos(index).getTipo.ToString = "moto" Then
+                    Dim imagen As Image = Image.FromFile(Application.StartupPath() & "\motorcycle.png")
                     btn.Image = imagen
                 Else
-                    Dim imagen As Image = Image.FromFile("C:\Users\mati\source\repos\ParkingGUI-VB.NET\iconos\car.png")
+                    Dim imagen As Image = Image.FromFile(Application.StartupPath() & "\car.png")
                     btn.Image = imagen
                 End If
                 Me.añadirTexto(listaVehiculos(index).toString & "cargado con exito")
@@ -100,16 +149,16 @@
     Public Function abrirInformacion(sender As Object, e As EventArgs)
         Dim btn As Button = sender
         Dim info As Informacion_coche = New Informacion_coche()
-        If Form1.listaPlanta1Botones.Contains(btn) Then
-            Me.añadirTexto("Se ha seleccionado " & Form1.listaPlanta1(btn.Tag).toString)
+        If Principal.listaPlanta1Botones.Contains(btn) Then
+            Me.añadirTexto("Se ha seleccionado " & Principal.listaPlanta1(btn.Tag).toString)
 
-            info.TextBox1.Text = Form1.listaPlanta1(btn.Tag).toString
-        ElseIf Form1.listaPlanta2Botones.Contains(btn) Then
-            Me.añadirTexto("Se ha seleccionado " & Form1.listaPlanta2(btn.Tag).toString)
-            info.TextBox1.Text = Form1.listaPlanta2(btn.Tag).toString
-        ElseIf Form1.listaPlanta3Botones.Contains(btn) Then
-            Me.añadirTexto("Se ha seleccionado " & Form1.listaPlanta3(btn.Tag).toString)
-            info.TextBox1.Text = Form1.listaPlanta3(btn.Tag).toString
+            info.TextBox1.Text = Principal.listaPlanta1(btn.Tag).toString
+        ElseIf Principal.listaPlanta2Botones.Contains(btn) Then
+            Me.añadirTexto("Se ha seleccionado " & Principal.listaPlanta2(btn.Tag).toString)
+            info.TextBox1.Text = Principal.listaPlanta2(btn.Tag).toString
+        ElseIf Principal.listaPlanta3Botones.Contains(btn) Then
+            Me.añadirTexto("Se ha seleccionado " & Principal.listaPlanta3(btn.Tag).toString)
+            info.TextBox1.Text = Principal.listaPlanta3(btn.Tag).toString
         End If
 
 

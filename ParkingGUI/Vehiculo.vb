@@ -18,4 +18,8 @@
     Public Function toString()
         Return Me.tipo & " " & Me.matricula & " " & Me.marca & " " & Me.modelo
     End Function
+
+    Public Function toCSV()
+        Return Me.tipo & ";" & Me.matricula & ";" & Me.marca & ";" & Me.modelo
+    End Function
 End Class

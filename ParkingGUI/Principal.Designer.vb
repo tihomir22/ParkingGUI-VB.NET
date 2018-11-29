@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class Principal
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -23,7 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Principal))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -943,7 +943,7 @@ Partial Class Form1
         Me.TextBox1.Size = New System.Drawing.Size(437, 652)
         Me.TextBox1.TabIndex = 0
         '
-        'Form1
+        'Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -951,8 +951,8 @@ Partial Class Form1
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Controls.Add(Me.Panel1)
-        Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Name = "Principal"
+        Me.Text = "Principal"
         Me.SplitContainer1.Panel1.ResumeLayout(False)
         Me.SplitContainer1.Panel1.PerformLayout()
         Me.SplitContainer1.Panel2.ResumeLayout(False)

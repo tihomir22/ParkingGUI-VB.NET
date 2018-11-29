@@ -1,6 +1,6 @@
 ﻿Imports System.Threading
 
-Public Class Form1
+Public Class Principal
     Public vehiculo As Vehiculo
     Public vehiculo2 As Vehiculo
     Public listaPlanta1() As Vehiculo
@@ -50,6 +50,7 @@ Public Class Form1
 
 
     Public Function darDeAltaVehiculosPlanta(ByVal list As List(Of Vehiculo), ByVal numPlanta As Integer)
+        'implementar autoasignacion
         Select Case numPlanta
             Case 1
                 Me.listaPlanta1 = New Vehiculo(9) {Nothing, list(0), list(1), Nothing, Nothing, Nothing, Nothing, list(2), Nothing, Nothing}
@@ -163,10 +164,21 @@ Public Class Form1
 
     End Sub
     Private Function cambiarImagen()
-        While True
+        Dim listaBotones As Button() = {Button36, Button37, Button38, Button39, Button40, Button41, Button42, Button43}
+        While Me.RadioButton2.Checked = False
+            Dim random As Integer = CInt(Math.Ceiling(Rnd() * Me.listaImagenes.Capacity - 1)) + 0
+            Dim btn As Button = listaBotones(random)
+            Me.Label5.Invoke(Sub() Me.Label5.Text = "CAMERA " & (random + 1))
+            Me.TextBox1.Invoke(Sub() Me.TextBox1.Text = Me.TextBox1.Text & Environment.NewLine & "Cambiando a " & Me.Label5.Text)
+            Me.fotoActual.Invoke(Sub() Me.fotoActual.Image = listaImagenes(random))
 
-            Dim random As Integer = CInt(Math.Ceiling(Rnd() * Me.listaImagenes.Capacity - 1)) + 1
-            ' Me.TextBox1.Text = Me.TextBox1.Text & Environment.NewLine & "Dembow"
+            btn.Invoke(Sub() btn.BackColor = Color.DimGray)
+            btn.Invoke(Sub() btn.ForeColor = Color.White)
+
+            botonSeleccionadoCamara.Invoke(Sub() botonSeleccionadoCamara.BackColor = Color.White)
+            botonSeleccionadoCamara.Invoke(Sub() botonSeleccionadoCamara.ForeColor = Color.Black)
+            botonSeleccionadoCamara.Invoke(Sub() botonSeleccionadoCamara = btn)
+
             Thread.Sleep(1000)
         End While
     End Function

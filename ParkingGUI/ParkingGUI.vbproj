@@ -92,11 +92,11 @@
     <Compile Include="fijarPrecios.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.vb">
+    <Compile Include="Principal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Principal.Designer.vb">
+      <DependentUpon>Principal.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GestionGastos.Designer.vb">
@@ -150,8 +150,8 @@
     <EmbeddedResource Include="fijarPrecios.resx">
       <DependentUpon>fijarPrecios.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionGastos.resx">
       <DependentUpon>GestionGastos.vb</DependentUpon>

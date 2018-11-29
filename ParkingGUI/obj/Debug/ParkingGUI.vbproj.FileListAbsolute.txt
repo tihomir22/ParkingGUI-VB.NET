@@ -20,7 +20,6 @@ C:\Users\sportak\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.
 C:\Users\sportak\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.bajaVehiculo.resources
 C:\Users\sportak\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.entradaVehiculo.resources
 C:\Users\sportak\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.fijarPrecios.resources
-C:\Users\sportak\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.Form1.resources
 C:\Users\sportak\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.Resources.resources
 C:\Users\sportak\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.vbproj.GenerateResource.cache
 C:\Users\sportak\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.vbproj.CoreCompileInputs.cache
@@ -49,3 +48,5 @@ C:\Users\mati\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.pdb
 C:\Users\mati\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.SoporteTecnico.resources
 C:\Users\sportak\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.SoporteTecnico.resources
 C:\Users\mati\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.Informacion_coche.resources
+C:\Users\sportak\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.Informacion_coche.resources
+C:\Users\sportak\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.Principal.resources
