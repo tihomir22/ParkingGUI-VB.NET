@@ -1,9 +1,9 @@
-1;coche;8814HJK;Opel;Corsa
-1;coche;123456HJK;Tesla;Modelo X
-1;moto;453463DAS;PIAGIO;DiMama
-2;coche;123124HA;Ford;Mondeo
-2;moto;44556HJK;Harley;Davidson
-2;moto;453456HAQ;Suzuki;Yamakuza
-3;coche;756344VCF;BMW;Serie 3
-3;coche;4565465F;Mercedes;Benz
-3;coche;14881488HFG;Lamborgini;Murcielago
+1;coche;8814HJK;Opel;Corsa;3
+1;coche;123456HJK;Tesla;Modelo X;4
+1;moto;453463DAS;PIAGIO;DiMama;6
+2;coche;123124HA;Ford;Mondeo;3
+2;moto;44556HJK;Harley;Davidson;5
+2;moto;453456HAQ;Suzuki;Yamakuza;7
+3;coche;756344VCF;BMW;Serie 3;1
+3;coche;4565465F;Mercedes;Benz;4
+3;coche;14881488HFG;Lamborgini;Murcielago;8

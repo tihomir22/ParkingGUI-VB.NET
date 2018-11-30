@@ -53,19 +53,22 @@ Public Class Principal
         'implementar autoasignacion
         Select Case numPlanta
             Case 1
-                Me.listaPlanta1 = New Vehiculo(9) {Nothing, list(0), list(1), Nothing, Nothing, Nothing, Nothing, list(2), Nothing, Nothing}
+                Me.listaPlanta1 = New Vehiculo(9) {Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}
+                Me.listaPlanta1 = Me.asignarVehiculoaPlanta(Me.listaPlanta1, list)
                 Me.añadirTexto("Añadido con exito vehiculos de la planta 1")
                 Me.listaPlanta1Botones = New Button(9) {Button6, Button7, Button8, Button9, Button10, Button11, Button12, Button13, Button14, Button15}
                 Me.añadirTexto("Añadido con exito botones de la planta 1")
                 control.asignarValorABotonesPlanta(Me.listaPlanta1.ToList, Me.listaPlanta1Botones.ToList)
             Case 2
-                Me.listaPlanta2 = New Vehiculo(9) {list(0), Nothing, list(1), Nothing, Nothing, list(2), Nothing, Nothing, Nothing, Nothing}
+                Me.listaPlanta2 = New Vehiculo(9) {Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}
+                Me.listaPlanta2 = Me.asignarVehiculoaPlanta(Me.listaPlanta2, list)
                 Me.añadirTexto("Añadido con exito vehiculos de la planta 2")
                 Me.listaPlanta2Botones = New Button(9) {Button16, Button17, Button18, Button19, Button20, Button21, Button22, Button23, Button24, Button25}
                 Me.añadirTexto("Añadido con exito botones de la planta 2")
                 control.asignarValorABotonesPlanta(Me.listaPlanta2.ToList, Me.listaPlanta2Botones.ToList)
             Case 3
-                Me.listaPlanta3 = New Vehiculo(9) {list(1), Nothing, Nothing, Nothing, Nothing, list(2), Nothing, Nothing, list(0), Nothing}
+                Me.listaPlanta3 = New Vehiculo(9) {Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}
+                Me.listaPlanta3 = Me.asignarVehiculoaPlanta(Me.listaPlanta3, list)
                 Me.añadirTexto("Añadido con exito vehiculos de la planta 3")
                 Me.listaPlanta3Botones = New Button(9) {Button26, Button27, Button28, Button29, Button30, Button31, Button32, Button33, Button34, Button35}
                 Me.añadirTexto("Añadido con exito botones de la planta 3")
@@ -73,6 +76,15 @@ Public Class Principal
 
         End Select
 
+    End Function
+
+
+    Public Function asignarVehiculoaPlanta(ByRef listaVehiculosPlanta As Vehiculo(), ByRef listaVehiculos As List(Of Vehiculo))
+        For index As Integer = 0 To listaVehiculos.Count - 1
+            listaVehiculosPlanta(listaVehiculos(index).getPlaza) = listaVehiculos(index)
+        Next
+
+        Return listaVehiculosPlanta
     End Function
 
 
@@ -149,7 +161,7 @@ Public Class Principal
 
     End Sub
 
-    Private Function añadirTexto(ByRef texto As String)
+    Public Function añadirTexto(ByRef texto As String)
         Me.TextBox1.Text = Me.TextBox1.Text & Environment.NewLine & texto
     End Function
 

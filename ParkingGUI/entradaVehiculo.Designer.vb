@@ -36,12 +36,16 @@ Partial Class entradaVehiculo
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.matriculatxt = New System.Windows.Forms.TextBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.RadioButton5 = New System.Windows.Forms.RadioButton()
         Me.RadioButton6 = New System.Windows.Forms.RadioButton()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.textmodelo = New System.Windows.Forms.TextBox()
+        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.textmarca = New System.Windows.Forms.TextBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -49,6 +53,8 @@ Partial Class entradaVehiculo
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox6.SuspendLayout()
+        Me.GroupBox7.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -59,7 +65,7 @@ Partial Class entradaVehiculo
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.OK_Button, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Cancel_Button, 1, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(296, 436)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(296, 507)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -172,8 +178,7 @@ Partial Class entradaVehiculo
         '
         'GroupBox4
         '
-        Me.GroupBox4.Controls.Add(Me.TextBox1)
-        Me.GroupBox4.Enabled = False
+        Me.GroupBox4.Controls.Add(Me.matriculatxt)
         Me.GroupBox4.Location = New System.Drawing.Point(241, 303)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(198, 61)
@@ -181,13 +186,13 @@ Partial Class entradaVehiculo
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Matricula del vehiculo"
         '
-        'TextBox1
+        'matriculatxt
         '
-        Me.TextBox1.Location = New System.Drawing.Point(6, 28)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(186, 20)
-        Me.TextBox1.TabIndex = 1
-        Me.ToolTip1.SetToolTip(Me.TextBox1, "Debe introducir la matricula del vehiculo para registrarlo en el sistema")
+        Me.matriculatxt.Location = New System.Drawing.Point(6, 28)
+        Me.matriculatxt.Name = "matriculatxt"
+        Me.matriculatxt.Size = New System.Drawing.Size(186, 20)
+        Me.matriculatxt.TabIndex = 1
+        Me.ToolTip1.SetToolTip(Me.matriculatxt, "Debe introducir la matricula del vehiculo para registrarlo en el sistema")
         '
         'GroupBox5
         '
@@ -236,13 +241,51 @@ Partial Class entradaVehiculo
         '
         Me.ToolTip1.AutomaticDelay = 100
         '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.textmodelo)
+        Me.GroupBox6.Location = New System.Drawing.Point(241, 423)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(198, 61)
+        Me.GroupBox6.TabIndex = 8
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Modelo"
+        '
+        'textmodelo
+        '
+        Me.textmodelo.Location = New System.Drawing.Point(6, 28)
+        Me.textmodelo.Name = "textmodelo"
+        Me.textmodelo.Size = New System.Drawing.Size(186, 20)
+        Me.textmodelo.TabIndex = 1
+        Me.ToolTip1.SetToolTip(Me.textmodelo, "Debe introducir la matricula del vehiculo para registrarlo en el sistema")
+        '
+        'GroupBox7
+        '
+        Me.GroupBox7.Controls.Add(Me.textmarca)
+        Me.GroupBox7.Location = New System.Drawing.Point(14, 423)
+        Me.GroupBox7.Name = "GroupBox7"
+        Me.GroupBox7.Size = New System.Drawing.Size(221, 61)
+        Me.GroupBox7.TabIndex = 7
+        Me.GroupBox7.TabStop = False
+        Me.GroupBox7.Text = "Marca del vehiculo"
+        '
+        'textmarca
+        '
+        Me.textmarca.Location = New System.Drawing.Point(6, 28)
+        Me.textmarca.Name = "textmarca"
+        Me.textmarca.Size = New System.Drawing.Size(209, 20)
+        Me.textmarca.TabIndex = 3
+        Me.ToolTip1.SetToolTip(Me.textmarca, "Fecha actual en la que se quiere guardar el vehiculo")
+        '
         'entradaVehiculo
         '
         Me.AcceptButton = Me.OK_Button
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Cancel_Button
-        Me.ClientSize = New System.Drawing.Size(454, 477)
+        Me.ClientSize = New System.Drawing.Size(454, 548)
+        Me.Controls.Add(Me.GroupBox6)
+        Me.Controls.Add(Me.GroupBox7)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.GroupBox4)
@@ -268,6 +311,10 @@ Partial Class entradaVehiculo
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox6.ResumeLayout(False)
+        Me.GroupBox6.PerformLayout()
+        Me.GroupBox7.ResumeLayout(False)
+        Me.GroupBox7.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -282,11 +329,15 @@ Partial Class entradaVehiculo
     Friend WithEvents CheckedListBox1 As CheckedListBox
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents GroupBox4 As GroupBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents matriculatxt As TextBox
     Friend WithEvents GroupBox5 As GroupBox
     Friend WithEvents RadioButton5 As RadioButton
     Friend WithEvents RadioButton6 As RadioButton
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents GroupBox6 As GroupBox
+    Friend WithEvents textmodelo As TextBox
+    Friend WithEvents GroupBox7 As GroupBox
+    Friend WithEvents textmarca As TextBox
 End Class

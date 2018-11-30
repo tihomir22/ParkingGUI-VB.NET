@@ -36,7 +36,6 @@ C:\Users\mati\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.vbp
 C:\Users\mati\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.bajaVehiculo.resources
 C:\Users\mati\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.entradaVehiculo.resources
 C:\Users\mati\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.fijarPrecios.resources
-C:\Users\mati\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.Form1.resources
 C:\Users\mati\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.GestionGastos.resources
 C:\Users\mati\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.Resources.resources
 C:\Users\mati\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.SacarCuentas.resources
@@ -50,3 +49,4 @@ C:\Users\sportak\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.
 C:\Users\mati\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.Informacion_coche.resources
 C:\Users\sportak\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.Informacion_coche.resources
 C:\Users\sportak\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.Principal.resources
+C:\Users\mati\source\repos\ParkingGUI-VB.NET\ParkingGUI\obj\Debug\ParkingGUI.Principal.resources

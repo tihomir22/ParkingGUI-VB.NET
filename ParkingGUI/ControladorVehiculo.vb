@@ -61,21 +61,21 @@
             Principal.listaVehiculosPlanta3 = reader(newPath, "3")
 
         Else
-            Dim coche As Vehiculo = New Vehiculo("coche", "8814HJK", "Opel", "Corsa")
-            Dim coche2 As Vehiculo = New Vehiculo("coche", "123456HJK", "Tesla", "Modelo X")
-            Dim moto1 As Vehiculo = New Vehiculo("moto", "453463DAS", "PIAGIO", "DiMama")
+            Dim coche As Vehiculo = New Vehiculo("coche", "8814HJK", "Opel", "Corsa", 2)
+            Dim coche2 As Vehiculo = New Vehiculo("coche", "123456HJK", "Tesla", "Modelo X", 4)
+            Dim moto1 As Vehiculo = New Vehiculo("moto", "453463DAS", "PIAGIO", "DiMama", 6)
             Principal.listaVehiculosPlanta1 = New List(Of Vehiculo)({coche, coche2, moto1})
             Me.writer(newPath, Principal.listaVehiculosPlanta1, 1)
 
-            Dim coch3 As Vehiculo = New Vehiculo("coche", "123124HA", "Ford", "Mondeo")
-            Dim moto2 As Vehiculo = New Vehiculo("moto", "44556HJK", "Harley", "Davidson")
-            Dim moto3 As Vehiculo = New Vehiculo("moto", "453456HAQ", "Suzuki", "Yamakuza")
+            Dim coch3 As Vehiculo = New Vehiculo("coche", "123124HA", "Ford", "Mondeo", 3)
+            Dim moto2 As Vehiculo = New Vehiculo("moto", "44556HJK", "Harley", "Davidson", 5)
+            Dim moto3 As Vehiculo = New Vehiculo("moto", "453456HAQ", "Suzuki", "Yamakuza", 7)
             Principal.listaVehiculosPlanta2 = New List(Of Vehiculo)({coch3, moto2, moto3})
             Me.writer(newPath, Principal.listaVehiculosPlanta2, 2)
 
-            Dim coch4 As Vehiculo = New Vehiculo("coche", "756344VCF", "BMW", "Serie 3")
-            Dim coche5 As Vehiculo = New Vehiculo("coche", "4565465F", "Mercedes", "Benz")
-            Dim coche6 As Vehiculo = New Vehiculo("coche", "14881488HFG", "Lamborgini", "Murcielago")
+            Dim coch4 As Vehiculo = New Vehiculo("coche", "756344VCF", "BMW", "Serie 3", 1)
+            Dim coche5 As Vehiculo = New Vehiculo("coche", "4565465F", "Mercedes", "Benz", 4)
+            Dim coche6 As Vehiculo = New Vehiculo("coche", "14881488HFG", "Lamborgini", "Murcielago", 8)
             Principal.listaVehiculosPlanta3 = New List(Of Vehiculo)({coch4, coche5, coche6})
             Me.writer(newPath, Principal.listaVehiculosPlanta3, 3)
         End If
@@ -92,7 +92,10 @@
                 Dim listaItems As String() = strAux.Split(";")
 
                 If numPlanta = listaItems(0).ToString Then
-                    list.Add(New Vehiculo(listaItems(1), listaItems(2), listaItems(3), listaItems(4)))
+                    Dim vehiculo As Vehiculo = New Vehiculo(listaItems(1), listaItems(2), listaItems(3), listaItems(4), Convert.ToInt32(listaItems(5)))
+
+                    list.Add(vehiculo)
+                    Me.añadirTexto("Leido vehiculo" & vehiculo.toString)
 
                 End If
 
