@@ -37,14 +37,18 @@ Public Class Principal
         Me.botonSeleccionadoCamara = Me.Button36
         Me.fotoActual = Me.PictureBox2
         control.iniciarArrayImagenes(Me.listaImagenes)
+
         control.darDeAltaVehiculosLista()
         Me.darDeAltaVehiculosPlanta(Me.listaVehiculosPlanta1, 1)
         Me.darDeAltaVehiculosPlanta(Me.listaVehiculosPlanta2, 2)
         Me.darDeAltaVehiculosPlanta(Me.listaVehiculosPlanta3, 3)
 
+
+
     End Sub
 
-    Public Function haySitioCoche(ByRef listaVehiculos As List(Of Vehiculo))
+    Public Function haySitioCoche(ByRef listaVehiculosArray() As Vehiculo)
+        Dim listaVehiculos As List(Of Vehiculo) = listaVehiculosArray.ToList
         Dim contadorCoches As Integer = 0
         For index As Integer = 0 To listaVehiculos.Count - 1
 
@@ -65,7 +69,8 @@ Public Class Principal
 
     End Function
 
-    Public Function haySitioMoto(ByRef listaVehiculos As List(Of Vehiculo))
+    Public Function haySitioMoto(ByRef listaVehiculosArray() As Vehiculo)
+        Dim listaVehiculos As List(Of Vehiculo) = listaVehiculosArray.ToList
         Dim contadorMoto As Integer = 0
         For index As Integer = 0 To listaVehiculos.Count - 1
             If (listaVehiculos(index) Is Nothing) Then
@@ -93,24 +98,26 @@ Public Class Principal
             Case 1
                 Me.listaPlanta1 = New Vehiculo(9) {Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}
                 Me.listaPlanta1 = Me.asignarVehiculoaPlanta(Me.listaPlanta1, list)
+
                 Me.añadirTexto("Añadido con exito vehiculos de la planta 1")
                 Me.listaPlanta1Botones = New Button(9) {Button6, Button7, Button8, Button9, Button10, Button11, Button12, Button13, Button14, Button15}
                 Me.añadirTexto("Añadido con exito botones de la planta 1")
-                control.asignarValorABotonesPlanta(Me.listaPlanta1.ToList, Me.listaPlanta1Botones.ToList)
+                control.asignarValorABotonesPlanta(Me.listaPlanta1, Me.listaPlanta1Botones.ToList)
             Case 2
                 Me.listaPlanta2 = New Vehiculo(9) {Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}
                 Me.listaPlanta2 = Me.asignarVehiculoaPlanta(Me.listaPlanta2, list)
+
                 Me.añadirTexto("Añadido con exito vehiculos de la planta 2")
-                Me.listaPlanta2Botones = New Button(9) {Button16, Button17, Button18, Button19, Button20, Button21, Button22, Button23, Button24, Button25}
+                Me.listaPlanta2Botones = New Button(9) {Button16, Button21, Button19, Button17, Button18, Button25, Button23, Button24, Button20, Button22}
                 Me.añadirTexto("Añadido con exito botones de la planta 2")
-                control.asignarValorABotonesPlanta(Me.listaPlanta2.ToList, Me.listaPlanta2Botones.ToList)
+                control.asignarValorABotonesPlanta(Me.listaPlanta2, Me.listaPlanta2Botones.ToList)
             Case 3
                 Me.listaPlanta3 = New Vehiculo(9) {Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}
                 Me.listaPlanta3 = Me.asignarVehiculoaPlanta(Me.listaPlanta3, list)
                 Me.añadirTexto("Añadido con exito vehiculos de la planta 3")
-                Me.listaPlanta3Botones = New Button(9) {Button26, Button27, Button28, Button29, Button30, Button31, Button32, Button33, Button34, Button35}
+                Me.listaPlanta3Botones = New Button(9) {Button26, Button29, Button28, Button27, Button30, Button35, Button33, Button34, Button31, Button32}
                 Me.añadirTexto("Añadido con exito botones de la planta 3")
-                control.asignarValorABotonesPlanta(Me.listaPlanta3.ToList, Me.listaPlanta3Botones.ToList)
+                control.asignarValorABotonesPlanta(Me.listaPlanta3, Me.listaPlanta3Botones.ToList)
 
         End Select
 

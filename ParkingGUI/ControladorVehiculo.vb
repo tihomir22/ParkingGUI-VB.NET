@@ -61,21 +61,21 @@
             Principal.listaVehiculosPlanta3 = reader(newPath, "3")
 
         Else
-            Dim coche As Vehiculo = New Vehiculo("coche", "8814HJK", "Opel", "Corsa", 2)
-            Dim coche2 As Vehiculo = New Vehiculo("coche", "123456HJK", "Tesla", "Modelo X", 4)
-            Dim moto1 As Vehiculo = New Vehiculo("moto", "453463DAS", "PIAGIO", "DiMama", 6)
+            Dim coche As Vehiculo = New Vehiculo("coche", "8814HJK", "Opel", "Corsa", 2, DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), 10, 10)
+            Dim coche2 As Vehiculo = New Vehiculo("coche", "123456HJK", "Tesla", "Modelo X", 4, DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), 10, 10)
+            Dim moto1 As Vehiculo = New Vehiculo("moto", "453463DAS", "PIAGIO", "DiMama", 6, DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), 10, 10)
             Principal.listaVehiculosPlanta1 = New List(Of Vehiculo)({coche, coche2, moto1})
             Me.writer(newPath, Principal.listaVehiculosPlanta1, 1)
 
-            Dim coch3 As Vehiculo = New Vehiculo("coche", "123124HA", "Ford", "Mondeo", 3)
-            Dim moto2 As Vehiculo = New Vehiculo("moto", "44556HJK", "Harley", "Davidson", 5)
-            Dim moto3 As Vehiculo = New Vehiculo("moto", "453456HAQ", "Suzuki", "Yamakuza", 7)
+            Dim coch3 As Vehiculo = New Vehiculo("coche", "123124HA", "Ford", "Mondeo", 3, DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), 10, 10)
+            Dim moto2 As Vehiculo = New Vehiculo("moto", "44556HJK", "Harley", "Davidson", 5, DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), 10, 10)
+            Dim moto3 As Vehiculo = New Vehiculo("moto", "453456HAQ", "Suzuki", "Yamakuza", 7, DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), 10, 10)
             Principal.listaVehiculosPlanta2 = New List(Of Vehiculo)({coch3, moto2, moto3})
             Me.writer(newPath, Principal.listaVehiculosPlanta2, 2)
 
-            Dim coch4 As Vehiculo = New Vehiculo("coche", "756344VCF", "BMW", "Serie 3", 1)
-            Dim coche5 As Vehiculo = New Vehiculo("coche", "4565465F", "Mercedes", "Benz", 4)
-            Dim coche6 As Vehiculo = New Vehiculo("coche", "14881488HFG", "Lamborgini", "Murcielago", 8)
+            Dim coch4 As Vehiculo = New Vehiculo("coche", "756344VCF", "BMW", "Serie 3", 1, DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), 10, 10)
+            Dim coche5 As Vehiculo = New Vehiculo("coche", "4565465F", "Mercedes", "Benz", 4, DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), 10, 10)
+            Dim coche6 As Vehiculo = New Vehiculo("coche", "14881488HFG", "Lamborgini", "Murcielago", 8, DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), 10, 10)
             Principal.listaVehiculosPlanta3 = New List(Of Vehiculo)({coch4, coche5, coche6})
             Me.writer(newPath, Principal.listaVehiculosPlanta3, 3)
         End If
@@ -92,7 +92,7 @@
                 Dim listaItems As String() = strAux.Split(";")
 
                 If numPlanta = listaItems(0).ToString Then
-                    Dim vehiculo As Vehiculo = New Vehiculo(listaItems(1), listaItems(2), listaItems(3), listaItems(4), Convert.ToInt32(listaItems(5)))
+                    Dim vehiculo As Vehiculo = New Vehiculo(listaItems(1), listaItems(2), listaItems(3), listaItems(4), Convert.ToInt32(listaItems(5)), listaItems(6), listaItems(7), listaItems(8))
 
                     list.Add(vehiculo)
                     Me.añadirTexto("Leido vehiculo" & vehiculo.toString)
@@ -109,6 +109,7 @@
     Sub writer(ByRef newPath As String, ByVal list As List(Of Vehiculo), ByVal planta As Integer)
 
         Using sw As New System.IO.StreamWriter(newPath, True)
+
             For Each item As Vehiculo In list
                 sw.WriteLine(planta & ";" & item.toCSV)
             Next
@@ -132,11 +133,11 @@
     End Sub
 
 
-    Public Function asignarValorABotonesPlanta(ByRef listaVehiculos As List(Of Vehiculo), ByRef listaBotones As List(Of Button))
+    Public Function asignarValorABotonesPlanta(ByRef listaVehiculos() As Vehiculo, ByRef listaBotones As List(Of Button))
         'lista planta es listaVehiculos
         'listaPlanta1Botones es listabotones
 
-        For index As Integer = 0 To listaVehiculos.Capacity - 1
+        For index As Integer = 0 To listaVehiculos.Count - 1
             listaBotones(index).Tag = index
             If listaVehiculos(index) Is Nothing Then
 
@@ -166,15 +167,15 @@
         Dim btn As Button = sender
         Dim info As Informacion_coche = New Informacion_coche()
         If Principal.listaPlanta1Botones.Contains(btn) Then
-            Me.añadirTexto("Se ha seleccionado " & Principal.listaPlanta1(btn.Tag).toString)
+            Me.añadirTexto("Se ha seleccionado " & Principal.listaPlanta1(btn.Tag).toString())
 
-            info.TextBox1.Text = Principal.listaPlanta1(btn.Tag).toString
+            info.TextBox1.Text = Principal.listaPlanta1(btn.Tag).toString()
         ElseIf Principal.listaPlanta2Botones.Contains(btn) Then
-            Me.añadirTexto("Se ha seleccionado " & Principal.listaPlanta2(btn.Tag).toString)
-            info.TextBox1.Text = Principal.listaPlanta2(btn.Tag).toString
+            Me.añadirTexto("Se ha seleccionado " & Principal.listaPlanta2(btn.Tag).toString())
+            info.TextBox1.Text = Principal.listaPlanta2(btn.Tag).toString()
         ElseIf Principal.listaPlanta3Botones.Contains(btn) Then
-            Me.añadirTexto("Se ha seleccionado " & Principal.listaPlanta3(btn.Tag).toString)
-            info.TextBox1.Text = Principal.listaPlanta3(btn.Tag).toString
+            Me.añadirTexto("Se ha seleccionado " & Principal.listaPlanta3(btn.Tag).toString())
+            info.TextBox1.Text = Principal.listaPlanta3(btn.Tag).toString()
         End If
 
 

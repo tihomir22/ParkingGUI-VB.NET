@@ -27,7 +27,6 @@ Partial Class bajaVehiculo
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.OK_Button = New System.Windows.Forms.Button()
         Me.Cancel_Button = New System.Windows.Forms.Button()
-        Me.CheckedListBox1 = New System.Windows.Forms.CheckedListBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
@@ -41,6 +40,7 @@ Partial Class bajaVehiculo
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -82,19 +82,9 @@ Partial Class bajaVehiculo
         Me.Cancel_Button.TabIndex = 1
         Me.Cancel_Button.Text = "Cancelar"
         '
-        'CheckedListBox1
-        '
-        Me.CheckedListBox1.FormattingEnabled = True
-        Me.CheckedListBox1.Items.AddRange(New Object() {"Plaza 1", "Plaza 2 ", "Plaza 3", "Plaza 4", "Plaza 5", "Plaza 6", "Plaza 7 ", "Plaza 8 ", "Plaza 9", "Plaza 10"})
-        Me.CheckedListBox1.Location = New System.Drawing.Point(7, 20)
-        Me.CheckedListBox1.Name = "CheckedListBox1"
-        Me.CheckedListBox1.Size = New System.Drawing.Size(411, 49)
-        Me.CheckedListBox1.TabIndex = 0
-        Me.ToolTip1.SetToolTip(Me.CheckedListBox1, "Un vehiculo por plaza")
-        '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.CheckedListBox1)
+        Me.GroupBox2.Controls.Add(Me.ListBox1)
         Me.GroupBox2.Location = New System.Drawing.Point(-3, 180)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(424, 80)
@@ -104,6 +94,7 @@ Partial Class bajaVehiculo
         '
         'TextBox1
         '
+        Me.TextBox1.Enabled = False
         Me.TextBox1.Location = New System.Drawing.Point(4, 358)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
@@ -226,6 +217,15 @@ Partial Class bajaVehiculo
         Me.ToolTip1.SetToolTip(Me.Button2, "Haga click para generar información sobre el vehiculo")
         Me.Button2.UseVisualStyleBackColor = False
         '
+        'ListBox1
+        '
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.Items.AddRange(New Object() {"Plaza 1", "Plaza 2 ", "Plaza 3", "Plaza 4", "Plaza 5", "Plaza 6", "Plaza 7 ", "Plaza 8 ", "Plaza 9", "Plaza 10"})
+        Me.ListBox1.Location = New System.Drawing.Point(12, 20)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(411, 56)
+        Me.ListBox1.TabIndex = 0
+        '
         'bajaVehiculo
         '
         Me.AcceptButton = Me.OK_Button
@@ -262,7 +262,6 @@ Partial Class bajaVehiculo
     Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents OK_Button As System.Windows.Forms.Button
     Friend WithEvents Cancel_Button As System.Windows.Forms.Button
-    Friend WithEvents CheckedListBox1 As CheckedListBox
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents TextBox1 As TextBox
@@ -276,4 +275,5 @@ Partial Class bajaVehiculo
     Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Button2 As Button
+    Friend WithEvents ListBox1 As ListBox
 End Class
