@@ -44,7 +44,45 @@ Public Class Principal
 
     End Sub
 
+    Public Function haySitioCoche(ByRef listaVehiculos As List(Of Vehiculo))
+        Dim contadorCoches As Integer = 0
+        For index As Integer = 0 To listaVehiculos.Count - 1
 
+            If (listaVehiculos(index) Is Nothing) Then
+
+            Else
+                If listaVehiculos(index).getTipo.ToString = "coche" Then
+                    contadorCoches = contadorCoches + 1
+                End If
+            End If
+
+
+        Next
+        If contadorCoches >= 7 Then
+            Return False
+        End If
+        Return True
+
+    End Function
+
+    Public Function haySitioMoto(ByRef listaVehiculos As List(Of Vehiculo))
+        Dim contadorMoto As Integer = 0
+        For index As Integer = 0 To listaVehiculos.Count - 1
+            If (listaVehiculos(index) Is Nothing) Then
+
+            Else
+                If listaVehiculos(index).getTipo.ToString = "moto" Then
+                    contadorMoto = contadorMoto + 1
+                End If
+            End If
+
+        Next
+        If contadorMoto >= 3 Then
+            Return False
+        End If
+        Return True
+
+    End Function
 
 
 

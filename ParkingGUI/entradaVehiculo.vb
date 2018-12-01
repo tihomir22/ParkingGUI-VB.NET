@@ -1,43 +1,71 @@
 ﻿Imports System.Windows.Forms
 
 Public Class entradaVehiculo
-
+    Public control As ControladorVehiculo = New ControladorVehiculo
 
     Private Sub OK_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK_Button.Click
         Dim listaVehiculosPlanta As List(Of Vehiculo)
         Dim tipoVehiculo As String
+        Dim newfile As String = "bbdd.txt"
+        Dim newPath As String = System.IO.Path.Combine(Application.StartupPath(), newfile)
+
+        If RadioButton5.Checked Then
+            tipoVehiculo = "coche"
+        Else
+            tipoVehiculo = "moto"
+        End If
 
         If RadioButton1.Checked Then
             listaVehiculosPlanta = Principal.listaPlanta1.ToList
+            Principal.añadirTexto("Elegiste la plaza " & Me.CheckedListBox1.GetItemText(Me.CheckedListBox1.SelectedIndex) & "y la planta 1")
+            Dim vehiculo As Vehiculo = New Vehiculo(tipoVehiculo, matriculatxt.Text, Me.textmarca.Text, Me.textmodelo.Text, Me.CheckedListBox1.GetItemText(Me.CheckedListBox1.SelectedIndex))
+            If (listaVehiculosPlanta(Me.CheckedListBox1.GetItemText(Me.CheckedListBox1.SelectedIndex)) Is Nothing) Then
+                If (Principal.haySitioCoche(listaVehiculosPlanta) = True And Principal.haySitioMoto(listaVehiculosPlanta) = True) Then
+                    control.writeAObject(newPath, vehiculo, 1)
+                    control.darDeAltaVehiculosLista()
+                    Principal.darDeAltaVehiculosPlanta(Principal.listaVehiculosPlanta1, 1)
+                    Principal.añadirTexto(vehiculo.toString & "creado con exito")
+                Else
+                    MsgBox("No se puede añadir más vehiculos de tipo !" & tipoVehiculo)
+                End If
+            Else
+                    MsgBox("Esa plaza esta ocupada!")
+            End If
 
-            Principal.añadirTexto("Elegiste la planta 1 ")
         ElseIf RadioButton2.Checked Then
             listaVehiculosPlanta = Principal.listaVehiculosPlanta2.ToList
-            Principal.añadirTexto("Elegiste la planta 2 ")
+            Principal.añadirTexto("Elegiste la plaza " & Me.CheckedListBox1.GetItemText(Me.CheckedListBox1.SelectedIndex) & "y la planta 2")
+            Dim vehiculo As Vehiculo = New Vehiculo(tipoVehiculo, matriculatxt.Text, Me.textmarca.Text, Me.textmodelo.Text, Me.CheckedListBox1.GetItemText(Me.CheckedListBox1.SelectedIndex))
+            If (listaVehiculosPlanta(Me.CheckedListBox1.GetItemText(Me.CheckedListBox1.SelectedIndex)) Is Nothing) Then
+                If (Principal.haySitioCoche(listaVehiculosPlanta) = True And Principal.haySitioMoto(listaVehiculosPlanta) = True) Then
+                    control.writeAObject(newPath, vehiculo, 2)
+                    control.darDeAltaVehiculosLista()
+                    Principal.darDeAltaVehiculosPlanta(Principal.listaVehiculosPlanta2, 2)
+                    Principal.añadirTexto(vehiculo.toString & "creado con exito")
+                Else
+                    MsgBox("No se puede añadir más vehiculos de tipo !" & tipoVehiculo)
+                End If
+            Else
+                    MsgBox("Esa plaza esta ocupada!")
+            End If
+
         Else
             listaVehiculosPlanta = Principal.listaVehiculosPlanta3.ToList
-            Principal.añadirTexto("Elegiste la planta 3 ")
-        End If
-
-        If RadioButton5.Checked Then
-            tipoVehiculo = "moto"
-        Else
-            tipoVehiculo = "coche"
-        End If
-
-        If (listaVehiculosPlanta(Me.CheckedListBox1.GetItemText(Me.CheckedListBox1.SelectedIndex)) Is Nothing) Then
-            Principal.añadirTexto("Elegiste la plaza " & Me.CheckedListBox1.GetItemText(Me.CheckedListBox1.SelectedIndex))
-
+            Principal.añadirTexto("Elegiste la plaza " & Me.CheckedListBox1.GetItemText(Me.CheckedListBox1.SelectedIndex) & "y la planta 3")
             Dim vehiculo As Vehiculo = New Vehiculo(tipoVehiculo, matriculatxt.Text, Me.textmarca.Text, Me.textmodelo.Text, Me.CheckedListBox1.GetItemText(Me.CheckedListBox1.SelectedIndex))
-            Principal.listaPlanta1(Me.CheckedListBox1.GetItemText(Me.CheckedListBox1.SelectedIndex)) = vehiculo
-            Principal.añadirTexto(Principal.listaPlanta1(Me.CheckedListBox1.GetItemText(Me.CheckedListBox1.SelectedIndex)).toString)
-            Principal.añadirTexto(vehiculo.toString & "creado con exito")
-        Else
-            Principal.añadirTexto("Esa plaza esta ocupada")
+            If (listaVehiculosPlanta(Me.CheckedListBox1.GetItemText(Me.CheckedListBox1.SelectedIndex)) Is Nothing) Then
+                If (Principal.haySitioCoche(listaVehiculosPlanta) = True And Principal.haySitioMoto(listaVehiculosPlanta) = True) Then
+                    control.writeAObject(newPath, vehiculo, 3)
+                    control.darDeAltaVehiculosLista()
+                    Principal.darDeAltaVehiculosPlanta(Principal.listaVehiculosPlanta3, 3)
+                    Principal.añadirTexto(vehiculo.toString & "creado con exito")
+                Else
+                    MsgBox("No se puede añadir más vehiculos de tipo !" & tipoVehiculo)
+                End If
+            Else
+                    MsgBox("Esa plaza esta ocupada!")
+            End If
         End If
-
-
-
 
         Me.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Close()

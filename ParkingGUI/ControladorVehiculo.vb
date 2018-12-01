@@ -14,7 +14,7 @@
     End Function
 
     Private Function añadirTexto(ByRef texto As String)
-        Me.TextBox1.Text = Me.TextBox1.Text & Environment.NewLine & texto
+        Principal.TextBox1.Text = Principal.TextBox1.Text & Environment.NewLine & texto
     End Function
 
     Public Sub Clicaso(sender As Object, e As EventArgs)
@@ -113,7 +113,19 @@
                 sw.WriteLine(planta & ";" & item.toCSV)
             Next
             sw.Flush() ''yeap I'm the sort of person that flushes it then closes it
-                sw.Close()
+            sw.Close()
+
+
+        End Using
+    End Sub
+
+    Sub writeAObject(ByRef newPath As String, ByVal vehiculo As Vehiculo, ByVal planta As Integer)
+
+        Using sw As New System.IO.StreamWriter(newPath, True)
+
+            sw.WriteLine(planta & ";" & vehiculo.toCSV)
+            sw.Flush() ''yeap I'm the sort of person that flushes it then closes it
+            sw.Close()
 
 
         End Using
@@ -130,6 +142,7 @@
 
             Else
                 Dim btn As Button = listaBotones(index)
+                RemoveHandler btn.Click, AddressOf Me.abrirInformacion
                 AddHandler btn.Click, AddressOf Me.abrirInformacion
                 btn.BackColor = ColorTranslator.FromHtml("#FF4136")
 
