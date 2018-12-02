@@ -28,6 +28,7 @@ Partial Class bajaVehiculo
         Me.OK_Button = New System.Windows.Forms.Button()
         Me.Cancel_Button = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
@@ -39,8 +40,7 @@ Partial Class bajaVehiculo
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -91,6 +91,15 @@ Partial Class bajaVehiculo
         Me.GroupBox2.TabIndex = 6
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Elija una plaza"
+        '
+        'ListBox1
+        '
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.Items.AddRange(New Object() {"Plaza 1", "Plaza 2 ", "Plaza 3", "Plaza 4", "Plaza 5", "Plaza 6", "Plaza 7 ", "Plaza 8 ", "Plaza 9", "Plaza 10"})
+        Me.ListBox1.Location = New System.Drawing.Point(12, 20)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(411, 56)
+        Me.ListBox1.TabIndex = 0
         '
         'TextBox1
         '
@@ -152,7 +161,7 @@ Partial Class bajaVehiculo
         '
         Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Red
         Me.Button1.FlatAppearance.BorderSize = 2
-        Me.Button1.Location = New System.Drawing.Point(2, 568)
+        Me.Button1.Location = New System.Drawing.Point(4, 568)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 29)
         Me.Button1.TabIndex = 3
@@ -203,28 +212,8 @@ Partial Class bajaVehiculo
         '
         Me.ToolTip1.AutomaticDelay = 100
         '
-        'Button2
+        'PrintDocument1
         '
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(54, Byte), Integer))
-        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.Red
-        Me.Button2.FlatAppearance.BorderSize = 2
-        Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button2.Location = New System.Drawing.Point(83, 568)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 29)
-        Me.Button2.TabIndex = 9
-        Me.Button2.Text = "Dar de baja"
-        Me.ToolTip1.SetToolTip(Me.Button2, "Haga click para generar información sobre el vehiculo")
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'ListBox1
-        '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Items.AddRange(New Object() {"Plaza 1", "Plaza 2 ", "Plaza 3", "Plaza 4", "Plaza 5", "Plaza 6", "Plaza 7 ", "Plaza 8 ", "Plaza 9", "Plaza 10"})
-        Me.ListBox1.Location = New System.Drawing.Point(12, 20)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(411, 56)
-        Me.ListBox1.TabIndex = 0
         '
         'bajaVehiculo
         '
@@ -233,7 +222,6 @@ Partial Class bajaVehiculo
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Cancel_Button
         Me.ClientSize = New System.Drawing.Size(433, 609)
-        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.Label2)
@@ -274,6 +262,6 @@ Partial Class bajaVehiculo
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Button2 As Button
     Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
 End Class
