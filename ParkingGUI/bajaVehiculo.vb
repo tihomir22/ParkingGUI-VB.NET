@@ -1,8 +1,37 @@
-﻿Imports System.Windows.Forms
+﻿Imports System.Drawing.Printing
+Imports System.Windows.Forms
 
 Public Class bajaVehiculo
     Private esCoche As Boolean
+    Private vehiculoSeleccionado As Vehiculo
+    Public plantaElegida As Integer
+    Private control As ControladorVehiculo = New ControladorVehiculo()
+    Dim newfile As String = "bbdd.txt"
+    Dim newPath As String = System.IO.Path.Combine(Application.StartupPath(), newfile)
+
     Private Sub OK_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK_Button.Click
+        If Me.vehiculoSeleccionado Is Nothing Then
+        Else
+            If Me.RadioButton1.Checked Then
+                plantaElegida = 1
+            ElseIf Me.RadioButton2.Checked Then
+                plantaElegida = 2
+            Else
+                plantaElegida = 3
+            End If
+
+
+
+            control.removeObject(newPath, vehiculoSeleccionado)
+            control.darDeAltaVehiculosLista()
+            Principal.darDeAltaVehiculosPlanta(Principal.listaVehiculosPlanta1, 1)
+            Principal.darDeAltaVehiculosPlanta(Principal.listaVehiculosPlanta2, 2)
+            Principal.darDeAltaVehiculosPlanta(Principal.listaVehiculosPlanta3, 3)
+            Dim btn As Button = control.devolverBotonSegunIndice(vehiculoSeleccionado.getPlaza(), Me.plantaElegida)
+
+            Principal.añadirTexto(vehiculoSeleccionado.toString & "eliminado con exito")
+            MsgBox("Eliminado con exito")
+        End If
         Me.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Close()
     End Sub
@@ -16,8 +45,48 @@ Public Class bajaVehiculo
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        PrintDocument1.Print()
+    Private Sub Button1_Click(ByVal sender As Object,
+                                    ByVal e As EventArgs) _
+                                    Handles Button1.Click
+        ' ejemplo simple para imprimir en .NET
+        ' Usamos una clase del tipo PrintDocument
+        'Dim printDoc As New PrintDocument
+        ' asignamos el método de evento para cada página a imprimir
+        If Me.TextBox1.Text.Length > 0 Then
+            AddHandler PrintDocument1.PrintPage, AddressOf print_PrintPage
+            ' indicamos que queremos imprimir
+            PrintDocument1.DocumentName = vehiculoSeleccionado.getMatricula & vehiculoSeleccionado.getMarca
+            PrintDocument1.Print()
+        Else
+            MsgBox("no puedes imprimir algo que esta en blanco...")
+        End If
+
+
+    End Sub
+
+
+
+
+    Private Sub print_PrintPage(ByVal sender As Object,
+                            ByVal e As PrintPageEventArgs)
+        ' Este evento se producirá cada vez que se imprima una nueva página
+        ' imprimir HOLA MUNDO en Arial tamaño 24 y negrita
+
+        ' imprimimos la cadena en el margen izquierdo
+        Dim xPos As Single = e.MarginBounds.Left
+        ' La fuente a usar
+        Dim prFont As New Font("Arial", 16, FontStyle.Regular)
+        ' la posición superior
+        Dim yPos As Single = prFont.GetHeight(e.Graphics)
+
+        ' imprimimos la cadena
+
+        e.Graphics.DrawString("************* TICKET *************" & Environment.NewLine & Me.TextBox1.Text & Environment.NewLine & "*************FIN TICKET *************", prFont, Brushes.Black, xPos, yPos)
+
+        ' indicamos que ya no hay nada más que imprimir
+        ' (el valor predeterminado de esta propiedad es False)
+        e.HasMorePages = False
+
     End Sub
 
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
@@ -29,10 +98,10 @@ Public Class bajaVehiculo
 
             If listaVehiculosPlanta(Me.ListBox1.GetItemText(Me.ListBox1.SelectedIndex)) Is Nothing Then
             Else
-                Dim vehiculo As Vehiculo = listaVehiculosPlanta(Me.ListBox1.GetItemText(Me.ListBox1.SelectedIndex))
-                MsgBox(vehiculo.toString & " Seleccionado")
-                ComboBox1.Text = vehiculo.getMatricula
-                mostrarInformacion(vehiculo, 1)
+                vehiculoSeleccionado = listaVehiculosPlanta(Me.ListBox1.GetItemText(Me.ListBox1.SelectedIndex))
+                MsgBox(vehiculoSeleccionado.toString & " Seleccionado")
+                ComboBox1.Text = vehiculoSeleccionado.getMatricula
+                mostrarInformacion(vehiculoSeleccionado, 1)
             End If
 
 
@@ -42,10 +111,10 @@ Public Class bajaVehiculo
 
             If listaVehiculosPlanta(Me.ListBox1.GetItemText(Me.ListBox1.SelectedIndex)) Is Nothing Then
             Else
-                Dim vehiculo As Vehiculo = listaVehiculosPlanta(Me.ListBox1.GetItemText(Me.ListBox1.SelectedIndex))
-                MsgBox(vehiculo.toString & " Seleccionado")
-                ComboBox1.Text = vehiculo.getMatricula
-                mostrarInformacion(vehiculo, 2)
+                vehiculoSeleccionado = listaVehiculosPlanta(Me.ListBox1.GetItemText(Me.ListBox1.SelectedIndex))
+                MsgBox(vehiculoSeleccionado.toString & " Seleccionado")
+                ComboBox1.Text = vehiculoSeleccionado.getMatricula
+                mostrarInformacion(vehiculoSeleccionado, 2)
             End If
         ElseIf RadioButton3.Checked Then
             'MsgBox("Has clickado planta 3 plazza " & Me.ListBox1.GetItemText(Me.ListBox1.SelectedIndex))
@@ -53,10 +122,10 @@ Public Class bajaVehiculo
             listaVehiculosPlanta = Principal.listaPlanta3
             If listaVehiculosPlanta(Me.ListBox1.GetItemText(Me.ListBox1.SelectedIndex)) Is Nothing Then
             Else
-                Dim vehiculo As Vehiculo = listaVehiculosPlanta(Me.ListBox1.GetItemText(Me.ListBox1.SelectedIndex))
-                MsgBox(vehiculo.toString & " Seleccionado")
-                ComboBox1.Text = vehiculo.getMatricula
-                mostrarInformacion(vehiculo, 3)
+                vehiculoSeleccionado = listaVehiculosPlanta(Me.ListBox1.GetItemText(Me.ListBox1.SelectedIndex))
+                MsgBox(vehiculoSeleccionado.toString & " Seleccionado")
+                ComboBox1.Text = vehiculoSeleccionado.getMatricula
+                mostrarInformacion(vehiculoSeleccionado, 3)
             End If
         Else
             MsgBox("Debes elegir una planta")
@@ -112,11 +181,7 @@ Public Class bajaVehiculo
 
     End Function
 
-    Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
-        Dim reportFont As Font = New Drawing.Font("Times New Roman", 14)
-        e.Graphics.DrawString("Factura informativa ", reportFont, Brushes.Black, 100, 100)
-        e.Graphics.DrawString("Cuerpo del documento ", reportFont, Brushes.Black, 100, 100)
-    End Sub
+
 End Class
 
 

@@ -132,6 +132,56 @@
         End Using
     End Sub
 
+    Sub removeObject(ByRef newPath As String, ByVal vehiculo As Vehiculo)
+        Dim listaVehiculos As New List(Of Vehiculo)
+        Dim listaPlantasOrdenada As New List(Of String)
+
+        Using sr As New System.IO.StreamReader(newPath)
+            Dim strAux As String = "Dembow"
+            While sr.Peek <> -1
+                strAux = sr.ReadLine()
+                Dim listaItems As String() = strAux.Split(";")
+                Dim vehiculoLeido As Vehiculo = New Vehiculo(listaItems(1), listaItems(2), listaItems(3), listaItems(4), Convert.ToInt32(listaItems(5)), listaItems(6), listaItems(7), listaItems(8))
+
+                If vehiculo.getMatricula = vehiculoLeido.getMatricula Then
+                    MsgBox("Eliminando " & vehiculo.getMatricula)
+                Else
+                    listaVehiculos.Add(vehiculoLeido)
+                    Me.añadirTexto("Leido vehiculo" & vehiculo.toString)
+                    listaPlantasOrdenada.Add(listaItems(0))
+                End If
+            End While
+            sr.Close()
+        End Using
+
+        Using sw As New System.IO.StreamWriter(newPath)
+            Dim int As Integer = 0
+            For Each item As Vehiculo In listaVehiculos
+                sw.WriteLine(listaPlantasOrdenada(int) & ";" & item.toCSV)
+                int = int + 1
+            Next
+            sw.Flush() ''yeap I'm the sort of person that flushes it then closes it
+            sw.Close()
+
+
+        End Using
+
+
+
+
+    End Sub
+
+    Public Function devolverBotonSegunIndice(ByRef indice As Integer, ByRef planta As Integer)
+        Select Case planta
+            Case 1
+                Return Principal.listaPlanta1Botones(indice)
+            Case 2
+                Return Principal.listaPlanta2Botones(indice)
+            Case 3
+                Return Principal.listaPlanta3Botones(indice)
+        End Select
+    End Function
+
 
     Public Function asignarValorABotonesPlanta(ByRef listaVehiculos() As Vehiculo, ByRef listaBotones As List(Of Button))
         'lista planta es listaVehiculos
@@ -140,10 +190,14 @@
         For index As Integer = 0 To listaVehiculos.Count - 1
             listaBotones(index).Tag = index
             If listaVehiculos(index) Is Nothing Then
+                Dim btn As Button = listaBotones(index)
+                RemoveHandler btn.Click, AddressOf Me.abrirInformacion
+                btn.Image = Nothing
+                btn.BackColor = ColorTranslator.FromHtml("#01FF70")
+                listaVehiculos(index) = Nothing
 
             Else
                 Dim btn As Button = listaBotones(index)
-                RemoveHandler btn.Click, AddressOf Me.abrirInformacion
                 AddHandler btn.Click, AddressOf Me.abrirInformacion
                 btn.BackColor = ColorTranslator.FromHtml("#FF4136")
 
@@ -163,25 +217,30 @@
         Next
     End Function
 
-    Public Function abrirInformacion(sender As Object, e As EventArgs)
+    Public Function abrirInformacion(ByVal sender As Object, ByVal e As EventArgs)
         Dim btn As Button = sender
         Dim info As Informacion_coche = New Informacion_coche()
-        If Principal.listaPlanta1Botones.Contains(btn) Then
-            Me.añadirTexto("Se ha seleccionado " & Principal.listaPlanta1(btn.Tag).toString())
-
-            info.TextBox1.Text = Principal.listaPlanta1(btn.Tag).toString()
-        ElseIf Principal.listaPlanta2Botones.Contains(btn) Then
-            Me.añadirTexto("Se ha seleccionado " & Principal.listaPlanta2(btn.Tag).toString())
-            info.TextBox1.Text = Principal.listaPlanta2(btn.Tag).toString()
-        ElseIf Principal.listaPlanta3Botones.Contains(btn) Then
-            Me.añadirTexto("Se ha seleccionado " & Principal.listaPlanta3(btn.Tag).toString())
-            info.TextBox1.Text = Principal.listaPlanta3(btn.Tag).toString()
-        End If
+        Try
 
 
+            If Principal.listaPlanta1Botones.Contains(btn) Then
+                Me.añadirTexto("Se ha seleccionado " & Principal.listaPlanta1(btn.Tag).toString())
 
-        info.ShowDialog()
+                info.TextBox1.Text = Principal.listaPlanta1(btn.Tag).toString()
+            ElseIf Principal.listaPlanta2Botones.Contains(btn) Then
+                Me.añadirTexto("Se ha seleccionado " & Principal.listaPlanta2(btn.Tag).toString())
+                info.TextBox1.Text = Principal.listaPlanta2(btn.Tag).toString()
+            ElseIf Principal.listaPlanta3Botones.Contains(btn) Then
+                Me.añadirTexto("Se ha seleccionado " & Principal.listaPlanta3(btn.Tag).toString())
+                info.TextBox1.Text = Principal.listaPlanta3(btn.Tag).toString()
+            End If
 
+
+
+            info.ShowDialog()
+        Catch ex As Exception
+            Principal.añadirTexto("Se ha intentado imprimir un boton vacio...")
+        End Try
     End Function
 
 End Class

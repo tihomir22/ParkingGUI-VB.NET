@@ -98,7 +98,6 @@ Public Class Principal
             Case 1
                 Me.listaPlanta1 = New Vehiculo(9) {Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}
                 Me.listaPlanta1 = Me.asignarVehiculoaPlanta(Me.listaPlanta1, list)
-
                 Me.añadirTexto("Añadido con exito vehiculos de la planta 1")
                 Me.listaPlanta1Botones = New Button(9) {Button6, Button7, Button8, Button9, Button10, Button11, Button12, Button13, Button14, Button15}
                 Me.añadirTexto("Añadido con exito botones de la planta 1")
@@ -106,7 +105,6 @@ Public Class Principal
             Case 2
                 Me.listaPlanta2 = New Vehiculo(9) {Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}
                 Me.listaPlanta2 = Me.asignarVehiculoaPlanta(Me.listaPlanta2, list)
-
                 Me.añadirTexto("Añadido con exito vehiculos de la planta 2")
                 Me.listaPlanta2Botones = New Button(9) {Button16, Button21, Button19, Button17, Button18, Button25, Button23, Button24, Button20, Button22}
                 Me.añadirTexto("Añadido con exito botones de la planta 2")
