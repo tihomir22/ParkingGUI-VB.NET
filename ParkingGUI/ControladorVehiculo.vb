@@ -132,6 +132,46 @@
         End Using
     End Sub
 
+    Sub removeObject(ByRef newPath As String, ByVal vehiculo As Vehiculo)
+        Dim listaVehiculos As New List(Of Vehiculo)
+        Dim listaPlantasOrdenada As New List(Of String)
+
+        Using sr As New System.IO.StreamReader(newPath)
+            Dim strAux As String = "Dembow"
+            While sr.Peek <> -1
+                strAux = sr.ReadLine()
+                Dim listaItems As String() = strAux.Split(";")
+                Dim vehiculoLeido As Vehiculo = New Vehiculo(listaItems(1), listaItems(2), listaItems(3), listaItems(4), Convert.ToInt32(listaItems(5)), listaItems(6), listaItems(7), listaItems(8))
+
+                If vehiculo.getMatricula = vehiculoLeido.getMatricula Then
+                    MsgBox("Eliminando " & vehiculo.getMatricula)
+                Else
+                    listaVehiculos.Add(vehiculoLeido)
+                    Me.añadirTexto("Leido vehiculo" & vehiculo.toString)
+                    listaPlantasOrdenada.Add(listaItems(0))
+                End If
+            End While
+            sr.Close()
+        End Using
+
+        Using sw As New System.IO.StreamWriter(newPath)
+            Dim int As Integer = 0
+            For Each item As Vehiculo In listaVehiculos
+                sw.WriteLine(listaPlantasOrdenada(int) & ";" & item.toCSV)
+                int = int + 1
+            Next
+            sw.Flush() ''yeap I'm the sort of person that flushes it then closes it
+            sw.Close()
+
+
+        End Using
+
+
+
+
+    End Sub
+
+
 
     Public Function asignarValorABotonesPlanta(ByRef listaVehiculos() As Vehiculo, ByRef listaBotones As List(Of Button))
         'lista planta es listaVehiculos
