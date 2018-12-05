@@ -138,6 +138,7 @@
     <Compile Include="SoporteTecnico.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Tarifa.vb" />
     <Compile Include="Vehiculo.vb" />
   </ItemGroup>
   <ItemGroup>

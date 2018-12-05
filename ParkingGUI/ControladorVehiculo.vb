@@ -132,6 +132,14 @@
         End Using
     End Sub
 
+    Sub writeTarifa(ByVal newPath As String, ByVal tarifa As Tarifa)
+        Using sw As New System.IO.StreamWriter(newPath, True)
+            sw.WriteLine(tarifa.toCSV)
+            sw.Flush() ''yeap I'm the sort of person that flushes it then closes it
+            sw.Close()
+        End Using
+    End Sub
+
     Sub removeObject(ByRef newPath As String, ByVal vehiculo As Vehiculo)
         Dim listaVehiculos As New List(Of Vehiculo)
         Dim listaPlantasOrdenada As New List(Of String)
