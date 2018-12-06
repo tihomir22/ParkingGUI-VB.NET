@@ -1,0 +1,2 @@
+Gastos de luz;06/12/2018;806;20;efectivo;0,15;23
+Gastos de mantenimiento;06/12/2018;634;60;bitcoin;0;60

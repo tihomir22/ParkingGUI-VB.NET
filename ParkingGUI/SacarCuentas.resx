@@ -124,7 +124,7 @@
   <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAD
-        BAAAAwQBJjY1cgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAABrqSURBVHhe7Z13
+        AQAAAwEBC4xQhAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAABrqSURBVHhe7Z13
         YBTVvsc3iQiCBUSvHQtey1WwQVB89z6zSTbZhNDRCFIVsIAXBRRRFHwC4hVUBKSJXBEDhCJFioFAEkJI
         CEk2vWwKm942IfRAmPf77WXzZmZ/uztnSiB5/vFZyNkz55z5fs/OzKmj4ziuTaLbXOUHcCqxmsqjLUAG
         tgXAtJEiE5Wwi8qjLUAGtgXAtOkiE5WQSOXRFiAD2wJg2iKRiUooofJoC5CBbQEwLUxkohIuAh5UPq0d
@@ -243,7 +243,7 @@
         gg==
 </value>
   </data>
-  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+  <metadata name="PrintDocument1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>116, 17</value>
   </metadata>
 </root>

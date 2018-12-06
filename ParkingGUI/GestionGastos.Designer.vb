@@ -227,6 +227,7 @@ Partial Class GestionGastos
         Me.RadioButton4.Size = New System.Drawing.Size(64, 32)
         Me.RadioButton4.TabIndex = 11
         Me.RadioButton4.TabStop = True
+        Me.RadioButton4.Tag = "bitcoin"
         Me.RadioButton4.Text = "             "
         Me.ToolTip2.SetToolTip(Me.RadioButton4, "Pagar con bitcoin")
         Me.RadioButton4.UseVisualStyleBackColor = True
@@ -249,6 +250,7 @@ Partial Class GestionGastos
         Me.RadioButton3.Size = New System.Drawing.Size(64, 32)
         Me.RadioButton3.TabIndex = 10
         Me.RadioButton3.TabStop = True
+        Me.RadioButton3.Tag = "banco"
         Me.RadioButton3.Text = "             "
         Me.ToolTip2.SetToolTip(Me.RadioButton3, "Pagar con transferencia bancaria")
         Me.RadioButton3.UseVisualStyleBackColor = True
@@ -262,6 +264,7 @@ Partial Class GestionGastos
         Me.RadioButton2.Size = New System.Drawing.Size(64, 32)
         Me.RadioButton2.TabIndex = 9
         Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Tag = "efectivo"
         Me.RadioButton2.Text = "             "
         Me.ToolTip2.SetToolTip(Me.RadioButton2, "Pagar con efectivo")
         Me.RadioButton2.UseVisualStyleBackColor = True
@@ -275,6 +278,7 @@ Partial Class GestionGastos
         Me.RadioButton1.Size = New System.Drawing.Size(64, 32)
         Me.RadioButton1.TabIndex = 8
         Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Tag = "tarjeta"
         Me.RadioButton1.Text = "             "
         Me.ToolTip2.SetToolTip(Me.RadioButton1, "Pagar con visa")
         Me.RadioButton1.UseVisualStyleBackColor = True

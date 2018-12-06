@@ -120,25 +120,57 @@
         End Using
     End Sub
 
-    Sub writeAObject(ByRef newPath As String, ByVal vehiculo As Vehiculo, ByVal planta As Integer)
+    Function readPayments(ByVal newPath As String)
+        Dim pago As New List(Of Movimiento_contable)
+        Using sr As New System.IO.StreamReader(newPath)
+            While sr.Peek <> -1
+                Dim strAux As String = sr.ReadLine()
+                Dim elementosSplit() As String = strAux.Split(";")
+                pago.Add(New Movimiento_contable(elementosSplit(0), elementosSplit(1), elementosSplit(2), elementosSplit(3), elementosSplit(4), elementosSplit(5), elementosSplit(6)))
+            End While
+            sr.Close()
+        End Using
+        Return pago
+    End Function
 
+    Sub writePago(ByRef newPath As String, ByVal pago As Movimiento_contable)
         Using sw As New System.IO.StreamWriter(newPath, True)
+            sw.WriteLine(pago.toCSV)
+            sw.Flush() ''yeap I'm the sort of person that flushes it then closes it
+            sw.Close()
+        End Using
+    End Sub
 
+    Sub writeAObject(ByRef newPath As String, ByVal vehiculo As Vehiculo, ByVal planta As Integer)
+        Using sw As New System.IO.StreamWriter(newPath, True)
             sw.WriteLine(planta & ";" & vehiculo.toCSV)
             sw.Flush() ''yeap I'm the sort of person that flushes it then closes it
             sw.Close()
-
-
         End Using
     End Sub
 
     Sub writeTarifa(ByVal newPath As String, ByVal tarifa As Tarifa)
-        Using sw As New System.IO.StreamWriter(newPath, True)
+        Using sw As New System.IO.StreamWriter(newPath)
             sw.WriteLine(tarifa.toCSV)
             sw.Flush() ''yeap I'm the sort of person that flushes it then closes it
             sw.Close()
         End Using
     End Sub
+
+    Function leerTarifa(ByVal newPath As String)
+
+        Dim tarifa As Tarifa
+        Using sr As New System.IO.StreamReader(newPath)
+            While sr.Peek <> -1
+                Dim strAux As String = sr.ReadLine()
+                Dim elementosSplit() As String = strAux.Split(";")
+                tarifa = New Tarifa(elementosSplit(0), elementosSplit(1), elementosSplit(2), elementosSplit(3))
+
+            End While
+            sr.Close()
+        End Using
+        Return tarifa
+    End Function
 
     Sub removeObject(ByRef newPath As String, ByVal vehiculo As Vehiculo)
         Dim listaVehiculos As New List(Of Vehiculo)

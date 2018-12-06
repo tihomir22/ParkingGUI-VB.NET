@@ -13,12 +13,18 @@ Public Class fijarPrecios
     Private indiceTarifaElegida As Integer
     Private total As Double
 
-    Dim newfile As String = "tarifa.txt"
-    Dim newPath As String = System.IO.Path.Combine(Application.StartupPath(), newfile)
+
+    Dim newPathMoto As String = System.IO.Path.Combine(Application.StartupPath(), "tarifaMoto.txt")
+    Dim newPathCoche As String = System.IO.Path.Combine(Application.StartupPath(), "tarifaCoche.txt")
 
     Private Sub OK_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK_Button.Click
         Dim tarifa As Tarifa = New Tarifa(Me.tipoElegido, Me.beneficio, ListBox1.SelectedIndex, Me.total)
-        control.writeTarifa(newPath, tarifa)
+        If tarifa.getTipo = "moto" Then
+            control.writeTarifa(newPathMoto, tarifa)
+        ElseIf tarifa.getTipo = "coche" Then
+            control.writeTarifa(newPathCoche, tarifa)
+        End If
+
         Me.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Close()
     End Sub

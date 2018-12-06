@@ -18,4 +18,11 @@
     Public Function toString()
         Return Me.tipo & " " & Me.beneficio & " " & Me.indiceTarifa & " " & Me.importeTarifa
     End Function
+
+    Public Function getTipo()
+        Return Me.tipo
+    End Function
+    Public Function getImporteTarifa()
+        Return Me.importeTarifa
+    End Function
 End Class

@@ -17,6 +17,14 @@ Public Class Principal
     Public listaVehiculosPlanta2 As List(Of Vehiculo)
     Public listaVehiculosPlanta3 As List(Of Vehiculo)
 
+    Public listaIngresos As New List(Of Movimiento_contable)
+    Public listaPagos As New List(Of Movimiento_contable)
+
+    Private rutaIngresos As String = System.IO.Path.Combine(Application.StartupPath(), "ingresos.txt")
+    Private rutaPagos As String = System.IO.Path.Combine(Application.StartupPath(), "pagos.txt")
+
+
+
     Public control As ControladorVehiculo
 
 
@@ -29,6 +37,8 @@ Public Class Principal
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
         control = New ControladorVehiculo
         control.TextBox1 = Me.TextBox1
 
@@ -43,8 +53,29 @@ Public Class Principal
         Me.darDeAltaVehiculosPlanta(Me.listaVehiculosPlanta2, 2)
         Me.darDeAltaVehiculosPlanta(Me.listaVehiculosPlanta3, 3)
 
+        Me.leerContabilidad()
 
 
+
+    End Sub
+
+    Private Sub leerContabilidad()
+
+        If System.IO.File.Exists(rutaIngresos) Then
+
+            listaIngresos = control.readPayments(rutaIngresos)
+            Me.añadirTexto(listaIngresos.Count & " ingresos leidos con exito")
+
+        Else
+            Me.añadirTexto("No existe el fichero de ingresos...")
+        End If
+
+        If System.IO.File.Exists(rutaPagos) Then
+            listaPagos = control.readPayments(rutaPagos)
+            Me.añadirTexto(listaPagos.Count & " pagos leidos con exito")
+        Else
+            Me.añadirTexto("No existe el fichero de pagos...")
+        End If
     End Sub
 
     Public Function haySitioCoche(ByRef listaVehiculosArray() As Vehiculo)

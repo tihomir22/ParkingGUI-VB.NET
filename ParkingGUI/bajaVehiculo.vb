@@ -2,12 +2,17 @@
 Imports System.Windows.Forms
 
 Public Class bajaVehiculo
+    Private fechaActualMov As Date
+    Private numFacturaMov As Integer
+    Private totalPagarMov As Double
+
     Private esCoche As Boolean
     Private vehiculoSeleccionado As Vehiculo
     Public plantaElegida As Integer
     Private control As ControladorVehiculo = New ControladorVehiculo()
     Dim newfile As String = "bbdd.txt"
     Dim newPath As String = System.IO.Path.Combine(Application.StartupPath(), newfile)
+    Dim newPathIngresos As String = System.IO.Path.Combine(Application.StartupPath(), "ingresos.txt")
 
     Private Sub OK_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK_Button.Click
         If Me.vehiculoSeleccionado Is Nothing Then
@@ -30,7 +35,9 @@ Public Class bajaVehiculo
             Dim btn As Button = control.devolverBotonSegunIndice(vehiculoSeleccionado.getPlaza(), Me.plantaElegida)
 
             Principal.añadirTexto(vehiculoSeleccionado.toString & "eliminado con exito")
-            MsgBox("Eliminado con exito")
+            Dim movimiento As Movimiento_contable = New Movimiento_contable("Ingreso por salida de vehiculo con matricula" & vehiculoSeleccionado.getMatricula, Me.fechaActualMov, Me.numFacturaMov, obtenerTarifa(), "efectivo", 0, Me.totalPagarMov)
+            control.writePago(newPathIngresos, movimiento)
+            MsgBox(movimiento.toString)
         End If
         Me.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Close()
@@ -80,8 +87,8 @@ Public Class bajaVehiculo
         Dim yPos As Single = prFont.GetHeight(e.Graphics)
 
         ' imprimimos la cadena
-
-        e.Graphics.DrawString("************* TICKET *************" & Environment.NewLine & Me.TextBox1.Text & Environment.NewLine & "*************FIN TICKET *************", prFont, Brushes.Black, xPos, yPos)
+        Me.numFacturaMov = CInt(Math.Ceiling(Rnd() * 1000)) + 100
+        e.Graphics.DrawString("************* TICKET *************" & Environment.NewLine & "Num Ticket" & numFacturaMov & Environment.NewLine & Me.TextBox1.Text & Environment.NewLine & "*************FIN TICKET *************", prFont, Brushes.Black, xPos, yPos)
 
         ' indicamos que ya no hay nada más que imprimir
         ' (el valor predeterminado de esta propiedad es False)
@@ -143,20 +150,22 @@ Public Class bajaVehiculo
         Dim hours As Integer = diferenciaEnDias.TotalHours
         Dim minutes As Integer = diferenciaEnDias.TotalMinutes Mod 60
 
+        Me.fechaActualMov = fechaActual
 
 
         Me.TextBox1.Text = ("Planta: " & planta & Environment.NewLine & "Plaza: " & vehiculo.getPlaza & Environment.NewLine & "Matricula:" & vehiculo.getMatricula & Environment.NewLine & "Marca : " & vehiculo.getMarca & Environment.NewLine & "Modelo:" & vehiculo.getModelo & Environment.NewLine & "Precio :" & Environment.NewLine)
         If vehiculo.getTipo = "moto" Then
             'tarifa de moto  0,30€ por 30 mins 
             Me.esCoche = False
-            Me.TextBox1.Text = Me.TextBox1.Text & " tarifa de moto : 0,30€ por 30 minutos" & Environment.NewLine
+            Me.TextBox1.Text = Me.TextBox1.Text & " tarifa de moto : " & obtenerTarifa() & "€ por 30 minutos" & Environment.NewLine
         Else
             'tarifa de coche 0,40€ por 30 mins
             Me.esCoche = True
-            Me.TextBox1.Text = Me.TextBox1.Text & " tarifa de coche : 0,40€ por 30 minutos" & Environment.NewLine
+            Me.TextBox1.Text = Me.TextBox1.Text & " tarifa de coche : " & obtenerTarifa() & "€ por 30 minutos" & Environment.NewLine
         End If
+        Me.totalPagarMov = Me.TotalAPagar(days, hours, diferenciaEnDias.TotalMinutes)
         Me.TextBox1.Text = Me.TextBox1.Text & " Dias estacionado : " & days & Environment.NewLine & " Horas estacionado : " & hours & Environment.NewLine & " Minutos estacionado : " & minutes & Environment.NewLine
-        Me.TextBox1.Text = Me.TextBox1.Text & "Total a pagar " & Me.TotalAPagar(days, hours, diferenciaEnDias.TotalMinutes) & "€" & Environment.NewLine
+        Me.TextBox1.Text = Me.TextBox1.Text & "Total a pagar " & Me.totalPagarMov & "€" & Environment.NewLine
 
     End Function
 
@@ -170,12 +179,37 @@ Public Class bajaVehiculo
 
         If (cantidadMultiplicable > 0) Then
             If esCoche = True Then
-                Return cantidadMultiplicable * 0.4
+                Return cantidadMultiplicable * obtenerTarifa()
             Else
-                Return cantidadMultiplicable * 0.3
+                Return cantidadMultiplicable * obtenerTarifa()
             End If
         Else
-            Return "Gratis"
+            Return 0
+        End If
+
+
+    End Function
+
+
+    Public Function obtenerTarifa()
+        Dim newPathMoto As String = System.IO.Path.Combine(Application.StartupPath(), "tarifaMoto.txt")
+        Dim newPathCoche As String = System.IO.Path.Combine(Application.StartupPath(), "tarifaCoche.txt")
+
+        If esCoche Then
+            If System.IO.File.Exists(newPathCoche) Then
+                Dim tarifaCoche As Tarifa = control.leerTarifa(newPathCoche)
+                Return tarifaCoche.getImporteTarifa
+            Else
+                Return 0.4
+            End If
+        Else
+            If System.IO.File.Exists(newPathMoto) Then
+                Dim tarifaMoto As Tarifa = control.leerTarifa(newPathMoto)
+                Return tarifaMoto.getImporteTarifa
+            Else
+                Return 0.3
+            End If
+
         End If
 
 
