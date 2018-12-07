@@ -8,6 +8,8 @@ Public Class SacarCuentas
     Private resultadoIngreso As Double
     Private resultadoPago As Double
 
+    Private control As ControladorVehiculo = New ControladorVehiculo
+
     Private listaPagos As New List(Of Movimiento_contable)
     Private listaIngresos As New List(Of Movimiento_contable)
 
@@ -36,6 +38,9 @@ Public Class SacarCuentas
     Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
         gastosCheck = True
         Me.Gastos.Items.Clear()
+        Principal.listaPagos.Clear()
+        Me.listaPagos.Clear()
+        Principal.listaPagos = control.readPayments(System.IO.Path.Combine(Application.StartupPath(), "pagos.txt"))
         Dim resultadoPagos As Double = 0
         For Each pago As Movimiento_contable In Principal.listaPagos
             Me.Gastos.Items.Add(pago.toString)
@@ -47,11 +52,11 @@ Public Class SacarCuentas
 
         If Me.ingresosCheck And Me.gastosCheck Then
             If Me.resultadoPago > Me.resultadoIngreso Then
-                Me.TextBox3.BackColor = Color.LightGreen
-                Me.TextBox3.Text = (Me.resultadoPago - Me.resultadoIngreso) & " €"
-            Else
                 Me.TextBox3.BackColor = Color.Red
-                Me.TextBox3.Text = (Me.resultadoIngreso - Me.resultadoPago) & " €"
+                Me.TextBox3.Text = Math.Round((Me.resultadoPago - Me.resultadoIngreso), 2) & " €"
+            Else
+                Me.TextBox3.BackColor = Color.LightGreen
+                Me.TextBox3.Text = Math.Round((Me.resultadoIngreso - Me.resultadoPago), 2) & " €"
             End If
         End If
     End Sub
@@ -59,6 +64,9 @@ Public Class SacarCuentas
     Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
         Me.ingresosCheck = True
         Me.Gastos.Items.Clear()
+        Principal.listaIngresos.Clear()
+        Me.listaIngresos.Clear()
+        Principal.listaIngresos = control.readPayments(System.IO.Path.Combine(Application.StartupPath(), "ingresos.txt"))
         Dim resultadoIngresos As Double = 0
         For Each ingresos As Movimiento_contable In Principal.listaIngresos
             Me.Gastos.Items.Add(ingresos.toString)
@@ -70,11 +78,11 @@ Public Class SacarCuentas
 
         If Me.ingresosCheck And Me.gastosCheck Then
             If Me.resultadoPago > Me.resultadoIngreso Then
-                Me.TextBox3.BackColor = Color.LightGreen
-                Me.TextBox3.Text = (Me.resultadoPago - Me.resultadoIngreso) & " €"
-            Else
                 Me.TextBox3.BackColor = Color.Red
-                Me.TextBox3.Text = (Me.resultadoIngreso - Me.resultadoPago) & " €"
+                Me.TextBox3.Text = Math.Round((Me.resultadoPago - Me.resultadoIngreso), 2) & " €"
+            Else
+                Me.TextBox3.BackColor = Color.LightGreen
+                Me.TextBox3.Text = Math.Round((Me.resultadoIngreso - Me.resultadoPago), 2) & " €"
             End If
         End If
     End Sub
@@ -112,14 +120,16 @@ Public Class SacarCuentas
         For Each pago As Movimiento_contable In listaPagos
             e.Graphics.DrawString(pago.toString, prFont, Brushes.Black, xPos, yPos)
             yPos = yPos + prFont.GetHeight(e.Graphics)
+            MsgBox(pago.toString)
         Next
+
         yPos = yPos + prFont.GetHeight(e.Graphics)
         e.Graphics.DrawString("Ingresos", titulo, Brushes.Black, xPos, yPos)
         yPos = yPos + prFont.GetHeight(e.Graphics) + prFont.GetHeight(e.Graphics)
         For Each ingreso As Movimiento_contable In listaIngresos
             e.Graphics.DrawString(ingreso.toString, prFont, Brushes.Black, xPos, yPos)
             yPos = yPos + prFont.GetHeight(e.Graphics)
-
+            MsgBox(ingreso.toString)
         Next
         'e.Graphics.DrawString("Pagos" & pagos & "Ingresos" & ingresos, prFont, Brushes.Black, xPos, yPos)
 

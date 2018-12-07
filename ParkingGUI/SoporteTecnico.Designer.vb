@@ -27,13 +27,13 @@ Partial Class SoporteTecnico
         Me.OK_Button = New System.Windows.Forms.Button()
         Me.Cancel_Button = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -91,25 +91,24 @@ Partial Class SoporteTecnico
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Formas de contactar"
         '
-        'Label2
+        'LinkLabel1
         '
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.35!)
-        Me.Label2.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label2.Location = New System.Drawing.Point(115, 53)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(287, 23)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "tihomir_alcudia3@hotmail.com"
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Location = New System.Drawing.Point(6, 234)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(212, 13)
+        Me.LinkLabel1.TabIndex = 14
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "http://net-informations.com/faq/vb/faq.htm"
         '
-        'Label1
+        'Label3
         '
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.35!)
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(75, 130)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(255, 36)
-        Me.Label1.TabIndex = 3
-        Me.Label1.Text = "WhatsApp: +34603680594"
+        Me.Label3.Location = New System.Drawing.Point(7, 203)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(411, 31)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "En dias laborales , te responderemos las dudas en 24 horas. Tambien puede resolve" &
+    "r las dudas más rapido en nuestro foro o FAQ, en el siguiente link. "
         '
         'PictureBox3
         '
@@ -129,6 +128,26 @@ Partial Class SoporteTecnico
         Me.PictureBox2.TabIndex = 4
         Me.PictureBox2.TabStop = False
         '
+        'Label1
+        '
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.35!)
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(75, 130)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(255, 36)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "WhatsApp: +34603680594"
+        '
+        'Label2
+        '
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.35!)
+        Me.Label2.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.Label2.Location = New System.Drawing.Point(115, 53)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(287, 23)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "tihomir_alcudia3@hotmail.com"
+        '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
@@ -138,32 +157,13 @@ Partial Class SoporteTecnico
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
         '
-        'Label3
-        '
-        Me.Label3.Location = New System.Drawing.Point(7, 203)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(411, 31)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "En dias laborales , te responderemos las dudas en 24 horas. Tambien puede resolve" &
-    "r las dudas más rapido en nuestro foro o FAQ, en el siguiente link. "
-        '
-        'LinkLabel1
-        '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(6, 234)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(212, 13)
-        Me.LinkLabel1.TabIndex = 14
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "http://net-informations.com/faq/vb/faq.htm"
-        '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(13, 434)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(115, 29)
         Me.Button1.TabIndex = 14
-        Me.Button1.Text = "Button1"
+        Me.Button1.Text = "Enviar correo"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'SoporteTecnico
