@@ -144,7 +144,11 @@ Public Class bajaVehiculo
 
     Public Function mostrarInformacion(ByRef vehiculo As Vehiculo, ByVal planta As Integer)
         Dim fechaVehiculo As Date = vehiculo.getFecha
-        Dim fechaActual As Date = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
+        'Dim fechaActual As Date = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
+        Dim fechaActual As Date = DateTimePicker1.Value.ToString("yyyy/MM/dd HH:mm:ss")
+
+
+        MsgBox(fechaActual)
         Dim diferenciaEnDias = fechaActual - fechaVehiculo
         Dim days As Integer = diferenciaEnDias.TotalDays
         Dim hours As Integer = diferenciaEnDias.TotalHours
@@ -215,7 +219,9 @@ Public Class bajaVehiculo
 
     End Function
 
+    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs)
 
+    End Sub
 End Class
 
 

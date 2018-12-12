@@ -41,11 +41,14 @@ Partial Class bajaVehiculo
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox4.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -56,7 +59,7 @@ Partial Class bajaVehiculo
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.OK_Button, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Cancel_Button, 1, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(275, 568)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(275, 631)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -104,7 +107,7 @@ Partial Class bajaVehiculo
         'TextBox1
         '
         Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(4, 358)
+        Me.TextBox1.Location = New System.Drawing.Point(4, 421)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(417, 201)
@@ -161,7 +164,7 @@ Partial Class bajaVehiculo
         '
         Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Red
         Me.Button1.FlatAppearance.BorderSize = 2
-        Me.Button1.Location = New System.Drawing.Point(4, 568)
+        Me.Button1.Location = New System.Drawing.Point(4, 628)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 29)
         Me.Button1.TabIndex = 3
@@ -174,7 +177,7 @@ Partial Class bajaVehiculo
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(7, 20)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(411, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(403, 21)
         Me.ComboBox1.TabIndex = 0
         Me.ToolTip1.SetToolTip(Me.ComboBox1, "Listado de todas las matriculas")
         '
@@ -184,7 +187,7 @@ Partial Class bajaVehiculo
         Me.GroupBox3.Enabled = False
         Me.GroupBox3.Location = New System.Drawing.Point(2, 266)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(419, 60)
+        Me.GroupBox3.Size = New System.Drawing.Size(416, 60)
         Me.GroupBox3.TabIndex = 7
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Matricula"
@@ -192,10 +195,10 @@ Partial Class bajaVehiculo
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label2.Location = New System.Drawing.Point(114, 331)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(124, 400)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(215, 24)
+        Me.Label2.Size = New System.Drawing.Size(167, 18)
         Me.Label2.TabIndex = 7
         Me.Label2.Text = "Información del vehiculo"
         '
@@ -212,8 +215,24 @@ Partial Class bajaVehiculo
         '
         Me.ToolTip1.AutomaticDelay = 100
         '
-        'PrintDocument1
+        'DateTimePicker1
         '
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateTimePicker1.Location = New System.Drawing.Point(7, 19)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(403, 20)
+        Me.DateTimePicker1.TabIndex = 9
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.DateTimePicker1)
+        Me.GroupBox4.Enabled = False
+        Me.GroupBox4.Location = New System.Drawing.Point(2, 332)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(416, 50)
+        Me.GroupBox4.TabIndex = 8
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Matricula"
         '
         'bajaVehiculo
         '
@@ -221,7 +240,8 @@ Partial Class bajaVehiculo
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Cancel_Button
-        Me.ClientSize = New System.Drawing.Size(433, 609)
+        Me.ClientSize = New System.Drawing.Size(433, 672)
+        Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.Label2)
@@ -243,6 +263,7 @@ Partial Class bajaVehiculo
         Me.GroupBox1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox4.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -264,4 +285,6 @@ Partial Class bajaVehiculo
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
+    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents GroupBox4 As GroupBox
 End Class

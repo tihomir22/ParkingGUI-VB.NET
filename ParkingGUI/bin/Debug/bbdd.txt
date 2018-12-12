@@ -5,3 +5,8 @@
 3;coche;756344VCF;BMW;Serie 3;1;06/12/2018 12:47:13;10;10
 3;coche;4565465F;Mercedes;Benz;4;06/12/2018 12:47:13;10;10
 3;coche;14881488HFG;Lamborgini;Murcielago;8;06/12/2018 12:47:13;10;10
+1;coche;83080FP;Opel;Astra;0;12/12/2018 21:10:35;21;10
+1;coche;gfdgdfgdfgdfgdf;dgdfgdfgdfgdf;dfgdfgdfgdf;1;12/12/2018 21:21:50;21;21
+1;moto;ssdfsdfdsgsdf;fgdfgdfgfdg;gdfgdfgdf;2;12/12/2018 21:23:49;21;23
+1;moto;hgfhfghfghfg;gfhfghfghfghfghfg;fghfghfghfg;3;12/12/2018 21:23:58;21;23
+1;moto;fgfdgdfhdfhdfhdffhdf;dfhdfhdfhgfdgfd;fdgdfgdfgdfgfd;4;12/12/2018 21:24:08;21;24

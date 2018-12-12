@@ -190,6 +190,7 @@ Public Class Principal
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim salida As bajaVehiculo = New bajaVehiculo
+        salida.DateTimePicker1.CustomFormat = "yyyy/MM/dd HH:mm:ss"
         salida.Show()
         añadirTexto("Abriendo baja vehiculo " & salida.ToString)
     End Sub
