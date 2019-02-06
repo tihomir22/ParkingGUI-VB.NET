@@ -3,6 +3,7 @@
 Public Class entradaVehiculo
     Public control As ControladorVehiculo = New ControladorVehiculo
     Public plantaTmp As Integer
+    Public cajaNegra As CajaNegra = New CajaNegra
 
     Private Sub OK_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK_Button.Click
         Dim listaVehiculosPlanta() As Vehiculo
@@ -238,8 +239,13 @@ Public Class entradaVehiculo
     End Function
 
     Private Function comprobar_entrada_usuario()
+
         If matriculatxt.Text.Length > 0 And (RadioButton5.Checked Or RadioButton6.Checked) And textmarca.Text.Length > 0 And textmodelo.Text.Length > 0 Then
-            Return True
+            If (cajaNegra.comprobarMatricula(matriculatxt.Text) And cajaNegra.comprobarLongitud25(matriculatxt.Text) And cajaNegra.comprobarLongitud25(textmarca.Text) And cajaNegra.comprobarLongitud25(textmodelo.Text)) Then
+                Return True
+            Else
+                Return False
+            End If
         Else
             Return False
         End If
