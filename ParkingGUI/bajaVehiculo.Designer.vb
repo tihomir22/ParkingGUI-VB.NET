@@ -232,7 +232,7 @@ Partial Class bajaVehiculo
         Me.GroupBox4.Size = New System.Drawing.Size(416, 50)
         Me.GroupBox4.TabIndex = 8
         Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Matricula"
+        Me.GroupBox4.Text = "Fecha Entrada Vehiculo"
         '
         'bajaVehiculo
         '

@@ -32,6 +32,7 @@ Partial Class entradaVehiculo
         Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
@@ -45,7 +46,6 @@ Partial Class entradaVehiculo
         Me.textmarca = New System.Windows.Forms.TextBox()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -147,6 +147,15 @@ Partial Class entradaVehiculo
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Elija una plaza"
         Me.ToolTip1.SetToolTip(Me.GroupBox2, "Elija una plaza donde quiere almacenar el vehiculo")
+        '
+        'ListBox1
+        '
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.Items.AddRange(New Object() {"Plaza 1", "Plaza 2 ", "Plaza 3", "Plaza 4", "Plaza 5", "Plaza 6", "Plaza 7 ", "Plaza 8 ", "Plaza 9", "Plaza 10"})
+        Me.ListBox1.Location = New System.Drawing.Point(7, 20)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(417, 56)
+        Me.ListBox1.TabIndex = 0
         '
         'GroupBox3
         '
@@ -267,15 +276,6 @@ Partial Class entradaVehiculo
         Me.GroupBox7.TabIndex = 7
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Marca del vehiculo"
-        '
-        'ListBox1
-        '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Items.AddRange(New Object() {"Plaza 1", "Plaza 2 ", "Plaza 3", "Plaza 4", "Plaza 5", "Plaza 6", "Plaza 7 ", "Plaza 8 ", "Plaza 9", "Plaza 10"})
-        Me.ListBox1.Location = New System.Drawing.Point(7, 20)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(417, 56)
-        Me.ListBox1.TabIndex = 0
         '
         'entradaVehiculo
         '

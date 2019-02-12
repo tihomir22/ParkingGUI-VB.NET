@@ -5,6 +5,7 @@ Public Class entradaVehiculo
     Public plantaTmp As Integer
     Public cajaNegra As CajaNegra = New CajaNegra
 
+
     Private Sub OK_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK_Button.Click
         Dim listaVehiculosPlanta() As Vehiculo
         Dim tipoVehiculo As String
@@ -240,8 +241,13 @@ Public Class entradaVehiculo
 
     Private Function comprobar_entrada_usuario()
 
+
+
         If matriculatxt.Text.Length > 0 And (RadioButton5.Checked Or RadioButton6.Checked) And textmarca.Text.Length > 0 And textmodelo.Text.Length > 0 Then
+            Principal.añadirTexto("Llego 1 ")
+            Principal.añadirTexto(cajaNegra.comprobarLongitud25(matriculatxt.Text) And cajaNegra.comprobarLongitud25(textmarca.Text) And cajaNegra.comprobarLongitud25(textmodelo.Text))
             If (cajaNegra.comprobarMatricula(matriculatxt.Text) And cajaNegra.comprobarLongitud25(matriculatxt.Text) And cajaNegra.comprobarLongitud25(textmarca.Text) And cajaNegra.comprobarLongitud25(textmodelo.Text)) Then
+                Principal.añadirTexto("Llego 2 ")
                 Return True
             Else
                 Return False
@@ -275,6 +281,15 @@ Public Class entradaVehiculo
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles matriculatxt.TextChanged
+
+
+    End Sub
+
+    Private Sub textmarca_TextChanged(sender As Object, e As EventArgs) Handles textmarca.TextChanged
+
+    End Sub
+
+    Private Sub textmodelo_TextChanged(sender As Object, e As EventArgs) Handles textmodelo.TextChanged
 
     End Sub
 End Class

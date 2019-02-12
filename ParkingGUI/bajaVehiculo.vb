@@ -222,6 +222,10 @@ Public Class bajaVehiculo
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs)
 
     End Sub
+
+    Private Sub GroupBox4_Enter(sender As Object, e As EventArgs) Handles GroupBox4.Enter
+
+    End Sub
 End Class
 
 

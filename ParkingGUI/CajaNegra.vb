@@ -7,7 +7,7 @@
         Dim arrayMatri() As String = matricula.Trim().Split("-"c)
         'formato 1900-1971 XX-00000 \ X-00000 \ X-000000
         If (arrayMatri.Count() = 2) Then
-            If (arrayMatri(0).Length() = 1 Or arrayMatri(1).Length() = 2) Then
+            If (arrayMatri(0).Length() = 1 Or arrayMatri(0).Length() = 2) Then
                 If (arrayMatri(1).Length() = 5 Or arrayMatri(1).Length() = 6) Then
                     MsgBox("Detectado 1900-1971")
                     Return True
@@ -16,7 +16,7 @@
 
             'formato 1971-2000 XX-0000-X \ X-0000-XX \ X-0000-XX \ X-0000-XX
         ElseIf (arrayMatri.Count() = 3) Then
-            If (arrayMatri(0).Length() = 1 Or arrayMatri(1).Length() = 2) Then
+            If (arrayMatri(0).Length() = 1 Or arrayMatri(0).Length() = 2) Then
                 If (arrayMatri(1).Length() = 4) Then
                     If (arrayMatri(2).Length() = 1 Or arrayMatri(2).Length() = 2) Then
                         MsgBox("Detectado 1971 - 2000")
