@@ -7,6 +7,7 @@ Public Class GestionGastos
     Private precioNeto As Double
     Private metodoPago As String
     Private control As ControladorVehiculo = New ControladorVehiculo()
+    Private cajanegra As CajaNegra = New CajaNegra
     Dim newPathPagos As String = System.IO.Path.Combine(Application.StartupPath(), "pagos.txt")
 
     Private Sub OK_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK_Button.Click
@@ -58,7 +59,7 @@ Public Class GestionGastos
 
     Private Sub TextBox3_Leave(sender As Object, e As EventArgs) Handles TextBox3.Leave
 
-        If Regex.IsMatch(TextBox3.Text, "^[0-9 ]+$") Then
+        If cajanegra.esNumerico(TextBox3.Text) Then
             TextBox2.Text = CInt(Math.Ceiling(Rnd() * 1000)) + 100
             precioBruto = TextBox3.Text
             TextBox3.Text = TextBox3.Text & "€"

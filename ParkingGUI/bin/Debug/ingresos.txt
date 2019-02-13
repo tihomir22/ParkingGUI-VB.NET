@@ -1,3 +1,4 @@
 Ingreso por salida de vehiculo con matricula123456HJK;06/12/2018 12:48:06;0;0,63;efectivo;0;0,021
 Ingreso por salida de vehiculo con matricula01118JYP;07/12/2018 11:53:35;806;0,63;efectivo;0;0
 Ingreso por salida de vehiculo con matricula8814HJK;07/12/2018 11:54:43;0;1,91;efectivo;0;267,909333333333
+Ingreso por salida de vehiculo con matricula83080FP;13/02/2019 8:12:40;0;1,91;efectivo;0;17136,6473333333

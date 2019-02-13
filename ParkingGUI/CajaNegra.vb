@@ -1,4 +1,6 @@
-﻿Public Class CajaNegra
+﻿Imports System.Text.RegularExpressions
+
+Public Class CajaNegra
 
 
     Public Function comprobarMatricula(ByVal matricula As String)
@@ -80,6 +82,72 @@
             Return True
         Else
             MsgBox("Has introducido una cadena demasiado larga " & valor)
+            Return False
+        End If
+    End Function
+
+    Public Function esNumerico(ByRef valor As String)
+        If (Regex.IsMatch(valor, "^[0-9 ]+$")) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+    Public Function haySitioMoto(ByRef listaVehiculosArray() As Vehiculo)
+        Dim listaVehiculos As List(Of Vehiculo) = listaVehiculosArray.ToList
+        Dim contadorMoto As Integer = 0
+        For index As Integer = 0 To listaVehiculos.Count - 1
+            If (listaVehiculos(index) Is Nothing) Then
+
+            Else
+                If listaVehiculos(index).getTipo.ToString = "moto" Then
+                    contadorMoto = contadorMoto + 1
+                End If
+            End If
+
+        Next
+        If contadorMoto >= 3 Then
+            Return False
+        End If
+        Return True
+
+    End Function
+
+    Public Function haySitioCoche(ByRef listaVehiculosArray() As Vehiculo)
+        Dim listaVehiculos As List(Of Vehiculo) = listaVehiculosArray.ToList
+        Dim contadorCoches As Integer = 0
+        For index As Integer = 0 To listaVehiculos.Count - 1
+
+            If (listaVehiculos(index) Is Nothing) Then
+
+            Else
+                If listaVehiculos(index).getTipo.ToString = "coche" Then
+                    contadorCoches = contadorCoches + 1
+                End If
+            End If
+
+
+        Next
+        If contadorCoches >= 7 Then
+            Return False
+        End If
+        Return True
+
+    End Function
+
+    Public Function comprobar_entrada_usuario(ByRef matricula As String, ByRef radioMoto As RadioButton, ByRef radioCoche As RadioButton, ByRef marca As String, ByRef modelo As String)
+
+        If matricula.Length > 0 And (radioMoto.Checked Or radioCoche.Checked) And marca.Length > 0 And modelo.Length > 0 Then
+            Principal.añadirTexto("Llego 1 ")
+            ' Principal.añadirTexto(comprobarLongitud25(entradaVehiculo.matriculatxt.Text) And comprobarLongitud25(entradaVehiculo.textmarca.Text) And comprobarLongitud25(entradaVehiculo.textmodelo.Text))
+            If (comprobarMatricula(matricula) And comprobarLongitud25(matricula) And comprobarLongitud25(marca) And comprobarLongitud25(modelo)) Then
+                Principal.añadirTexto("Llego 2 ")
+                Return True
+            Else
+                Return False
+            End If
+        Else
             Return False
         End If
     End Function

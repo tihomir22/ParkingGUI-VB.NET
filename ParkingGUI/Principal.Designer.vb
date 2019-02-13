@@ -94,6 +94,7 @@ Partial Class Principal
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -856,6 +857,7 @@ Partial Class Principal
         'Button45
         '
         Me.Button45.BackColor = System.Drawing.Color.White
+        Me.Button45.Enabled = False
         Me.Button45.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Button45.Location = New System.Drawing.Point(155, 28)
         Me.Button45.Name = "Button45"
@@ -1049,4 +1051,5 @@ Partial Class Principal
     Friend WithEvents Label6 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Button47 As Button
+    Friend WithEvents SaveFileDialog1 As SaveFileDialog
 End Class

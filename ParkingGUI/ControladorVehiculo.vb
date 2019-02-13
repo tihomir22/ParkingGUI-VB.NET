@@ -260,23 +260,28 @@
     Public Function abrirInformacion(ByVal sender As Object, ByVal e As EventArgs)
         Dim btn As Button = sender
         Dim info As Informacion_coche = New Informacion_coche()
+
+        
+
         Try
 
 
             If Principal.listaPlanta1Botones.Contains(btn) Then
                 Me.añadirTexto("Se ha seleccionado " & Principal.listaPlanta1(btn.Tag).toString())
-
-                info.TextBox1.Text = Principal.listaPlanta1(btn.Tag).toString()
+                Dim veh As Vehiculo = Principal.listaPlanta1(btn.Tag)
+                MsgBox("TIPO" & veh.getTipo())
+                info.RichTextBox1.Text = "MATRICULA " & Environment.NewLine & veh.getMatricula() & Environment.NewLine & "MARCA" & Environment.NewLine & veh.getMarca() & Environment.NewLine & "MODELO " & Environment.NewLine & veh.getModelo() & Environment.NewLine & "Fecha entrada" & Environment.NewLine & veh.getFecha() & Environment.NewLine & "Plaza " & Environment.NewLine & veh.getPlaza()
             ElseIf Principal.listaPlanta2Botones.Contains(btn) Then
                 Me.añadirTexto("Se ha seleccionado " & Principal.listaPlanta2(btn.Tag).toString())
-                info.TextBox1.Text = Principal.listaPlanta2(btn.Tag).toString()
+                Dim veh As Vehiculo = Principal.listaPlanta2(btn.Tag)
+                MsgBox("TIPO" & veh.getTipo())
+                info.RichTextBox1.Text = "MATRICULA " & Environment.NewLine & veh.getMatricula() & Environment.NewLine & "MARCA" & Environment.NewLine & veh.getMarca() & Environment.NewLine & "MODELO " & Environment.NewLine & veh.getModelo() & Environment.NewLine & "Fecha entrada" & Environment.NewLine & veh.getFecha() & Environment.NewLine & "Plaza " & Environment.NewLine & veh.getPlaza()
             ElseIf Principal.listaPlanta3Botones.Contains(btn) Then
+                Dim veh As Vehiculo = Principal.listaPlanta3(btn.Tag)
+                MsgBox("TIPO" & veh.getTipo())
                 Me.añadirTexto("Se ha seleccionado " & Principal.listaPlanta3(btn.Tag).toString())
-                info.TextBox1.Text = Principal.listaPlanta3(btn.Tag).toString()
+                info.RichTextBox1.Text = "MATRICULA " & Environment.NewLine & veh.getMatricula() & Environment.NewLine & "MARCA" & Environment.NewLine & veh.getMarca() & Environment.NewLine & "MODELO " & Environment.NewLine & veh.getModelo() & Environment.NewLine & "Fecha entrada" & Environment.NewLine & veh.getFecha() & Environment.NewLine & "Plaza " & Environment.NewLine & veh.getPlaza()
             End If
-
-
-
             info.ShowDialog()
         Catch ex As Exception
             Principal.añadirTexto("Se ha intentado imprimir un boton vacio...")

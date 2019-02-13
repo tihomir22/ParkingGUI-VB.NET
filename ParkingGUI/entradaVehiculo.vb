@@ -20,7 +20,7 @@ Public Class entradaVehiculo
         'si no le decimos el lugar al que debe entrar...
         If RadioButton1.Checked = False And RadioButton2.Checked = False And RadioButton3.Checked = False And ListBox1.SelectedItem = Nothing Then
             MsgBox("No seleccionaste coordenadas")
-            If (Me.comprobar_entrada_usuario) Then
+            If cajaNegra.comprobar_entrada_usuario(Me.matriculatxt.Text, Me.RadioButton5, Me.RadioButton6, Me.textmarca.Text, Me.textmodelo.Text) Then
                 Dim resultadoPosicion As Integer = Me.recalcular_posicion()
                 If resultadoPosicion <> -1 Then
                     Dim vehiculo As Vehiculo = New Vehiculo(tipoVehiculo, matriculatxt.Text, Me.textmarca.Text, Me.textmodelo.Text, resultadoPosicion)
@@ -34,14 +34,14 @@ Public Class entradaVehiculo
                         Case 1
                             Select Case vehiculo.getTipo
                                 Case "moto"
-                                    If Principal.haySitioMoto(Principal.listaPlanta1) Then
+                                    If cajaNegra.haySitioMoto(Principal.listaPlanta1) Then
                                         Principal.darDeAltaVehiculosPlanta(Principal.listaVehiculosPlanta1, 1)
                                         MsgBox("Se ha añadido con exito el vehiculo" & vehiculo.toString)
                                     Else
                                         MsgBox("No se puede añadir más vehiculos de ese tipo " & vehiculo.toString)
                                     End If
                                 Case "coche"
-                                    If Principal.haySitioCoche(Principal.listaPlanta1) Then
+                                    If cajaNegra.haySitioCoche(Principal.listaPlanta1) Then
                                         Principal.darDeAltaVehiculosPlanta(Principal.listaVehiculosPlanta1, 1)
                                         MsgBox("Se ha añadido con exito el vehiculo" & vehiculo.toString)
                                     Else
@@ -52,14 +52,14 @@ Public Class entradaVehiculo
                         Case 2
                             Select Case vehiculo.getTipo
                                 Case "moto"
-                                    If Principal.haySitioMoto(Principal.listaPlanta2) Then
+                                    If cajaNegra.haySitioMoto(Principal.listaPlanta2) Then
                                         Principal.darDeAltaVehiculosPlanta(Principal.listaVehiculosPlanta2, 2)
                                         MsgBox("Se ha añadido con exito el vehiculo" & vehiculo.toString)
                                     Else
                                         MsgBox("No se puede añadir más vehiculos de ese tipo " & vehiculo.toString)
                                     End If
                                 Case "coche"
-                                    If Principal.haySitioCoche(Principal.listaPlanta2) Then
+                                    If cajaNegra.haySitioCoche(Principal.listaPlanta2) Then
                                         Principal.darDeAltaVehiculosPlanta(Principal.listaVehiculosPlanta2, 2)
                                         MsgBox("Se ha añadido con exito el vehiculo" & vehiculo.toString)
                                     Else
@@ -70,14 +70,14 @@ Public Class entradaVehiculo
                         Case 3
                             Select Case vehiculo.getTipo
                                 Case "moto"
-                                    If Principal.haySitioMoto(Principal.listaPlanta3) Then
+                                    If cajaNegra.haySitioMoto(Principal.listaPlanta3) Then
                                         Principal.darDeAltaVehiculosPlanta(Principal.listaVehiculosPlanta3, 3)
                                         MsgBox("Se ha añadido con exito el vehiculo" & vehiculo.toString)
                                     Else
                                         MsgBox("No se puede añadir más vehiculos de ese tipo " & vehiculo.toString)
                                     End If
                                 Case "coche"
-                                    If Principal.haySitioCoche(Principal.listaPlanta3) Then
+                                    If cajaNegra.haySitioCoche(Principal.listaPlanta3) Then
                                         Principal.darDeAltaVehiculosPlanta(Principal.listaVehiculosPlanta3, 3)
                                         MsgBox("Se ha añadido con exito el vehiculo" & vehiculo.toString)
                                     Else
@@ -94,7 +94,7 @@ Public Class entradaVehiculo
                 MsgBox("Te faltan datos por introducir por lo que no se añade ningun vehiculo")
             End If
         Else
-            If (Me.comprobar_entrada_usuario) Then
+            If cajaNegra.comprobar_entrada_usuario(Me.matriculatxt.Text, Me.RadioButton5, Me.RadioButton6, Me.textmarca.Text, Me.textmodelo.Text) Then
                 If RadioButton1.Checked Then
                     listaVehiculosPlanta = Principal.listaPlanta1
                     Dim indice As Integer = 0
@@ -107,7 +107,7 @@ Public Class entradaVehiculo
 
                     If (listaVehiculosPlanta(Me.ListBox1.GetItemText(Me.ListBox1.SelectedIndex)) Is Nothing) Then
                         If (tipoVehiculo = "moto") Then
-                            If (Principal.haySitioMoto(listaVehiculosPlanta) = True) Then
+                            If (cajaNegra.haySitioMoto(listaVehiculosPlanta) = True) Then
                                 control.writeAObject(newPath, vehiculo, 1)
                                 control.darDeAltaVehiculosLista()
                                 Principal.darDeAltaVehiculosPlanta(Principal.listaVehiculosPlanta1, 1)
@@ -116,7 +116,7 @@ Public Class entradaVehiculo
                                 MsgBox("No se puede añadir más vehiculos de tipo !" & tipoVehiculo)
                             End If
                         Else
-                            If (Principal.haySitioCoche(listaVehiculosPlanta) = True) Then
+                            If (cajaNegra.haySitioCoche(listaVehiculosPlanta) = True) Then
                                 control.writeAObject(newPath, vehiculo, 1)
                                 control.darDeAltaVehiculosLista()
                                 Principal.darDeAltaVehiculosPlanta(Principal.listaVehiculosPlanta1, 1)
@@ -144,7 +144,7 @@ Public Class entradaVehiculo
 
                     If (listaVehiculosPlanta(Me.ListBox1.GetItemText(Me.ListBox1.SelectedIndex)) Is Nothing) Then
                         If (tipoVehiculo = "moto") Then
-                            If (Principal.haySitioMoto(listaVehiculosPlanta) = True) Then
+                            If (cajaNegra.haySitioMoto(listaVehiculosPlanta) = True) Then
                                 control.writeAObject(newPath, vehiculo, 2)
                                 control.darDeAltaVehiculosLista()
                                 Principal.darDeAltaVehiculosPlanta(Principal.listaVehiculosPlanta2, 2)
@@ -153,7 +153,7 @@ Public Class entradaVehiculo
                                 MsgBox("No se puede añadir más vehiculos de tipo !" & tipoVehiculo)
                             End If
                         Else
-                            If (Principal.haySitioCoche(listaVehiculosPlanta) = True) Then
+                            If (cajaNegra.haySitioCoche(listaVehiculosPlanta) = True) Then
                                 control.writeAObject(newPath, vehiculo, 2)
                                 control.darDeAltaVehiculosLista()
                                 Principal.darDeAltaVehiculosPlanta(Principal.listaVehiculosPlanta2, 2)
@@ -179,7 +179,7 @@ Public Class entradaVehiculo
 
                     If (listaVehiculosPlanta(Me.ListBox1.GetItemText(Me.ListBox1.SelectedIndex)) Is Nothing) Then
                         If (tipoVehiculo = "moto") Then
-                            If (Principal.haySitioMoto(listaVehiculosPlanta) = True) Then
+                            If (cajaNegra.haySitioMoto(listaVehiculosPlanta) = True) Then
                                 control.writeAObject(newPath, vehiculo, 3)
                                 control.darDeAltaVehiculosLista()
                                 Principal.darDeAltaVehiculosPlanta(Principal.listaVehiculosPlanta3, 3)
@@ -188,7 +188,7 @@ Public Class entradaVehiculo
                                 MsgBox("No se puede añadir más vehiculos de tipo !" & tipoVehiculo)
                             End If
                         Else
-                            If (Principal.haySitioCoche(listaVehiculosPlanta) = True) Then
+                            If (cajaNegra.haySitioCoche(listaVehiculosPlanta) = True) Then
                                 control.writeAObject(newPath, vehiculo, 3)
                                 control.darDeAltaVehiculosLista()
                                 Principal.darDeAltaVehiculosPlanta(Principal.listaVehiculosPlanta3, 3)
@@ -239,23 +239,7 @@ Public Class entradaVehiculo
         Return -1
     End Function
 
-    Private Function comprobar_entrada_usuario()
 
-
-
-        If matriculatxt.Text.Length > 0 And (RadioButton5.Checked Or RadioButton6.Checked) And textmarca.Text.Length > 0 And textmodelo.Text.Length > 0 Then
-            Principal.añadirTexto("Llego 1 ")
-            Principal.añadirTexto(cajaNegra.comprobarLongitud25(matriculatxt.Text) And cajaNegra.comprobarLongitud25(textmarca.Text) And cajaNegra.comprobarLongitud25(textmodelo.Text))
-            If (cajaNegra.comprobarMatricula(matriculatxt.Text) And cajaNegra.comprobarLongitud25(matriculatxt.Text) And cajaNegra.comprobarLongitud25(textmarca.Text) And cajaNegra.comprobarLongitud25(textmodelo.Text)) Then
-                Principal.añadirTexto("Llego 2 ")
-                Return True
-            Else
-                Return False
-            End If
-        Else
-            Return False
-        End If
-    End Function
 
     Private Sub Cancel_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel_Button.Click
         Me.DialogResult = System.Windows.Forms.DialogResult.Cancel

@@ -9,6 +9,7 @@ Public Class Principal
     Public listaPlanta2Botones() As Button
     Public listaPlanta3() As Vehiculo
     Public listaPlanta3Botones() As Button
+
     Public botonSeleccionadoCamara As Button
     Public fotoActual As PictureBox
     Public listaImagenes As List(Of Image) = New List(Of Image)
@@ -78,47 +79,9 @@ Public Class Principal
         End If
     End Sub
 
-    Public Function haySitioCoche(ByRef listaVehiculosArray() As Vehiculo)
-        Dim listaVehiculos As List(Of Vehiculo) = listaVehiculosArray.ToList
-        Dim contadorCoches As Integer = 0
-        For index As Integer = 0 To listaVehiculos.Count - 1
-
-            If (listaVehiculos(index) Is Nothing) Then
-
-            Else
-                If listaVehiculos(index).getTipo.ToString = "coche" Then
-                    contadorCoches = contadorCoches + 1
-                End If
-            End If
 
 
-        Next
-        If contadorCoches >= 7 Then
-            Return False
-        End If
-        Return True
 
-    End Function
-
-    Public Function haySitioMoto(ByRef listaVehiculosArray() As Vehiculo)
-        Dim listaVehiculos As List(Of Vehiculo) = listaVehiculosArray.ToList
-        Dim contadorMoto As Integer = 0
-        For index As Integer = 0 To listaVehiculos.Count - 1
-            If (listaVehiculos(index) Is Nothing) Then
-
-            Else
-                If listaVehiculos(index).getTipo.ToString = "moto" Then
-                    contadorMoto = contadorMoto + 1
-                End If
-            End If
-
-        Next
-        If contadorMoto >= 3 Then
-            Return False
-        End If
-        Return True
-
-    End Function
 
 
 
@@ -276,5 +239,37 @@ Public Class Principal
     Private Sub Button47_Click(sender As Object, e As EventArgs) Handles Button47.Click
         Dim soporte As SoporteTecnico = New SoporteTecnico
         soporte.Show()
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+
+    End Sub
+
+    Private Sub Button44_Click(sender As Object, e As EventArgs) Handles Button44.Click
+        Dim path As String
+        Dim pic As Image
+        pic = Me.fotoActual.Image
+        Me.SaveFileDialog1.ShowDialog()
+        pic.Save(SaveFileDialog1.FileName)
+        MsgBox("Guardado con exito")
+    End Sub
+
+    Private Sub Button46_Click(sender As Object, e As EventArgs) Handles Button46.Click
+        Me.fotoActual.Image = Me.listaImagenes(0)
+        botonSeleccionadoCamara.BackColor = Color.White
+        botonSeleccionadoCamara.ForeColor = Color.DimGray
+
+        Me.Button36.BackColor = Color.DimGray
+        Me.Button36.ForeColor = Color.White
+
+        botonSeleccionadoCamara = Me.Button36
+    End Sub
+
+    Private Sub Button36_Click(sender As Object, e As EventArgs) Handles Button36.Click
+
+    End Sub
+
+    Private Sub Button45_Click(sender As Object, e As EventArgs) Handles Button45.Click
+
     End Sub
 End Class
