@@ -250,8 +250,13 @@ Public Class Principal
         Dim pic As Image
         pic = Me.fotoActual.Image
         Me.SaveFileDialog1.ShowDialog()
-        pic.Save(SaveFileDialog1.FileName)
-        MsgBox("Guardado con exito")
+        If SaveFileDialog1.FileName IsNot Nothing And SaveFileDialog1.FileName IsNot "" Then
+            MsgBox(SaveFileDialog1.FileName)
+            pic.Save(SaveFileDialog1.FileName)
+            MsgBox("Guardado con exito")
+        End If
+
+
     End Sub
 
     Private Sub Button46_Click(sender As Object, e As EventArgs) Handles Button46.Click

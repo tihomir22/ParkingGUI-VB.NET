@@ -1,5 +1,6 @@
 ﻿Public Class ControladorVehiculo
     Public TextBox1 As TextBox
+    Public tipoVehiculoSeleccionado As String
 
     Public Function iniciarArrayImagenes(ByRef lista As List(Of Image))
         lista.Add(Image.FromFile(Application.StartupPath() & "\camera1.jpg"))
@@ -245,9 +246,11 @@
                 If listaVehiculos(index).getTipo.ToString = "moto" Then
                     Dim imagen As Image = Image.FromFile(Application.StartupPath() & "\motorcycle.png")
                     btn.Image = imagen
+
                 Else
                     Dim imagen As Image = Image.FromFile(Application.StartupPath() & "\car.png")
                     btn.Image = imagen
+
                 End If
                 Me.añadirTexto(listaVehiculos(index).toString & "cargado con exito")
 
@@ -261,11 +264,7 @@
         Dim btn As Button = sender
         Dim info As Informacion_coche = New Informacion_coche()
 
-        
-
         Try
-
-
             If Principal.listaPlanta1Botones.Contains(btn) Then
                 Me.añadirTexto("Se ha seleccionado " & Principal.listaPlanta1(btn.Tag).toString())
                 Dim veh As Vehiculo = Principal.listaPlanta1(btn.Tag)
@@ -282,6 +281,8 @@
                 Me.añadirTexto("Se ha seleccionado " & Principal.listaPlanta3(btn.Tag).toString())
                 info.RichTextBox1.Text = "MATRICULA " & Environment.NewLine & veh.getMatricula() & Environment.NewLine & "MARCA" & Environment.NewLine & veh.getMarca() & Environment.NewLine & "MODELO " & Environment.NewLine & veh.getModelo() & Environment.NewLine & "Fecha entrada" & Environment.NewLine & veh.getFecha() & Environment.NewLine & "Plaza " & Environment.NewLine & veh.getPlaza()
             End If
+
+
             info.ShowDialog()
         Catch ex As Exception
             Principal.añadirTexto("Se ha intentado imprimir un boton vacio...")

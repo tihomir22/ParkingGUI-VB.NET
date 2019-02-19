@@ -15,7 +15,6 @@ Public Class CajaNegra
                     Return True
                 End If
             End If
-
             'formato 1971-2000 XX-0000-X \ X-0000-XX \ X-0000-XX \ X-0000-XX
         ElseIf (arrayMatri.Count() = 3) Then
             If (arrayMatri(0).Length() = 1 Or arrayMatri(0).Length() = 2) Then
@@ -60,11 +59,6 @@ Public Class CajaNegra
                 Return False
             End If
         End If
-
-
-
-
-
     End Function
 
     Function CheckForAlphaCharacters(ByVal StringToCheck As String)

@@ -89,6 +89,7 @@ Partial Class Informacion_coche
         Me.RichTextBox1.ForeColor = System.Drawing.SystemColors.Window
         Me.RichTextBox1.Location = New System.Drawing.Point(210, 12)
         Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.ReadOnly = True
         Me.RichTextBox1.Size = New System.Drawing.Size(403, 191)
         Me.RichTextBox1.TabIndex = 4
         Me.RichTextBox1.Text = ""
